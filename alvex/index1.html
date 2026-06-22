@@ -1,0 +1,1128 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ALVEX Handel GmbH | Natriumhydrogencarbonat in Großmengen</title>
+<meta name="description" content="ALVEX Handel GmbH – Ihr strategischer Partner für hochreines Natriumhydrogencarbonat (Natron) in Großmengen. Zuverlässige Logistik, geprüfte Qualität, deutschlandweite Lieferung.">
+
+<!--
+  ===================================================================
+  ALVEX Handel GmbH — corporate one-pager
+  Single file, no external requests: no fonts, no CDNs, no trackers,
+  no cookies. Everything (markup, styles, behaviour) lives below.
+  ===================================================================
+-->
+
+<style>
+
+  /* ============================================================
+     1. DESIGN TOKENS
+     Royal/cobalt blue = trust, precision, chemical-grade purity.
+     Slate gray = industrial, neutral, technical.
+     A simple molecule motif (linked nodes) is used throughout as
+     the page's one recurring signature — a quiet nod to NaHCO₃.
+     ============================================================ */
+  :root{
+    --color-primary:        #0A58CA;
+    --color-primary-dark:   #07408F;
+    --color-primary-darker: #052C63;
+    --color-primary-light:  #EAF1FC;
+    --color-secondary:      #7A7A7A;
+    --color-secondary-soft: #8A8D91;
+    --color-bg:             #FFFFFF;
+    --color-bg-alt:         #F5F6F8;
+    --color-bg-dark:        #10243F;
+    --color-border:         #E1E3E7;
+    --color-text:           #1A1E23;
+    --color-text-muted:     #5B5F66;
+    --color-success:        #1E7E45;
+
+    --font-base: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+
+    --radius-sm: 4px;
+    --radius-md: 8px;
+    --radius-lg: 14px;
+
+    --shadow-sm: 0 1px 3px rgba(16,36,63,0.08);
+    --shadow-md: 0 8px 24px rgba(16,36,63,0.10);
+    --shadow-lg: 0 18px 48px rgba(16,36,63,0.16);
+
+    --container-w: 1180px;
+    --header-h: 76px;
+
+    --transition: 180ms ease;
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    *{ animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; scroll-behavior: auto !important; }
+  }
+
+  /* ============================================================
+     2. RESET & BASE
+     ============================================================ */
+  *,*::before,*::after{ box-sizing: border-box; }
+  html{ scroll-behavior: smooth; }
+  body{
+    margin:0;
+    font-family: var(--font-base);
+    color: var(--color-text);
+    background: var(--color-bg);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  img{ max-width:100%; display:block; }
+  a{ color: var(--color-primary); text-decoration:none; }
+  ul{ margin:0; padding:0; list-style:none; }
+  h1,h2,h3,h4{ margin:0; line-height:1.18; font-weight:700; letter-spacing:-0.01em; }
+  p{ margin:0; }
+  button{ font-family:inherit; cursor:pointer; }
+
+  :focus-visible{
+    outline: 3px solid var(--color-primary);
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+
+  .container{
+    width:100%;
+    max-width: var(--container-w);
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  .skip-link{
+    position:absolute; left:-999px; top:0;
+    background: var(--color-primary); color:#fff;
+    padding:10px 16px; z-index:1000; border-radius: 0 0 var(--radius-sm) 0;
+  }
+  .skip-link:focus{ left:0; }
+
+  .eyebrow{
+    display:inline-flex; align-items:center; gap:8px;
+    font-size:0.78rem; font-weight:700; letter-spacing:0.08em; text-transform:uppercase;
+    color: var(--color-primary); margin-bottom:14px;
+  }
+  .eyebrow .dot{ width:6px; height:6px; border-radius:50%; background: var(--color-primary); display:inline-block; }
+
+  .section-head{ max-width: 680px; margin-bottom: 44px; }
+  .section-head p{ color: var(--color-secondary); font-size:1.05rem; margin-top:12px; }
+  .section-head.center{ margin-left:auto; margin-right:auto; text-align:center; }
+
+  section{ padding: 92px 0; }
+  .bg-alt{ background: var(--color-bg-alt); }
+
+  /* Molecule divider — the page's signature element: three linked
+     nodes echoing the carbonate ion, used between sections instead
+     of a generic rule or numbered marker. */
+  .molecule-divider{
+    display:flex; align-items:center; justify-content:center;
+    gap:10px; margin: 0 auto; width: fit-content;
+  }
+  .molecule-divider .bond{ width:48px; height:1.5px; background: var(--color-border); }
+  .molecule-divider .node{ width:7px; height:7px; border-radius:50%; background: var(--color-secondary-soft); }
+  .molecule-divider .node.primary{ background: var(--color-primary); width:9px; height:9px; }
+
+  .btn{
+    display:inline-flex; align-items:center; justify-content:center; gap:8px;
+    padding: 14px 28px; border-radius: var(--radius-sm);
+    font-weight:700; font-size:0.96rem; border:2px solid transparent;
+    transition: background var(--transition), color var(--transition), border-color var(--transition), transform var(--transition);
+    white-space:nowrap;
+  }
+  .btn-primary{ background: var(--color-primary); color:#fff; }
+  .btn-primary:hover{ background: var(--color-primary-dark); transform: translateY(-1px); }
+  .btn-outline{ background:transparent; border-color: var(--color-border); color: var(--color-text); }
+  .btn-outline:hover{ border-color: var(--color-primary); color: var(--color-primary); }
+  .btn-block{ width:100%; }
+
+  .tag{
+    display:inline-block; padding:4px 11px; border-radius: 999px;
+    background: var(--color-primary-light); color: var(--color-primary);
+    font-size:0.74rem; font-weight:700; letter-spacing:0.03em;
+  }
+
+  /* ============================================================
+     3. HEADER & NAVIGATION
+     ============================================================ */
+  .site-header{
+    position: sticky; top:0; z-index:500;
+    background: rgba(255,255,255,0.96);
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid var(--color-border);
+    height: var(--header-h);
+  }
+  .site-header .container{
+    height:100%; display:flex; align-items:center; justify-content:space-between; gap:24px;
+  }
+
+  .logo{ display:flex; align-items:center; gap:10px; flex-shrink:0; }
+  .logo-icon{ width:38px; height:38px; flex-shrink:0; }
+  .logo-text{ display:flex; flex-direction:column; line-height:1.05; }
+  .logo-text .logo-main{ font-size:1.28rem; font-weight:800; color: var(--color-primary); letter-spacing:0.02em; }
+  .logo-text .logo-sub{ font-size:0.62rem; font-weight:700; color: var(--color-secondary); letter-spacing:0.14em; text-transform:uppercase; }
+
+  .main-nav{ display:flex; }
+  .main-nav ul{ display:flex; gap:30px; }
+  .main-nav a{
+    color: var(--color-text); font-weight:600; font-size:0.95rem;
+    padding: 8px 2px; position:relative;
+  }
+  .main-nav a::after{
+    content:""; position:absolute; left:0; right:0; bottom:0; height:2px;
+    background: var(--color-primary); transform: scaleX(0); transition: transform var(--transition);
+  }
+  .main-nav a:hover::after, .main-nav a:focus-visible::after{ transform: scaleX(1); }
+
+  .header-actions{ display:flex; align-items:center; gap:20px; flex-shrink:0; }
+  .header-phone{ display:flex; align-items:center; gap:8px; font-weight:700; color: var(--color-primary-darker); white-space:nowrap; }
+  .header-phone svg{ width:18px; height:18px; flex-shrink:0; }
+  .header-phone .label{ display:block; font-size:0.68rem; font-weight:600; color: var(--color-secondary); text-transform:uppercase; letter-spacing:0.05em; }
+
+  .nav-toggle{
+    display:none; background:none; border:1px solid var(--color-border); border-radius: var(--radius-sm);
+    width:42px; height:42px; align-items:center; justify-content:center; flex-shrink:0;
+  }
+  .nav-toggle svg{ width:20px; height:20px; }
+
+  /* ============================================================
+     4. HERO
+     ============================================================ */
+  .hero{
+    padding: 76px 0 96px;
+    background:
+      radial-gradient(circle at 8% 12%, rgba(10,88,202,0.06), transparent 40%),
+      radial-gradient(circle at 92% 85%, rgba(10,88,202,0.05), transparent 45%),
+      #fff;
+    position:relative; overflow:hidden;
+  }
+  .hero-grid{
+    display:grid; grid-template-columns: 1.05fr 0.95fr; gap:56px; align-items:center;
+  }
+  .hero-content h1{ font-size: clamp(2.1rem, 3.4vw, 2.85rem); color: var(--color-text); }
+  .hero-content h1 .accent{ color: var(--color-primary); }
+  .hero-sub{
+    margin-top:22px; font-size:1.12rem; color: var(--color-secondary); max-width:520px;
+  }
+  .hero-stats{ display:flex; gap:30px; margin-top:34px; flex-wrap:wrap; }
+  .hero-stat strong{ display:block; font-size:1.5rem; color: var(--color-primary-darker); }
+  .hero-stat span{ font-size:0.8rem; color: var(--color-secondary); }
+  .hero-cta{ display:flex; gap:16px; margin-top:38px; flex-wrap:wrap; }
+
+  /* Intro video container */
+  .hero-video{
+    position:relative; border-radius: var(--radius-lg); overflow:hidden;
+    box-shadow: var(--shadow-lg);
+    aspect-ratio: 16/9;
+    background: linear-gradient(135deg, var(--color-bg-dark), var(--color-primary-darker));
+  }
+  .hero-video video{ width:100%; height:100%; object-fit:cover; display:block; background:#0d1f37; }
+  .hero-video .video-caption{
+    position:absolute; left:18px; bottom:16px; color:#fff; font-size:0.8rem; font-weight:600;
+    background: rgba(8,20,38,0.55); padding:6px 12px; border-radius: var(--radius-sm);
+    letter-spacing:0.02em;
+  }
+  .play-overlay{
+    position:absolute; inset:0; display:flex; align-items:center; justify-content:center;
+    background: rgba(8,20,38,0.22);
+    border:none; transition: background var(--transition);
+  }
+  .play-overlay:hover{ background: rgba(8,20,38,0.34); }
+  .play-overlay .play-btn{
+    width:74px; height:74px; border-radius:50%;
+    background: var(--color-primary);
+    display:flex; align-items:center; justify-content:center;
+    box-shadow: 0 8px 24px rgba(5,44,99,0.45);
+    transition: transform var(--transition), background var(--transition);
+  }
+  .play-overlay:hover .play-btn{ transform: scale(1.06); background: var(--color-primary-dark); }
+  .play-overlay .play-btn svg{ width:26px; height:26px; fill:#fff; margin-left:3px; }
+  .play-overlay.is-playing{ opacity:0; pointer-events:none; }
+
+  /* ============================================================
+     5. ABOUT
+     ============================================================ */
+  .about-grid{ display:grid; grid-template-columns: 0.9fr 1.1fr; gap:64px; align-items:start; }
+  .about-points{ display:grid; gap:22px; margin-top:30px; }
+  .about-point{ display:flex; gap:16px; }
+  .about-point .icon-badge{
+    width:42px; height:42px; border-radius: var(--radius-sm); background: var(--color-primary-light);
+    display:flex; align-items:center; justify-content:center; flex-shrink:0;
+  }
+  .about-point .icon-badge svg{ width:20px; height:20px; stroke: var(--color-primary); }
+  .about-point h4{ font-size:1.02rem; }
+  .about-point p{ color: var(--color-secondary); font-size:0.94rem; margin-top:4px; }
+
+  .about-card{
+    background: var(--color-bg-dark); color:#fff; border-radius: var(--radius-lg);
+    padding:38px; position:relative; overflow:hidden;
+  }
+  .about-card::before{
+    content:""; position:absolute; right:-60px; top:-60px; width:220px; height:220px;
+    border-radius:50%; background: radial-gradient(circle, rgba(10,88,202,0.45), transparent 70%);
+  }
+  .about-card h3{ font-size:1.35rem; color:#fff; position:relative; }
+  .about-card p{ color:#C4CCD8; margin-top:14px; font-size:0.96rem; position:relative; }
+  .about-card .location{
+    margin-top:26px; display:flex; align-items:center; gap:10px; font-size:0.88rem; color:#9FB0C7;
+    border-top:1px solid rgba(255,255,255,0.14); padding-top:20px; position:relative;
+  }
+  .about-card .location svg{ width:16px; height:16px; flex-shrink:0; }
+
+  /* ============================================================
+     6. PRODUKTQUALITÄT — technical data sheet
+     ============================================================ */
+  .data-sheet{
+    border:1px solid var(--color-border); border-radius: var(--radius-md);
+    overflow:hidden; box-shadow: var(--shadow-sm); background:#fff;
+  }
+  table.spec-table{ width:100%; border-collapse:collapse; font-size:0.92rem; }
+  table.spec-table thead th{
+    background: var(--color-primary); color:#fff; text-align:left;
+    padding:14px 18px; font-weight:700; font-size:0.84rem; letter-spacing:0.02em;
+  }
+  table.spec-table thead th:first-child{ border-top-left-radius: 0; }
+  table.spec-table tbody td{
+    padding:13px 18px; border-bottom:1px solid var(--color-border); color: var(--color-text);
+  }
+  table.spec-table tbody td:first-child{ color: var(--color-secondary); font-weight:600; width:42%; }
+  table.spec-table tbody tr:last-child td{ border-bottom:none; }
+  table.spec-table tbody tr:nth-child(even){ background: var(--color-bg-alt); }
+  .data-sheet-note{
+    padding:14px 18px; font-size:0.8rem; color: var(--color-secondary); border-top:1px solid var(--color-border); background: var(--color-bg-alt);
+  }
+
+  /* ============================================================
+     7. BRANCHEN — industries grid
+     ============================================================ */
+  .industry-grid{ display:grid; grid-template-columns: repeat(4, 1fr); gap:22px; margin-top:48px; }
+  .industry-card{
+    border:1px solid var(--color-border); border-radius: var(--radius-md); padding:28px 24px;
+    background:#fff; transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+  }
+  .industry-card:hover{ transform: translateY(-4px); box-shadow: var(--shadow-md); border-color: var(--color-primary); }
+  .industry-card .icon-badge{
+    width:48px; height:48px; border-radius:50%; background: var(--color-primary-light);
+    display:flex; align-items:center; justify-content:center; margin-bottom:18px;
+  }
+  .industry-card .icon-badge svg{ width:22px; height:22px; stroke: var(--color-primary); }
+  .industry-card h4{ font-size:1.02rem; margin-bottom:8px; }
+  .industry-card p{ font-size:0.88rem; color: var(--color-secondary); }
+  .industry-card .grade-tag{ margin-top:14px; display:block; }
+
+  /* ============================================================
+     8. BLOG — Aktuelles & Marktberichte
+     ============================================================ */
+  .blog-grid{ display:grid; grid-template-columns: repeat(3, 1fr); gap:26px; margin-top:48px; }
+  .blog-card{
+    border:1px solid var(--color-border); border-radius: var(--radius-md); overflow:hidden; background:#fff;
+    transition: box-shadow var(--transition), transform var(--transition);
+  }
+  .blog-card:hover{ box-shadow: var(--shadow-md); transform: translateY(-3px); }
+  .blog-card .blog-thumb{
+    height:160px; background: linear-gradient(135deg, var(--color-primary-light), #fff);
+    display:flex; align-items:center; justify-content:center; border-bottom:1px solid var(--color-border);
+  }
+  .blog-card .blog-thumb svg{ width:38px; height:38px; stroke: var(--color-primary); opacity:0.8; }
+  .blog-card-body{ padding:24px; }
+  .blog-meta{ display:flex; gap:10px; align-items:center; font-size:0.76rem; color: var(--color-secondary); margin-bottom:10px; text-transform:uppercase; letter-spacing:0.04em; font-weight:600; }
+  .blog-card h4{ font-size:1.04rem; margin-bottom:10px; }
+  .blog-card p{ font-size:0.9rem; color: var(--color-secondary); }
+  .blog-readmore{ display:inline-flex; align-items:center; gap:6px; margin-top:16px; font-weight:700; font-size:0.86rem; color: var(--color-primary); }
+
+  /* ============================================================
+     9. KONTAKT — quotation form
+     ============================================================ */
+  .contact-wrap{ display:grid; grid-template-columns: 0.85fr 1.15fr; gap:56px; }
+  .contact-info-card{
+    background: var(--color-bg-dark); color:#fff; border-radius: var(--radius-lg); padding:36px; height:fit-content;
+  }
+  .contact-info-card h3{ color:#fff; font-size:1.2rem; }
+  .contact-info-card p{ color:#B9C3D2; margin-top:10px; font-size:0.92rem; }
+  .contact-info-list{ display:grid; gap:18px; margin-top:28px; }
+  .contact-info-item{ display:flex; gap:14px; align-items:flex-start; }
+  .contact-info-item .icon-badge{
+    width:38px; height:38px; border-radius: var(--radius-sm); background: rgba(10,88,202,0.22);
+    display:flex; align-items:center; justify-content:center; flex-shrink:0;
+  }
+  .contact-info-item .icon-badge svg{ width:18px; height:18px; stroke:#fff; }
+  .contact-info-item strong{ display:block; font-size:0.92rem; }
+  .contact-info-item span{ font-size:0.86rem; color:#B9C3D2; }
+
+  .form-card{
+    background:#fff; border:1px solid var(--color-border); border-radius: var(--radius-lg); padding:38px;
+    box-shadow: var(--shadow-sm);
+  }
+  .form-row{ display:grid; grid-template-columns: 1fr 1fr; gap:18px; }
+  .form-group{ margin-bottom:20px; }
+  .form-group label{ display:block; font-size:0.86rem; font-weight:700; margin-bottom:7px; color: var(--color-text); }
+  .form-group .req{ color: var(--color-primary); }
+  .form-group input,
+  .form-group select,
+  .form-group textarea{
+    width:100%; padding:12px 14px; border:1px solid var(--color-border); border-radius: var(--radius-sm);
+    font-family:inherit; font-size:0.94rem; color: var(--color-text); background:#fff;
+    transition: border-color var(--transition), box-shadow var(--transition);
+  }
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus{
+    outline:none; border-color: var(--color-primary); box-shadow: 0 0 0 3px rgba(10,88,202,0.14);
+  }
+  .form-group textarea{ resize:vertical; min-height:110px; }
+  .form-checkbox{
+    display:flex; align-items:flex-start; gap:10px; font-size:0.84rem; color: var(--color-secondary);
+    margin: 6px 0 24px;
+  }
+  .form-checkbox input{ width:18px; height:18px; flex-shrink:0; margin-top:2px; accent-color: var(--color-primary); }
+  .form-checkbox a{ font-weight:600; }
+  .form-note{ font-size:0.78rem; color: var(--color-secondary); margin-top:14px; }
+  .form-success{
+    display:none; align-items:center; gap:10px; background:#EAF7EF; color: var(--color-success);
+    border:1px solid #BFE6CC; border-radius: var(--radius-sm); padding:13px 16px; font-size:0.88rem; font-weight:600;
+    margin-bottom:20px;
+  }
+  .form-success.visible{ display:flex; }
+  .form-success svg{ width:18px; height:18px; flex-shrink:0; }
+
+  /* ============================================================
+     10. FOOTER
+     ============================================================ */
+  .site-footer{ background: var(--color-bg-dark); color:#C4CCD8; padding-top:72px; }
+  .footer-top{ display:grid; grid-template-columns: 1.3fr 1fr 1fr; gap:48px; padding-bottom:48px; border-bottom:1px solid rgba(255,255,255,0.12); }
+  .footer-brand .logo-main{ color:#fff; }
+  .footer-brand .logo-sub{ color:#8FA0BA; }
+  .footer-brand p{ margin-top:16px; font-size:0.88rem; color:#8FA0BA; max-width:280px; }
+  .footer-col h5{ color:#fff; font-size:0.86rem; letter-spacing:0.05em; text-transform:uppercase; margin-bottom:18px; }
+  .footer-col ul{ display:grid; gap:11px; }
+  .footer-col a{ color:#B9C3D2; font-size:0.92rem; }
+  .footer-col a:hover{ color:#fff; }
+  .footer-col button.linklike{
+    background:none; border:none; color:#B9C3D2; font-size:0.92rem; padding:0; text-align:left; font-family:inherit;
+  }
+  .footer-col button.linklike:hover{ color:#fff; }
+
+  .footer-legal{ padding:36px 0 30px; font-size:0.8rem; color:#80909F; line-height:1.7; }
+  .footer-legal strong{ color:#C4CCD8; }
+  .footer-legal .legal-grid{ display:grid; grid-template-columns: 1fr 1fr; gap:34px; margin-top:18px; }
+  .footer-bottom{
+    border-top:1px solid rgba(255,255,255,0.12); padding:18px 0 28px;
+    display:flex; justify-content:space-between; align-items:center; font-size:0.78rem; color:#71808F; flex-wrap:wrap; gap:10px;
+  }
+
+  /* ============================================================
+     11. MODALS (Impressum / Datenschutz)
+     ============================================================ */
+  .modal-overlay{
+    position:fixed; inset:0; background: rgba(8,16,28,0.62); z-index:1000;
+    display:none; align-items:center; justify-content:center; padding:24px;
+  }
+  .modal-overlay.is-open{ display:flex; }
+  .modal-box{
+    background:#fff; border-radius: var(--radius-lg); max-width:640px; width:100%;
+    max-height:82vh; overflow-y:auto; box-shadow: var(--shadow-lg); position:relative;
+  }
+  .modal-head{
+    display:flex; align-items:center; justify-content:space-between; padding:26px 30px;
+    border-bottom:1px solid var(--color-border); position:sticky; top:0; background:#fff;
+  }
+  .modal-head h3{ font-size:1.2rem; }
+  .modal-close{
+    width:36px; height:36px; border-radius:50%; border:none; background: var(--color-bg-alt);
+    display:flex; align-items:center; justify-content:center; flex-shrink:0;
+  }
+  .modal-close svg{ width:16px; height:16px; }
+  .modal-body{ padding:28px 30px 34px; font-size:0.92rem; color: var(--color-text-muted); }
+  .modal-body h4{ font-size:0.96rem; color: var(--color-text); margin:22px 0 8px; }
+  .modal-body h4:first-child{ margin-top:0; }
+  .modal-body p{ margin-bottom:10px; }
+  .modal-body a{ font-weight:600; }
+
+  /* ============================================================
+     12. RESPONSIVE
+     ============================================================ */
+  @media (max-width: 980px){
+    .hero-grid{ grid-template-columns:1fr; }
+    .about-grid{ grid-template-columns:1fr; gap:40px; }
+    .industry-grid{ grid-template-columns: repeat(2, 1fr); }
+    .blog-grid{ grid-template-columns: repeat(2, 1fr); }
+    .contact-wrap{ grid-template-columns:1fr; }
+    .footer-top{ grid-template-columns:1fr 1fr; }
+  }
+
+  @media (max-width: 760px){
+    section{ padding: 64px 0; }
+    .main-nav{ position:fixed; top:var(--header-h); left:0; right:0; background:#fff; border-bottom:1px solid var(--color-border);
+      flex-direction:column; padding:8px 24px 18px; box-shadow: var(--shadow-md); transform: translateY(-12px); opacity:0; pointer-events:none; transition: opacity var(--transition), transform var(--transition); }
+    .main-nav.is-open{ transform:translateY(0); opacity:1; pointer-events:auto; }
+    .main-nav ul{ flex-direction:column; gap:4px; }
+    .main-nav a{ display:block; padding:12px 4px; }
+    .nav-toggle{ display:flex; }
+    .header-phone .label{ display:none; }
+    .industry-grid{ grid-template-columns:1fr; }
+    .blog-grid{ grid-template-columns:1fr; }
+    .footer-top{ grid-template-columns:1fr; gap:36px; }
+    .footer-legal .legal-grid{ grid-template-columns:1fr; }
+    .form-row{ grid-template-columns:1fr; }
+    .hero-stats{ gap:22px; }
+    .footer-bottom{ flex-direction:column; align-items:flex-start; }
+  }
+</style>
+</head>
+<body>
+
+<a href="#main" class="skip-link">Zum Inhalt springen</a>
+
+<!-- ============================================================
+     HEADER & NAVIGATION
+     ============================================================ -->
+<header class="site-header">
+  <div class="container">
+
+    <div class="logo">
+      <!-- Logo icon placeholder: stylised molecule mark, replace with final corporate icon -->
+      <svg class="logo-icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <circle cx="24" cy="13" r="6" fill="#0A58CA"/>
+        <circle cx="11" cy="33" r="5" fill="#7A7A7A"/>
+        <circle cx="37" cy="33" r="5" fill="#7A7A7A"/>
+        <line x1="24" y1="13" x2="11" y2="33" stroke="#0A58CA" stroke-width="2"/>
+        <line x1="24" y1="13" x2="37" y2="33" stroke="#0A58CA" stroke-width="2"/>
+        <line x1="11" y1="33" x2="37" y2="33" stroke="#C7CCD2" stroke-width="2"/>
+      </svg>
+      <div class="logo-text">
+        <span class="logo-main">ALVEX</span>
+        <span class="logo-sub">Handel GmbH</span>
+      </div>
+    </div>
+
+    <nav class="main-nav" id="main-nav" aria-label="Hauptnavigation">
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#ueber-uns">Über uns</a></li>
+        <li><a href="#produktqualitaet">Produktqualität</a></li>
+        <li><a href="#branchen">Branchen</a></li>
+        <li><a href="#kontakt">Kontakt</a></li>
+      </ul>
+    </nav>
+
+    <div class="header-actions">
+      <a class="header-phone" href="tel:+496912345678">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#0A58CA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        <span>
+          <span class="label">B2B Vertrieb</span>
+          +49 69 123 456 78
+        </span>
+      </a>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Menü öffnen" aria-expanded="false" aria-controls="main-nav">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
+    </div>
+
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ============================================================
+       HERO
+       ============================================================ -->
+  <section class="hero" id="home">
+    <div class="container hero-grid">
+
+      <div class="hero-content">
+        <div class="eyebrow"><span class="dot"></span>Natriumhydrogencarbonat &middot; B2B Großhandel</div>
+        <h1>Ihr strategischer Partner für <span class="accent">Natriumhydrogencarbonat</span> in Großmengen.</h1>
+        <p class="hero-sub">Zuverlässige Lieferketten, geprüfte Qualitätsstandards und planbare Verfügbarkeit &ndash; ALVEX versorgt deutsche Industrie-, Pharma- und Lebensmittelbetriebe mit hochreinem Natron, exakt nach Spezifikation und Liefertermin.</p>
+
+        <div class="hero-stats">
+          <div class="hero-stat"><strong>DE-weit</strong><span>Logistiknetzwerk</span></div>
+          <div class="hero-stat"><strong>Mehrfach</strong><span>geprüfte Chargenqualität</span></div>
+          <div class="hero-stat"><strong>Tonnenweise</strong><span>planbare Liefermengen</span></div>
+        </div>
+
+        <div class="hero-cta">
+          <a href="#kontakt" class="btn btn-primary">Angebot anfragen</a>
+          <a href="#produktqualitaet" class="btn btn-outline">Technisches Datenblatt</a>
+        </div>
+      </div>
+
+      <div class="hero-content">
+        <!-- Intro video placeholder container.
+             Replace the empty <source> below with the final corporate
+             video file and set a real poster image when available. -->
+        <div class="hero-video">
+          <video id="intro-video" playsinline preload="none" aria-label="ALVEX Unternehmensvideo">
+            <source src="" type="video/mp4">
+            Ihr Browser unterstützt das Video-Element nicht.
+          </video>
+          <button class="play-overlay" id="play-overlay" aria-label="Video abspielen">
+            <span class="play-btn">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+            </span>
+          </button>
+          <span class="video-caption">ALVEX Unternehmensfilm &middot; 1:42 Min.</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="molecule-divider"><span class="node"></span><span class="bond"></span><span class="node primary"></span><span class="bond"></span><span class="node"></span></div>
+
+  <!-- ============================================================
+       ÜBER UNS
+       ============================================================ -->
+  <section id="ueber-uns">
+    <div class="container about-grid">
+
+      <div>
+        <div class="eyebrow"><span class="dot"></span>Über uns</div>
+        <h2>Handel, der auf Verlässlichkeit aufbaut.</h2>
+        <div class="about-points">
+          <div class="about-point">
+            <span class="icon-badge">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7l9-4 9 4-9 4-9-4z"/><path d="M3 7v10l9 4 9-4V7"/></svg>
+            </span>
+            <div>
+              <h4>Sichere Logistiknetzwerke</h4>
+              <p>Etablierte Transport- und Lagerpartner sichern planbare Liefertermine im gesamten Bundesgebiet.</p>
+            </div>
+          </div>
+          <div class="about-point">
+            <span class="icon-badge">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg>
+            </span>
+            <div>
+              <h4>Lückenlose Qualitätssicherung</h4>
+              <p>Jede Charge wird anhand definierter Spezifikationen dokumentiert &ndash; von der Beschaffung bis zur Auslieferung.</p>
+            </div>
+          </div>
+          <div class="about-point">
+            <span class="icon-badge">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </span>
+            <div>
+              <h4>Partnerschaftliches Liefermodell</h4>
+              <p>Feste Ansprechpartner und transparente Konditionen für Chemie-, Pharma- und Vertriebsunternehmen.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-card">
+        <span class="tag">Standort &amp; Profil</span>
+        <h3 style="margin-top:16px;">ALVEX Handel GmbH</h3>
+        <p>Als bundesweit tätiges Handelsunternehmen mit Sitz in Frankfurt am Main bündelt ALVEX Beschaffung, Qualitätsprüfung und Distribution von Natriumhydrogencarbonat unter einem Dach &ndash; für Kunden, die auf konstante Versorgungssicherheit angewiesen sind.</p>
+        <p>Wir verstehen uns als verlängerter Arm der Einkaufsabteilung unserer Kunden: vom ersten Spezifikationsabgleich bis zur termingerechten Anlieferung in Werk oder Lager.</p>
+        <div class="location">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 1 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Frankfurt am Main, Deutschland
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="molecule-divider"><span class="node"></span><span class="bond"></span><span class="node primary"></span><span class="bond"></span><span class="node"></span></div>
+
+  <!-- ============================================================
+       PRODUKTQUALITÄT — technical data sheet
+       ============================================================ -->
+  <section class="bg-alt" id="produktqualitaet">
+    <div class="container">
+      <div class="section-head center">
+        <div class="eyebrow" style="justify-content:center;"><span class="dot"></span>Produktqualität</div>
+        <h2>Ein Rohstoff, lückenlos spezifiziert.</h2>
+        <p>Unser Natriumhydrogencarbonat wird nach klar definierten technischen Parametern geprüft und freigegeben &ndash; als verlässliche Grundlage für Ihre eigene Qualitätssicherung.</p>
+      </div>
+
+      <div class="data-sheet">
+        <table class="spec-table">
+          <thead>
+            <tr>
+              <th>Parameter</th>
+              <th>Spezifikation</th>
+              <th>Prüfmethode</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Reinheit (NaHCO₃)</td>
+              <td>≥ 99,0&nbsp;%</td>
+              <td>Titration</td>
+            </tr>
+            <tr>
+              <td>Erscheinungsbild</td>
+              <td>Weißes, kristallines Pulver</td>
+              <td>Visuelle Prüfung</td>
+            </tr>
+            <tr>
+              <td>Korngröße</td>
+              <td>Standard / fein, je nach Anwendung</td>
+              <td>Siebanalyse</td>
+            </tr>
+            <tr>
+              <td>Feuchtegehalt</td>
+              <td>≤ 0,2&nbsp;%</td>
+              <td>Trocknungsverlust</td>
+            </tr>
+            <tr>
+              <td>Schwermetalle</td>
+              <td>Innerhalb geltender Grenzwerte</td>
+              <td>ICP-Analyse</td>
+            </tr>
+            <tr>
+              <td>Verpackung</td>
+              <td>Sackware, Big Bag oder Silo-Anlieferung</td>
+              <td>&ndash;</td>
+            </tr>
+          </tbody>
+        </table>
+        <p class="data-sheet-note">Platzhalter-Datenblatt &ndash; finale Werte richten sich nach Charge, Qualitätsstufe (Lebensmittel-, Pharma-, Industrie- oder Futtermittelqualität) und dem aktuellen Prüfzertifikat. Detaillierte Spezifikationen stellen wir auf Anfrage zur Verfügung.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       BRANCHEN — industries grid
+       ============================================================ -->
+  <section id="branchen">
+    <div class="container">
+      <div class="section-head center">
+        <div class="eyebrow" style="justify-content:center;"><span class="dot"></span>Branchen</div>
+        <h2>Eine Lieferquelle, vier Qualitätsstufen.</h2>
+        <p>Von der Lebensmittelproduktion bis zur Rauchgasreinigung &ndash; wir liefern Natriumhydrogencarbonat exakt in der Qualität, die Ihr Prozess verlangt.</p>
+      </div>
+
+      <div class="industry-grid">
+
+        <article class="industry-card">
+          <span class="icon-badge">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
+          </span>
+          <h4>Lebensmittelindustrie</h4>
+          <p>Backtriebmittel und pH-Regulierung für Bäckereien und Lebensmittelhersteller.</p>
+          <span class="tag grade-tag">Food Grade</span>
+        </article>
+
+        <article class="industry-card">
+          <span class="icon-badge">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.29 1.51 4.04 3 5.5l7 7z"/></svg>
+          </span>
+          <h4>Pharma &amp; Gesundheit</h4>
+          <p>Hochreine Qualität für pharmazeutische Formulierungen und Wirkstoffträger.</p>
+          <span class="tag grade-tag">Pharma Grade</span>
+        </article>
+
+        <article class="industry-card">
+          <span class="icon-badge">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+          </span>
+          <h4>Industrie &amp; Energie</h4>
+          <p>Rauchgasreinigung und Neutralisation industrieller Abgasströme.</p>
+          <span class="tag grade-tag">Industrial Grade</span>
+        </article>
+
+        <article class="industry-card">
+          <span class="icon-badge">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 14.5V8a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v6.5"/><path d="M4 14.5L2 17h20l-2-2.5"/><path d="M9 11h6"/></svg>
+          </span>
+          <h4>Futtermittel</h4>
+          <p>Pufferwirkung und Verdaulichkeit in der Tierfutterproduktion.</p>
+          <span class="tag grade-tag">Feed Grade</span>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <div class="molecule-divider"><span class="node"></span><span class="bond"></span><span class="node primary"></span><span class="bond"></span><span class="node"></span></div>
+
+  <!-- ============================================================
+       AKTUELLES & MARKTBERICHTE
+       ============================================================ -->
+  <section class="bg-alt" id="aktuelles">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow"><span class="dot"></span>Aktuelles &amp; Marktberichte</div>
+        <h2>Einblicke aus Logistik und Rohstoffmarkt.</h2>
+      </div>
+
+      <div class="blog-grid">
+
+        <article class="blog-card">
+          <div class="blog-thumb">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+          </div>
+          <div class="blog-card-body">
+            <div class="blog-meta"><span>Logistik</span><span>&middot;</span><span>5 Min. Lesezeit</span></div>
+            <h4>Lieferketten für Industriechemikalien planbar machen</h4>
+            <p>Welche Faktoren die Versorgungssicherheit bei Großmengen-Rohstoffen heute am stärksten beeinflussen.</p>
+            <span class="blog-readmore">Weiterlesen &rarr;</span>
+          </div>
+        </article>
+
+        <article class="blog-card">
+          <div class="blog-thumb">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M19 9l-5 5-4-4-4 4"/></svg>
+          </div>
+          <div class="blog-card-body">
+            <div class="blog-meta"><span>Marktanalyse</span><span>&middot;</span><span>4 Min. Lesezeit</span></div>
+            <h4>Preistrends im Rohstofftransport im Überblick</h4>
+            <p>Ein Blick auf aktuelle Entwicklungen bei Frachtkosten und deren Auswirkung auf Großhandelspreise.</p>
+            <span class="blog-readmore">Weiterlesen &rarr;</span>
+          </div>
+        </article>
+
+        <article class="blog-card">
+          <div class="blog-thumb">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+          </div>
+          <div class="blog-card-body">
+            <div class="blog-meta"><span>Handling</span><span>&middot;</span><span>6 Min. Lesezeit</span></div>
+            <h4>Sichere Handhabung von Natriumhydrogencarbonat</h4>
+            <p>Best Practices für Lagerung, Umschlag und Transport von Sackware bis Silo-Anlieferung.</p>
+            <span class="blog-readmore">Weiterlesen &rarr;</span>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       KONTAKT — Angebotsanfrage
+       ============================================================ -->
+  <section id="kontakt">
+    <div class="container">
+      <div class="section-head center">
+        <div class="eyebrow" style="justify-content:center;"><span class="dot"></span>Kontakt</div>
+        <h2>Fordern Sie Ihr individuelles Angebot an.</h2>
+        <p>Teilen Sie uns Ihren Bedarf mit &ndash; wir melden uns in der Regel innerhalb eines Werktags mit einem auf Ihre Liefermenge abgestimmten Angebot.</p>
+      </div>
+
+      <div class="contact-wrap">
+
+        <div class="contact-info-card">
+          <h3>Direkter Draht zum Vertrieb</h3>
+          <p>Für dringende Anfragen oder bestehende Rahmenverträge erreichen Sie unser Team auch direkt.</p>
+          <div class="contact-info-list">
+            <div class="contact-info-item">
+              <span class="icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>
+              <div><strong>Telefon</strong><span>+49 69 123 456 78</span></div>
+            </div>
+            <div class="contact-info-item">
+              <span class="icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z"/><path d="M22 6l-10 7L2 6"/></svg></span>
+              <div><strong>E-Mail</strong><span>vertrieb@alvex-handel.de</span></div>
+            </div>
+            <div class="contact-info-item">
+              <span class="icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 1 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
+              <div><strong>Standort</strong><span>Frankfurt am Main</span></div>
+            </div>
+            <div class="contact-info-item">
+              <span class="icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></span>
+              <div><strong>Reaktionszeit</strong><span>i.d.R. innerhalb 1 Werktag</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-card">
+          <div class="form-success" id="form-success">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            Vielen Dank! Ihre Anfrage wurde übermittelt &ndash; wir melden uns zeitnah.
+          </div>
+
+          <!-- Form has no backend wired up yet: connect to your CRM / mail
+               endpoint and replace the JS submit handler below. -->
+          <form id="quote-form" novalidate>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="f-name">Name<span class="req">*</span></label>
+                <input type="text" id="f-name" name="name" required autocomplete="name">
+              </div>
+              <div class="form-group">
+                <label for="f-company">Firmenname<span class="req">*</span></label>
+                <input type="text" id="f-company" name="company" required autocomplete="organization">
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="f-email">E-Mail<span class="req">*</span></label>
+                <input type="email" id="f-email" name="email" required autocomplete="email">
+              </div>
+              <div class="form-group">
+                <label for="f-phone">Telefon</label>
+                <input type="tel" id="f-phone" name="phone" autocomplete="tel">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="f-amount">Gewünschte Liefermenge (in Tonnen)<span class="req">*</span></label>
+              <input type="number" id="f-amount" name="amount" min="1" step="1" placeholder="z. B. 24" required>
+            </div>
+            <div class="form-group">
+              <label for="f-message">Nachricht</label>
+              <textarea id="f-message" name="message" placeholder="Qualitätsstufe, gewünschter Liefertermin, Verpackungsart, etc."></textarea>
+            </div>
+
+            <label class="form-checkbox">
+              <input type="checkbox" id="f-privacy" name="privacy" required>
+              <span>Ich habe die <a href="#" data-modal="datenschutz-modal">Datenschutzerklärung</a> zur Kenntnis genommen und stimme zu, dass meine Angaben zur Kontaktaufnahme verarbeitet werden.<span class="req">*</span></span>
+            </label>
+
+            <button type="submit" class="btn btn-primary btn-block">Angebot anfragen</button>
+            <p class="form-note">Mit Absenden erhalten Sie keine automatisierten Marketing-Mails &ndash; ausschließlich eine individuelle Rückmeldung zu Ihrer Anfrage.</p>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============================================================
+     FOOTER
+     ============================================================ -->
+<footer class="site-footer">
+  <div class="container">
+
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="logo-text">
+          <span class="logo-main">ALVEX</span>
+          <span class="logo-sub">Handel GmbH</span>
+        </div>
+        <p>Strategischer Partner für die Beschaffung, Qualitätssicherung und bundesweite Distribution von Natriumhydrogencarbonat.</p>
+      </div>
+
+      <div class="footer-col">
+        <h5>Navigation</h5>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#ueber-uns">Über uns</a></li>
+          <li><a href="#produktqualitaet">Produktqualität</a></li>
+          <li><a href="#branchen">Branchen</a></li>
+          <li><a href="#kontakt">Kontakt</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h5>Rechtliches</h5>
+        <ul>
+          <li><button type="button" class="linklike" data-modal="impressum-modal">Impressum</button></li>
+          <li><button type="button" class="linklike" data-modal="datenschutz-modal">Datenschutzerklärung</button></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-legal">
+      <strong>ALVEX Handel GmbH</strong><br>
+      Geschäftsführer: Mehmet S. Cellikkiran<br>
+      Amtsgericht Frankfurt am Main, HRB 142640<br>
+      Umsatzsteuer-Identifikationsnummer gemäß § 27a Umsatzsteuergesetz: [Platzhalter USt-IdNr.]
+
+      <div class="legal-grid">
+        <div>
+          <strong>Aufsichtsbehörde &amp; Gewerbe</strong><br>
+          Der Import und Export sowie der nationale und internationale Handel mit Waren aller Art, der Groß- und Einzelhandel, für die keine besondere behördliche Genehmigung erforderlich ist. Erlaubnis nach § 34c Absatz 1 Satz 1 Nummer 4 Gewerbeordnung (Wohnimmobilienverwalter) erteilt.
+        </div>
+        <div>
+          <strong>Zuständige Aufsichtsbehörde</strong><br>
+          Industrie- und Handelskammer Frankfurt am Main, Börsenplatz 4, 60313 Frankfurt am Main.
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>&copy; <span id="year"></span> ALVEX Handel GmbH. Alle Rechte vorbehalten.</span>
+      <span>Keine Cookies &middot; Kein Tracking &middot; 100&nbsp;% statisch</span>
+    </div>
+
+  </div>
+</footer>
+
+<!-- ============================================================
+     MODAL: IMPRESSUM
+     ============================================================ -->
+<div class="modal-overlay" id="impressum-modal" role="dialog" aria-modal="true" aria-labelledby="impressum-title">
+  <div class="modal-box">
+    <div class="modal-head">
+      <h3 id="impressum-title">Impressum</h3>
+      <button class="modal-close" data-close-modal aria-label="Schließen">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
+      </button>
+    </div>
+    <div class="modal-body">
+      <h4>Angaben gemäß § 5 TMG</h4>
+      <p>ALVEX Handel GmbH<br>Frankfurt am Main, Deutschland</p>
+
+      <h4>Geschäftsführer</h4>
+      <p>Mehmet S. Cellikkiran</p>
+
+      <h4>Registereintrag</h4>
+      <p>Amtsgericht Frankfurt am Main, HRB 142640</p>
+
+      <h4>Umsatzsteuer-ID</h4>
+      <p>Umsatzsteuer-Identifikationsnummer gemäß § 27a Umsatzsteuergesetz: [Platzhalter USt-IdNr.]</p>
+
+      <h4>Aufsichtsbehörde &amp; Gewerbe</h4>
+      <p>Der Import und Export sowie der nationale und internationale Handel mit Waren aller Art, der Groß- und Einzelhandel, für die keine besondere behördliche Genehmigung erforderlich ist. Erlaubnis nach § 34c Absatz 1 Satz 1 Nummer 4 Gewerbeordnung (Wohnimmobilienverwalter) erteilt.</p>
+      <p>Zuständige Aufsichtsbehörde: Industrie- und Handelskammer Frankfurt am Main, Börsenplatz 4, 60313 Frankfurt am Main.</p>
+
+      <h4>Kontakt</h4>
+      <p>Telefon: +49 69 123 456 78<br>E-Mail: vertrieb@alvex-handel.de</p>
+
+      <h4>Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV</h4>
+      <p>Mehmet S. Cellikkiran, Anschrift wie oben.</p>
+
+      <p style="margin-top:18px; font-size:0.8rem;">Hinweis: Dieser Text ist eine Platzhalter-Vorlage. Bitte vor Veröffentlichung durch einen Rechtsbeistand prüfen und um vollständige Anschrift sowie finale USt-IdNr. ergänzen.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================
+     MODAL: DATENSCHUTZERKLÄRUNG
+     ============================================================ -->
+<div class="modal-overlay" id="datenschutz-modal" role="dialog" aria-modal="true" aria-labelledby="datenschutz-title">
+  <div class="modal-box">
+    <div class="modal-head">
+      <h3 id="datenschutz-title">Datenschutzerklärung</h3>
+      <button class="modal-close" data-close-modal aria-label="Schließen">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
+      </button>
+    </div>
+    <div class="modal-body">
+      <h4>1. Verantwortlicher</h4>
+      <p>Verantwortlicher im Sinne der Datenschutz-Grundverordnung (DSGVO) ist ALVEX Handel GmbH, Frankfurt am Main, vertreten durch Geschäftsführer Mehmet S. Cellikkiran.</p>
+
+      <h4>2. Diese Website verwendet keine Cookies</h4>
+      <p>Diese Website setzt bewusst keine Cookies, keine Analyse- oder Tracking-Tools und keine externen Schriftarten oder CDN-Dienste ein. Es werden beim Aufruf der Seite keine personenbezogenen Daten an Dritte übermittelt.</p>
+
+      <h4>3. Datenverarbeitung bei Nutzung des Angebotsformulars</h4>
+      <p>Wenn Sie das Formular im Bereich „Angebotsanfrage" nutzen, verarbeiten wir die von Ihnen freiwillig angegebenen Daten (z. B. Name, Firmenname, E-Mail-Adresse, Telefonnummer, gewünschte Liefermenge, Nachricht) ausschließlich zur Bearbeitung und Beantwortung Ihrer Anfrage gemäß Art. 6 Abs. 1 lit. b DSGVO.</p>
+
+      <h4>4. Speicherdauer</h4>
+      <p>Ihre Angaben werden nur so lange gespeichert, wie dies zur Bearbeitung Ihrer Anfrage und zur Erfüllung etwaiger gesetzlicher Aufbewahrungspflichten erforderlich ist.</p>
+
+      <h4>5. Ihre Rechte</h4>
+      <p>Sie haben das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung, Datenübertragbarkeit sowie Widerspruch gegen die Verarbeitung Ihrer personenbezogenen Daten. Wenden Sie sich hierzu an die oben genannte Kontaktadresse.</p>
+
+      <h4>6. Beschwerderecht</h4>
+      <p>Sie haben das Recht, sich bei einer Datenschutz-Aufsichtsbehörde über die Verarbeitung Ihrer personenbezogenen Daten zu beschweren.</p>
+
+      <p style="margin-top:18px; font-size:0.8rem;">Hinweis: Dieser Text ist eine allgemeine Platzhalter-Vorlage und ersetzt keine individuelle Rechtsberatung. Bitte vor Veröffentlichung durch einen Datenschutzbeauftragten bzw. Rechtsbeistand prüfen und an die tatsächlichen Verarbeitungsprozesse anpassen.</p>
+    </div>
+  </div>
+</div>
+
+<script>
+  // ============================================================
+  // Behaviour: mobile nav, modals, video play overlay, form submit.
+  // No analytics, no external requests, no cookies.
+  // ============================================================
+  (function(){
+    'use strict';
+
+    // ---- Year in footer ----
+    var yearEl = document.getElementById('year');
+    if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+    // ---- Mobile nav toggle ----
+    var navToggle = document.getElementById('nav-toggle');
+    var mainNav = document.getElementById('main-nav');
+    if (navToggle && mainNav) {
+      navToggle.addEventListener('click', function(){
+        var isOpen = mainNav.classList.toggle('is-open');
+        navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      });
+      mainNav.querySelectorAll('a').forEach(function(link){
+        link.addEventListener('click', function(){
+          mainNav.classList.remove('is-open');
+          navToggle.setAttribute('aria-expanded', 'false');
+        });
+      });
+    }
+
+    // ---- Intro video play overlay ----
+    var video = document.getElementById('intro-video');
+    var playOverlay = document.getElementById('play-overlay');
+    if (video && playOverlay) {
+      playOverlay.addEventListener('click', function(){
+        if (video.currentSrc) {
+          video.setAttribute('controls', 'controls');
+          video.play().catch(function(){ /* no source attached yet */ });
+        }
+        playOverlay.classList.add('is-playing');
+      });
+    }
+
+    // ---- Modals (Impressum / Datenschutz) ----
+    var openers = document.querySelectorAll('[data-modal]');
+    var closers = document.querySelectorAll('[data-close-modal]');
+    var lastFocused = null;
+
+    function openModal(id){
+      var modal = document.getElementById(id);
+      if (!modal) return;
+      lastFocused = document.activeElement;
+      modal.classList.add('is-open');
+      document.body.style.overflow = 'hidden';
+      var closeBtn = modal.querySelector('.modal-close');
+      if (closeBtn) closeBtn.focus();
+    }
+
+    function closeModal(modal){
+      modal.classList.remove('is-open');
+      document.body.style.overflow = '';
+      if (lastFocused) lastFocused.focus();
+    }
+
+    openers.forEach(function(el){
+      el.addEventListener('click', function(e){
+        e.preventDefault();
+        openModal(el.getAttribute('data-modal'));
+      });
+    });
+
+    closers.forEach(function(btn){
+      btn.addEventListener('click', function(){
+        closeModal(btn.closest('.modal-overlay'));
+      });
+    });
+
+    document.querySelectorAll('.modal-overlay').forEach(function(overlay){
+      overlay.addEventListener('click', function(e){
+        if (e.target === overlay) closeModal(overlay);
+      });
+    });
+
+    document.addEventListener('keydown', function(e){
+      if (e.key === 'Escape') {
+        document.querySelectorAll('.modal-overlay.is-open').forEach(closeModal);
+      }
+    });
+
+    // ---- Quotation form ----
+    // NOTE: there is no backend wired up. Replace this handler with a
+    // real fetch() call to your mail/CRM endpoint when one exists.
+    var form = document.getElementById('quote-form');
+    var successBox = document.getElementById('form-success');
+    if (form) {
+      form.addEventListener('submit', function(e){
+        e.preventDefault();
+        if (!form.checkValidity()) {
+          form.reportValidity();
+          return;
+        }
+        successBox.classList.add('visible');
+        successBox.setAttribute('tabindex', '-1');
+        successBox.focus();
+        form.reset();
+      });
+    }
+
+  })();
+</script>
+
+</body>
+</html>
