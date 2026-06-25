@@ -1,0 +1,968 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ALVEX Handel GmbH | B2B Sodium Bicarbonate Distribution</title>
+    <meta name="description" content="ALVEX Handel GmbH is your reliable B2B partner for high-volume sodium bicarbonate distribution. Secured supply chains, raw material logistics, and quality assurance.">
+    <style>
+        /* --- DESIGN SYSTEM & CSS VARIABLES --- */
+        :root {
+            --color-primary: #0f172a;       /* Deep Industrial Navy */
+            --color-primary-light: #1e293b; /* Slate Blue */
+            --color-accent: #06b6d4;        /* Sterile Cyan / Purity Mint */
+            --color-accent-hover: #0891b2;  
+            --color-text-dark: #334155;     /* Professional Gray */
+            --color-text-light: #f8fafc;    
+            --color-bg-light: #f1f5f9;      
+            --color-bg-white: #ffffff;
+            --color-border: #e2e8f0;
+            --font-stack: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            --max-width: 1200px;
+            --transition-smooth: all 0.3s ease;
+        }
+
+        /* --- BASE STYLES & RESET --- */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+            overflow-x: hidden; /* Prevent horizontal layout breaking */
+        }
+
+        body {
+            font-family: var(--font-stack);
+            color: var(--color-text-dark);
+            background-color: var(--color-bg-white);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+            width: 100%;
+        }
+
+        h1, h2, h3, h4 {
+            color: var(--color-primary);
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            position: relative;
+            padding-bottom: 0.75rem;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 60px;
+            height: 4px;
+            background-color: var(--color-accent);
+        }
+
+        .text-center h2::after {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+            transition: var(--transition-smooth);
+        }
+
+        img, video {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .container {
+            width: 100%;
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        .section {
+            padding: 4rem 0;
+        }
+
+        .section-bg {
+            background-color: var(--color-bg-light);
+        }
+
+        .text-center {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        /* --- BUTTONS --- */
+        .btn {
+            display: inline-block;
+            background-color: var(--color-accent);
+            color: var(--color-primary);
+            font-weight: 600;
+            padding: 0.75rem 1.75rem;
+            border-radius: 4px;
+            border: none;
+            cursor: pointer;
+            text-align: center;
+            transition: var(--transition-smooth);
+        }
+
+        .btn:hover {
+            background-color: var(--color-accent-hover);
+            color: var(--color-bg-white);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--color-bg-white);
+            color: var(--color-bg-white);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--color-bg-white);
+            color: var(--color-primary);
+        }
+
+        /* --- HEADER & NAVIGATION --- */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background-color: rgba(15, 23, 42, 0.96);
+            backdrop-filter: blur(8px);
+            border-bottom: 2px solid var(--color-accent);
+            color: var(--color-text-light);
+        }
+
+        .nav-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 80px;
+        }
+
+        .logo {
+            font-size: 1.75rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+            color: var(--color-text-light);
+        }
+
+        .logo span {
+            color: var(--color-accent);
+        }
+
+        .right-nav-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        /* Language Switcher Button */
+        .lang-switch {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: var(--color-text-light);
+            padding: 0.35rem 0.75rem;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .lang-switch:hover {
+            border-color: var(--color-accent);
+            color: var(--color-accent);
+        }
+
+        .nav-links {
+            display: none;
+            flex-direction: column;
+            position: absolute;
+            top: 80px;
+            left: 0;
+            width: 100%;
+            background-color: var(--color-primary);
+            padding: 2rem;
+            border-bottom: 2px solid var(--color-accent);
+            gap: 1.5rem;
+            list-style: none;
+        }
+
+        .nav-links.active {
+            display: flex;
+        }
+
+        .nav-links a {
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: #cbd5e1;
+            display: block;
+        }
+
+        .nav-links a:hover {
+            color: var(--color-accent);
+        }
+
+        .nav-cta {
+            display: none;
+        }
+
+        .nav-toggle {
+            background: none;
+            border: none;
+            color: var(--color-text-light);
+            font-size: 1.75rem;
+            cursor: pointer;
+        }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
+            color: var(--color-text-light);
+            padding: 4rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .hero h1 {
+            color: var(--color-text-light);
+            font-size: 2.25rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: #cbd5e1;
+            margin-bottom: 2rem;
+        }
+
+        .hero-actions {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .video-wrapper {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            background-color: #020617;
+            border-radius: 6px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3);
+        }
+
+        .video-wrapper video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .video-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(15, 23, 42, 0.85);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+            z-index: 2;
+        }
+
+        .play-btn {
+            width: 60px;
+            height: 60px;
+            background-color: var(--color-accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+            transition: var(--transition-smooth);
+        }
+
+        .play-btn::after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 10px 0 10px 16px;
+            border-color: transparent transparent transparent var(--color-primary);
+            transform: translateX(2px);
+        }
+
+        .video-overlay span {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 600;
+            color: var(--color-text-light);
+            text-align: center;
+            padding: 0 1rem;
+        }
+
+        /* --- ABOUT US --- */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 3rem;
+        }
+
+        .about-content p {
+            margin-bottom: 1.5rem;
+        }
+
+        .usp-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+        }
+
+        .usp-card {
+            background-color: var(--color-bg-light);
+            padding: 1.5rem;
+            border-left: 4px solid var(--color-accent);
+            border-radius: 0 4px 4px 0;
+        }
+
+        .usp-card h4 {
+            margin-bottom: 0.5rem;
+        }
+
+        /* --- BRANCHEN & DATA --- */
+        .industry-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .industry-card {
+            background-color: var(--color-bg-white);
+            padding: 2rem 1.5rem;
+            border-radius: 4px;
+            border: 1px solid var(--color-border);
+            border-top: 4px solid var(--color-primary);
+        }
+
+        .industry-icon {
+            font-size: 2rem;
+            color: var(--color-accent);
+            margin-bottom: 1rem;
+        }
+
+        .industry-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .table-container {
+            background-color: var(--color-bg-white);
+            border-radius: 6px;
+            border: 1px solid var(--color-border);
+            overflow-x: auto;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        }
+
+        .table-title {
+            background-color: var(--color-primary);
+            color: var(--color-text-light);
+            padding: 1.25rem 1.5rem;
+            font-weight: 600;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 600px;
+        }
+
+        th, td {
+            padding: 1rem 1.5rem;
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        th {
+            background-color: #f8fafc;
+            color: var(--color-primary);
+        }
+
+        /* --- BLOG --- */
+        .blog-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+
+        .blog-card {
+            background-color: var(--color-bg-white);
+            border-radius: 4px;
+            border: 1px solid var(--color-border);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .blog-meta {
+            padding: 1.5rem 1.5rem 0 1.5rem;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--color-accent);
+            text-transform: uppercase;
+        }
+
+        .blog-body {
+            padding: 1rem 1.5rem 2rem 1.5rem;
+        }
+
+        .blog-body h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .blog-body p {
+            margin-bottom: 1.5rem;
+        }
+
+        .blog-link {
+            font-weight: 600;
+            color: var(--color-primary);
+        }
+
+        /* --- CONTACT --- */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 3rem;
+        }
+
+        .info-block {
+            margin-bottom: 1.5rem;
+        }
+
+        .info-block span {
+            display: block;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            font-weight: 600;
+            color: #64748b;
+        }
+
+        .info-block p {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--color-primary);
+        }
+
+        .contact-form {
+            background-color: var(--color-bg-white);
+            padding: 1.5rem;
+            border-radius: 6px;
+            border: 1px solid var(--color-border);
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.25rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .form-group label {
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .form-group input, 
+        .form-group textarea {
+            font-size: 1rem;
+            padding: 0.75rem;
+            border: 1px solid var(--color-border);
+            border-radius: 4px;
+            background-color: #f8fafc;
+        }
+
+        .checkbox-group {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            margin-bottom: 2rem;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background-color: var(--color-primary);
+            color: #94a3b8;
+            padding: 4rem 0 2rem 0;
+            border-top: 4px solid var(--color-accent);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
+            border-bottom: 1px solid #1e293b;
+            padding-bottom: 2rem;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-links button {
+            background: none;
+            border: none;
+            color: #cbd5e1;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .footer-bottom {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            text-align: center;
+            color: #64748b;
+        }
+
+        /* --- MODALS --- */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 2000;
+            background-color: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(4px);
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+        }
+
+        .modal-content {
+            background-color: var(--color-bg-white);
+            color: var(--color-text-dark);
+            max-width: 800px;
+            width: 100%;
+            max-height: 85vh;
+            overflow-y: auto;
+            border-radius: 6px;
+            padding: 1.5rem;
+            position: relative;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            font-size: 1.5rem;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        /* --- DESKTOP LAYOUT (MIN-WIDTH: 1024px) --- */
+        @media (min-width: 1024px) {
+            h2 { font-size: 2.25rem; }
+            .section { padding: 6rem 0; }
+            .nav-toggle { display: none; }
+            
+            .nav-links {
+                display: flex;
+                flex-direction: row;
+                position: static;
+                padding: 0;
+                width: auto;
+                background: none;
+                border: none;
+                gap: 2rem;
+            }
+            .nav-links a { font-size: 0.95rem; }
+            .nav-cta { display: flex; align-items: center; gap: 0.5rem; color: var(--color-accent); font-weight: 700;}
+            .nav-cta a { color: var(--color-text-light); background-color: rgba(6, 182, 212, 0.15); padding: 0.5rem 1rem; border-radius: 4px; border: 1px solid var(--color-accent);}
+            
+            .hero { padding: 6rem 0 8rem 0; }
+            .hero-grid { grid-template-columns: 1.2fr 0.8fr; gap: 4rem; }
+            .hero h1 { font-size: 3rem; }
+            .hero-actions { flex-direction: row; }
+            
+            .about-grid { grid-template-columns: 1fr 1fr; gap: 4rem; }
+            .usp-grid { grid-template-columns: 1fr 1fr; }
+            
+            .industry-grid { grid-template-columns: repeat(4, 1fr); }
+            .blog-grid { grid-template-columns: repeat(3, 1fr); }
+            .contact-grid { grid-template-columns: 0.8fr 1.2fr; gap: 4rem; }
+            .form-grid { grid-template-columns: 1fr 1fr; }
+            .form-group-full { grid-column: span 2; }
+            .contact-form { padding: 2.5rem; }
+            .footer-grid { grid-template-columns: 1fr 1.5fr; gap: 4rem; }
+            .footer-bottom { flex-direction: row; justify-content: space-between; text-align: left; }
+            .modal-content { padding: 2.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-container">
+            <a href="#home" class="logo">ALVEX<span>.</span></a>
+            
+            <div class="right-nav-wrapper">
+                <button class="lang-switch" onclick="window.location.href='en.html'">EN</button>
+                <button class="nav-toggle" id="navToggle" aria-label="Navigation öffnen">☰</button>
+            </div>
+            
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#ueber-uns">Über uns</a></li>
+                <li><a href="#produktqualitaet">Produktqualität</a></li>
+                <li><a href="#branchen">Branchen</a></li>
+                <li><a href="#aktuelles">Aktuelles</a></li>
+                <li><a href="#kontakt">Kontakt</a></li>
+            </ul>
+
+            <div class="nav-cta">
+                <span>Vertrieb:</span>
+                <a href="tel:+496912345678">+49 (0) 69 1234 5678</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero" id="home">
+        <div class="container hero-grid">
+            <div class="hero-content">
+                <h1>Ihr strategischer Partner für Natriumhydrogencarbonat in Großmengen.</h1>
+                <p>ALVEX Handel GmbH sichert Ihre industriellen Wertschöpfungsketten mit hochreinem Natron. Direktvertrieb, lückenlose Qualitätskontrolle und optimierte Transportlogistik für den deutschen Markt.</p>
+                <div class="hero-actions">
+                    <a href="#kontakt" class="btn">Angebotsanfrage stellen</a>
+                    <a href="#produktqualitaet" class="btn btn-outline">Spezifikationen einsehen</a>
+                </div>
+            </div>
+            <div class="hero-media">
+                <div class="video-wrapper" id="videoContainer">
+                    <div class="video-overlay" id="videoOverlay">
+                        <div class="play-btn"></div>
+                        <span>Unternehmensvideo abspielen</span>
+                    </div>
+                    <video id="corpVideo" controls preload="none">
+                        <source src="https://streamable.com/zas87g" type="video/mp4">
+                        <source src="Alvex Trailer V.4 DE (DE-UT).mp4" type="video/mp4">
+                        Ihr Browser unterstützt keine HTML5-Videos.
+                    </video>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="ueber-uns">
+        <div class="container about-grid">
+            <div class="about-content">
+                <h2>Über uns &amp; Kompetenz</h2>
+                <p>Die <strong>ALVEX Handel GmbH</strong> mit strategischem Sitz in Frankfurt am Main ist auf den großvolumigen Import, das Supply Chain Management und die Distribution von reinem Natriumhydrogencarbonat ($NaHCO_3$) spezialisiert.</p>
+                <p>Als spezialisierter B2B-Marktteilnehmer bedienen wir anspruchsvolle Abnehmersegmente in ganz Deutschland. Wir agieren nicht nur als Händler, sondern als integraler Baustein Ihrer Rohstoffsicherheit.</p>
+            </div>
+            <div class="usp-grid">
+                <div class="usp-card">
+                    <h4>Sichere Logistikketten</h4>
+                    <p>Just-in-time Logistik über strategische Knotenpunkte direkt in Ihre Produktionsstätten oder Silos.</p>
+                </div>
+                <div class="usp-card">
+                    <h4>Qualitätsgarantie</h4>
+                    <p>Jede Charge wird nach europäischen Standards lückenlos analysiert und zertifiziert.</p>
+                </div>
+                <div class="usp-card">
+                    <h4>B2B-Großmengen</h4>
+                    <p>Spezialisiert auf Schüttgut, Big Bags und Palettenware ab Mindestmengen von 10 Tonnen.</p>
+                </div>
+                <div class="usp-card">
+                    <h4>Konforme Prozesse</h4>
+                    <p>Volle Rückverfolgbarkeit und Einhaltung aller deutschen Regularien und ISO-Vorgaben.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section-bg" id="produktqualitaet">
+        <div class="container">
+            <div class="text-center">
+                <h2>Produktqualität &amp; Branchen</h2>
+                <p style="max-width: 700px; margin: 0 auto;">Unser Portfolio umfasst verschiedene granulometrische Spezifikationen und Reinheitsgrade, präzise abgestimmt auf die regulatorischen Anforderungen des jeweiligen Zielmarktes.</p>
+            </div>
+
+            <div class="industry-grid" id="branchen">
+                <div class="industry-card">
+                    <div class="industry-icon">🔬</div>
+                    <h3>Pharma Grade</h3>
+                    <p>Höchste chemische Reinheit nach EP/USP für Dialyselösungen, Arzneimittel und Laboranwendungen.</p>
+                </div>
+                <div class="industry-card">
+                    <div class="industry-icon">🍞</div>
+                    <h3>Food Grade</h3>
+                    <p>Konform nach E500(ii). Einsatz als Triebmittel, Säureregulator und Pufferkomponente in der Lebensmittelindustrie.</p>
+                </div>
+                <div class="industry-card">
+                    <div class="industry-icon">🚜</div>
+                    <h3>Feed Grade</h3>
+                    <p>Zertifizierter Futtermittelzusatzstoff zur Optimierung des pH-Werts im Pansen und zur Erhöhung der Milchleistung.</p>
+                </div>
+                <div class="industry-card">
+                    <div class="industry-icon">⚙️</div>
+                    <h3>Rauchgasreinigung</h3>
+                    <p>Optimierte Partikelgrößen zur hocheffizienten Trockensorption von Schwefeldioxid und $HCl$ in Kraftwerken.</p>
+                </div>
+            </div>
+
+            <div class="table-container">
+                <div class="table-title">Typisches Technisches Datenblatt (Richtwerte)</div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Parameter</th>
+                            <th>Spezifikation (Lebensmittelqualität)</th>
+                            <th>Analysemethode</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Gehalt ($NaHCO_3$)</strong></td>
+                            <td>&ge; 99,3 %</td>
+                            <td>Acidimetrie</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Carbonat ($Na_2CO_3$)</strong></td>
+                            <td>&le; 0,5 %</td>
+                            <td>Titration</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Trocknungsverlust</strong></td>
+                            <td>&le; 0,25 %</td>
+                            <td>Thermogravimetrie</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Eisen (Fe)</strong></td>
+                            <td>&le; 5 mg/kg</td>
+                            <td>ICP-OES</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Schwermetalle (als Pb)</strong></td>
+                            <td>&le; 2 mg/kg</td>
+                            <td>ICP-OES</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="aktuelles">
+        <div class="container">
+            <div class="text-center">
+                <h2>Aktuelles &amp; Marktberichte</h2>
+                <p style="max-width: 700px; margin: 0 auto;">Analysen, Marktentwicklungen und regulatorische Neuerungen im Bereich der anorganischen Chemie.</p>
+            </div>
+
+            <div class="blog-grid">
+                <div class="blog-card">
+                    <div class="blog-meta">Logistik • Juni 2026</div>
+                    <div class="blog-body">
+                        <h3>Optimierung von Frachtketten im Rheingebiet</h3>
+                        <p>Ein Blick auf die strategische Verlagerung von Schüttgut-Transporten zur Absicherung gegen winterliche und sommerliche Extremwasserstände.</p>
+                        <a href="#" class="blog-link">Weiterlesen &rarr;</a>
+                    </div>
+                </div>
+                <div class="blog-card">
+                    <div class="blog-meta">Marktanalyse • Mai 2026</div>
+                    <div class="blog-body">
+                        <h3>Rohstofftrends bei Pufferchemikalien</h3>
+                        <p>Preisvolatilitäten bei synthetischer Soda und deren direkte Auswirkungen auf die Herstellungskosten von Natriumhydrogencarbonat.</p>
+                        <a href="#" class="blog-link">Weiterlesen &rarr;</a>
+                    </div>
+                </div>
+                <div class="blog-card">
+                    <div class="blog-meta">Compliance • April 2026</div>
+                    <div class="blog-body">
+                        <h3>Verschärfte Richtlinien für Feed Grade Produkte</h3>
+                        <p>Die neuen Dokumentationspflichten für Importeure von Futtermittelzusatzstoffen gemäß EU-Verordnung im Praxischeck.</p>
+                        <a href="#" class="blog-link">Weiterlesen &rarr;</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section-bg" id="kontakt">
+        <div class="container contact-grid">
+            <div class="contact-info">
+                <h2>Angebotsanfrage</h2>
+                <p>Wenden Sie sich direkt an unsere Verkaufsabteilung in Frankfurt am Main für ein maßgeschneidertes, volumengestaffeltes Festpreisangebot inklusive Frachtkostenberechnung.</p>
+                
+                <div class="info-block">
+                    <span>Zentrale Frankfurt:</span>
+                    <p>ALVEX Handel GmbH</p>
+                    <p>Mainzer Landstraße / City-Lage</p>
+                    <p>60313 Frankfurt am Main</p>
+                </div>
+                <div class="info-block">
+                    <span>Direktkontakt:</span>
+                    <p>Tel: +49 (0) 69 1234 5678</p>
+                    <p>E-Mail: vertrieb@alvex-handel.de</p>
+                </div>
+            </div>
+
+            <div>
+                <form class="contact-form" action="#" method="POST" onsubmit="alert('Dies ist ein Funktionsprototyp. Es wurden keine Daten übertragen.'); return false;">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="name">Ansprechpartner Name *</label>
+                            <input type="text" id="name" required autocomplete="name">
+                        </div>
+                        <div class="form-group">
+                            <label for="firma">Firmenname *</label>
+                            <input type="text" id="firma" required autocomplete="organization">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">E-Mail-Adresse *</label>
+                            <input type="email" id="email" required autocomplete="email">
+                        </div>
+                        <div class="form-group">
+                            <label for="telefon">Telefonnummer *</label>
+                            <input type="tel" id="telefon" required autocomplete="tel">
+                        </div>
+                        <div class="form-group form-group-full">
+                            <label for="menge">Gewünschte Liefermenge (in Tonnen) *</label>
+                            <input type="number" id="menge" min="1" step="any" placeholder="z.B. 24" required>
+                        </div>
+                        <div class="form-group form-group-full">
+                            <label for="nachricht">Spezifische Anforderungen / Nachricht</label>
+                            <textarea id="nachricht" rows="4" placeholder="Spezifizieren Sie hier gewünschte Verpackungsart..."></textarea>
+                        </div>
+                    </div>
+
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="datenschutz" required>
+                        <label for="datenschutz">Ich habe die Datenschutzerklärung zur Kenntnis genommen und stimme zu, dass meine Angaben zur Kontaktaufnahme verarbeitet werden. *</label>
+                    </div>
+
+                    <button type="submit" class="btn" style="width: 100%;">Verbindliche Großmengen-Anfrage senden</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container footer-grid">
+            <div>
+                <h3 style="color: white; margin-bottom: 1rem;">ALVEX Handel GmbH</h3>
+                <p>Sicherer Handel und strategische Rohstoffversorgung für die europäische Chemie- und Verarbeitungsindustrie.</p>
+            </div>
+            <div class="footer-legal-text">
+                <div class="footer-links">
+                    <button onclick="openModal('impressumModal')">Impressum</button>
+                    <button onclick="openModal('datenschutzModal')">Datenschutzerklärung</button>
+                </div>
+                <p><strong>Geschäftsführer:</strong> Mehmet S. Cellikkiran<br>
+                <strong>Registergericht:</strong> Amtsgericht Frankfurt am Main, HRB 142640<br>
+                <strong>Umsatzsteuer-Identifikationsnummer:</strong> [Platzhalter USt-IdNr.]</p>
+            </div>
+        </div>
+        <div class="container footer-bottom">
+            <p>&copy; 2026 ALVEX Handel GmbH. Alle Rechte vorbehalten.</p>
+            <p>100% DSGVO-konform | Keine externen CDNs | Keine Cookies</p>
+        </div>
+    </footer>
+
+    <div id="impressumModal" class="modal">
+        <div class="modal-content">
+            <button class="close-modal" onclick="closeModal('impressumModal')">&times;</button>
+            <h2>Impressum</h2>
+            <p>ALVEX Handel GmbH<br>Mainzer Landstraße<br>60313 Frankfurt am Main</p>
+        </div>
+    </div>
+
+    <div id="datenschutzModal" class="modal">
+        <div class="modal-content">
+            <button class="close-modal" onclick="closeModal('datenschutzModal')">&times;</button>
+            <h2>Datenschutzerklärung</h2>
+            <p>Diese Website verzichtet vollständig auf Tracker, Cookies und externe Ressourcenbibliotheken.</p>
+        </div>
+    </div>
+
+    <script>
+        const navToggle = document.getElementById('navToggle');
+        const navLinks = document.getElementById('navLinks');
+
+        navToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+
+        const videoOverlay = document.getElementById('videoOverlay');
+        const corpVideo = document.getElementById('corpVideo');
+
+        videoOverlay.addEventListener('click', () => {
+            videoOverlay.style.display = 'none';
+            corpVideo.play(); 
+        });
+
+        function openModal(modalId) {
+            document.getElementById(modalId).style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        window.addEventListener('click', function(event) {
+            if (event.target.classList.contains('modal')) {
+                event.target.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        });
+    </script>
+</body>
+</html>
