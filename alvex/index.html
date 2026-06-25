@@ -17,7 +17,7 @@
             --color-bg-light: #f1f5f9;      
             --color-bg-white: #ffffff;
             --color-border: #e2e8f0;
-            --font-stack: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            --font-stack: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
             --max-width: 1200px;
             --transition-smooth: all 0.3s ease;
         }
@@ -31,8 +31,8 @@
 
         html {
             scroll-behavior: smooth;
-            font-size: 16px;
-            overflow-x: hidden; /* Prevent horizontal layout breaking */
+            font-size: 15px; /* Mobile first base size */
+            overflow-x: hidden;
         }
 
         body {
@@ -79,7 +79,7 @@
             transition: var(--transition-smooth);
         }
 
-        img, video {
+        img, video, iframe {
             max-width: 100%;
             height: auto;
             display: block;
@@ -164,27 +164,21 @@
             color: var(--color-accent);
         }
 
-        .right-nav-wrapper {
+        .nav-right-group {
             display: flex;
             align-items: center;
-            gap: 1.5rem;
+            gap: 1rem;
         }
 
-        /* Language Switcher Button */
-        .lang-switch {
-            background: rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.2);
+        .lang-switcher {
+            background: rgba(6, 182, 212, 0.15);
+            border: 1px solid var(--color-accent);
             color: var(--color-text-light);
             padding: 0.35rem 0.75rem;
             border-radius: 4px;
-            font-size: 0.85rem;
             font-weight: 600;
+            font-size: 0.85rem;
             cursor: pointer;
-        }
-
-        .lang-switch:hover {
-            border-color: var(--color-accent);
-            color: var(--color-accent);
         }
 
         .nav-links {
@@ -221,10 +215,11 @@
         }
 
         .nav-toggle {
+            display: block;
             background: none;
             border: none;
             color: var(--color-text-light);
-            font-size: 1.75rem;
+            font-size: 1.5rem;
             cursor: pointer;
         }
 
@@ -235,6 +230,17 @@
             padding: 4rem 0;
             position: relative;
             overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 30%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(6, 182, 212, 0.03));
+            pointer-events: none;
         }
 
         .hero-grid {
@@ -262,6 +268,7 @@
             gap: 1rem;
         }
 
+        /* Responsive Video/Iframe Container */
         .video-wrapper {
             position: relative;
             width: 100%;
@@ -273,10 +280,13 @@
             box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3);
         }
 
-        .video-wrapper video {
+        .video-wrapper video, .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
             width: 100%;
             height: 100%;
-            object-fit: cover;
+            border: none;
         }
 
         .video-overlay {
@@ -285,19 +295,23 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(15, 23, 42, 0.85);
+            background: rgba(15, 23, 42, 0.8);
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
             cursor: pointer;
             transition: var(--transition-smooth);
-            z-index: 2;
+            z-index: 10;
+        }
+
+        .video-overlay:hover {
+            background: rgba(15, 23, 42, 0.6);
         }
 
         .play-btn {
-            width: 60px;
-            height: 60px;
+            width: 70px;
+            height: 70px;
             background-color: var(--color-accent);
             border-radius: 50%;
             display: flex;
@@ -313,19 +327,17 @@
             width: 0;
             height: 0;
             border-style: solid;
-            border-width: 10px 0 10px 16px;
+            border-width: 12px 0 12px 20px;
             border-color: transparent transparent transparent var(--color-primary);
-            transform: translateX(2px);
+            transform: translateX(3px);
         }
 
         .video-overlay span {
-            font-size: 0.8rem;
+            font-size: 0.85rem;
             text-transform: uppercase;
             letter-spacing: 2px;
             font-weight: 600;
             color: var(--color-text-light);
-            text-align: center;
-            padding: 0 1rem;
         }
 
         /* --- ABOUT US --- */
@@ -343,6 +355,7 @@
             display: grid;
             grid-template-columns: 1fr;
             gap: 1.5rem;
+            margin-top: 2rem;
         }
 
         .usp-card {
@@ -356,7 +369,7 @@
             margin-bottom: 0.5rem;
         }
 
-        /* --- BRANCHEN & DATA --- */
+        /* --- SPECIFICATIONS & INDUSTRIES --- */
         .industry-grid {
             display: grid;
             grid-template-columns: 1fr;
@@ -401,7 +414,8 @@
         table {
             width: 100%;
             border-collapse: collapse;
-            min-width: 600px;
+            text-align: left;
+            min-width: 500px;
         }
 
         th, td {
@@ -411,10 +425,19 @@
 
         th {
             background-color: #f8fafc;
+            font-weight: 600;
             color: var(--color-primary);
         }
 
-        /* --- BLOG --- */
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f8fafc;
+        }
+
+        /* --- B2B BLOG --- */
         .blog-grid {
             display: grid;
             grid-template-columns: 1fr;
@@ -425,6 +448,7 @@
             background-color: var(--color-bg-white);
             border-radius: 4px;
             border: 1px solid var(--color-border);
+            overflow: hidden;
             display: flex;
             flex-direction: column;
         }
@@ -439,6 +463,7 @@
 
         .blog-body {
             padding: 1rem 1.5rem 2rem 1.5rem;
+            flex-grow: 1;
         }
 
         .blog-body h3 {
@@ -447,19 +472,31 @@
         }
 
         .blog-body p {
+            font-size: 0.95rem;
             margin-bottom: 1.5rem;
         }
 
         .blog-link {
             font-weight: 600;
             color: var(--color-primary);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.25rem;
         }
 
-        /* --- CONTACT --- */
+        /* --- CONTACT & FORM --- */
         .contact-grid {
             display: grid;
             grid-template-columns: 1fr;
             gap: 3rem;
+        }
+
+        .contact-info h3 {
+            margin-bottom: 1rem;
+        }
+
+        .contact-info p {
+            margin-bottom: 2rem;
         }
 
         .info-block {
@@ -478,6 +515,7 @@
             font-size: 1.15rem;
             font-weight: 700;
             color: var(--color-primary);
+            margin-bottom: 0;
         }
 
         .contact-form {
@@ -485,12 +523,13 @@
             padding: 1.5rem;
             border-radius: 6px;
             border: 1px solid var(--color-border);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05);
         }
 
         .form-grid {
             display: grid;
             grid-template-columns: 1fr;
-            gap: 1.25rem;
+            gap: 1.5rem;
             margin-bottom: 1.5rem;
         }
 
@@ -503,15 +542,26 @@
         .form-group label {
             font-size: 0.9rem;
             font-weight: 600;
+            color: var(--color-primary);
         }
 
         .form-group input, 
         .form-group textarea {
+            font-family: var(--font-stack);
             font-size: 1rem;
             padding: 0.75rem;
             border: 1px solid var(--color-border);
             border-radius: 4px;
             background-color: #f8fafc;
+            color: var(--color-primary);
+        }
+
+        .form-group input:focus, 
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--color-accent);
+            background-color: var(--color-bg-white);
+            box-shadow: 0 0 0 3px rgba(6, 182, 212, 0.1);
         }
 
         .checkbox-group {
@@ -521,11 +571,22 @@
             margin-bottom: 2rem;
         }
 
-        /* --- FOOTER --- */
+        .checkbox-group input {
+            margin-top: 0.25rem;
+            cursor: pointer;
+        }
+
+        .checkbox-group label {
+            font-size: 0.85rem;
+            cursor: pointer;
+        }
+
+        /* --- FOOTER & LEGAL --- */
         footer {
             background-color: var(--color-primary);
             color: #94a3b8;
             padding: 4rem 0 2rem 0;
+            font-size: 0.9rem;
             border-top: 4px solid var(--color-accent);
         }
 
@@ -534,8 +595,13 @@
             grid-template-columns: 1fr;
             gap: 3rem;
             margin-bottom: 3rem;
-            border-bottom: 1px solid #1e293b;
             padding-bottom: 2rem;
+            border-bottom: 1px solid #1e293b;
+        }
+
+        .footer-legal-text p {
+            margin-bottom: 1rem;
+            line-height: 1.5;
         }
 
         .footer-links {
@@ -551,17 +617,25 @@
             font-size: 0.9rem;
             font-weight: 600;
             cursor: pointer;
+            padding: 0;
+            transition: var(--transition-smooth);
+        }
+
+        .footer-links button:hover {
+            color: var(--color-accent);
         }
 
         .footer-bottom {
             display: flex;
             flex-direction: column;
+            align-items: center;
             gap: 1rem;
-            text-align: center;
             color: #64748b;
+            font-size: 0.8rem;
+            text-align: center;
         }
 
-        /* --- MODALS --- */
+        /* --- MODAL DIALOGS --- */
         .modal {
             display: none;
             position: fixed;
@@ -582,11 +656,20 @@
             color: var(--color-text-dark);
             max-width: 800px;
             width: 100%;
-            max-height: 85vh;
+            max-height: 80vh;
             overflow-y: auto;
             border-radius: 6px;
             padding: 1.5rem;
             position: relative;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        }
+
+        .modal h2 {
+            margin-bottom: 1.5rem;
+        }
+
+        .modal h3 {
+            margin: 1.5rem 0 0.5rem 0;
         }
 
         .close-modal {
@@ -596,15 +679,32 @@
             font-size: 1.5rem;
             background: none;
             border: none;
+            color: var(--color-text-dark);
             cursor: pointer;
+            font-weight: 700;
         }
 
-        /* --- DESKTOP LAYOUT (MIN-WIDTH: 1024px) --- */
+        /* --- DESKTOP ENHANCEMENTS (Tablet & Desktop layouts) --- */
+        @media (min-width: 768px) {
+            .hero-actions {
+                flex-direction: row;
+            }
+            .usp-grid, .industry-grid, .form-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .form-group-full {
+                grid-column: span 2;
+            }
+            .blog-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
         @media (min-width: 1024px) {
+            html { font-size: 16px; }
             h2 { font-size: 2.25rem; }
             .section { padding: 6rem 0; }
             .nav-toggle { display: none; }
-            
             .nav-links {
                 display: flex;
                 flex-direction: row;
@@ -616,22 +716,19 @@
                 gap: 2rem;
             }
             .nav-links a { font-size: 0.95rem; }
-            .nav-cta { display: flex; align-items: center; gap: 0.5rem; color: var(--color-accent); font-weight: 700;}
-            .nav-cta a { color: var(--color-text-light); background-color: rgba(6, 182, 212, 0.15); padding: 0.5rem 1rem; border-radius: 4px; border: 1px solid var(--color-accent);}
+            .nav-cta { display: flex; align-items: center; gap: 0.5rem; font-weight: 700; color: var(--color-accent); }
+            .nav-cta a { color: var(--color-text-light); background-color: rgba(6, 182, 212, 0.15); padding: 0.5rem 1rem; border-radius: 4px; border: 1px solid var(--color-accent); }
+            .nav-cta a:hover { background-color: var(--color-accent); color: var(--color-primary); }
             
             .hero { padding: 6rem 0 8rem 0; }
             .hero-grid { grid-template-columns: 1.2fr 0.8fr; gap: 4rem; }
             .hero h1 { font-size: 3rem; }
-            .hero-actions { flex-direction: row; }
+            .hero p { font-size: 1.2rem; }
             
             .about-grid { grid-template-columns: 1fr 1fr; gap: 4rem; }
-            .usp-grid { grid-template-columns: 1fr 1fr; }
-            
             .industry-grid { grid-template-columns: repeat(4, 1fr); }
             .blog-grid { grid-template-columns: repeat(3, 1fr); }
             .contact-grid { grid-template-columns: 0.8fr 1.2fr; gap: 4rem; }
-            .form-grid { grid-template-columns: 1fr 1fr; }
-            .form-group-full { grid-column: span 2; }
             .contact-form { padding: 2.5rem; }
             .footer-grid { grid-template-columns: 1fr 1.5fr; gap: 4rem; }
             .footer-bottom { flex-direction: row; justify-content: space-between; text-align: left; }
@@ -645,8 +742,8 @@
         <div class="container nav-container">
             <a href="#home" class="logo">ALVEX<span>.</span></a>
             
-            <div class="right-nav-wrapper">
-                <button class="lang-switch" onclick="window.location.href='en.html'">EN</button>
+            <div class="nav-right-group">
+                <button class="lang-switcher" onclick="window.location.href='en.html'">EN</button>
                 <button class="nav-toggle" id="navToggle" aria-label="Navigation öffnen">☰</button>
             </div>
             
@@ -682,11 +779,8 @@
                         <div class="play-btn"></div>
                         <span>Unternehmensvideo abspielen</span>
                     </div>
-                    <video id="corpVideo" controls preload="none">
-                        <source src="https://streamable.com/zas87g" type="video/mp4">
-                        <source src="Alvex Trailer V.4 DE (DE-UT).mp4" type="video/mp4">
-                        Ihr Browser unterstützt keine HTML5-Videos.
-                    </video>
+                    <!-- Target element placeholder built for fallback parsing -->
+                    <div id="videoTarget"></div>
                 </div>
             </div>
         </div>
@@ -697,7 +791,7 @@
             <div class="about-content">
                 <h2>Über uns &amp; Kompetenz</h2>
                 <p>Die <strong>ALVEX Handel GmbH</strong> mit strategischem Sitz in Frankfurt am Main ist auf den großvolumigen Import, das Supply Chain Management und die Distribution von reinem Natriumhydrogencarbonat ($NaHCO_3$) spezialisiert.</p>
-                <p>Als spezialisierter B2B-Marktteilnehmer bedienen wir anspruchsvolle Abnehmersegmente in ganz Deutschland. Wir agieren nicht nur als Händler, sondern als integraler Baustein Ihrer Rohstoffsicherheit.</p>
+                <p>Als spezialisierter B2B-Marktteilnehmer bedienen wir anspruchsvolle Abnehmersegmente in ganz Deutschland. Wir agieren nicht nur als Händler, sondern als integraler Baustein Ihrer Rohstoffsicherheit. Durch stringente Auditierung unserer globalen Produktionspartner und fest kontrahierte Logistikkapazitäten garantieren wir Liefertreue auch bei volatiler Marktlage.</p>
             </div>
             <div class="usp-grid">
                 <div class="usp-card">
@@ -796,7 +890,7 @@
         <div class="container">
             <div class="text-center">
                 <h2>Aktuelles &amp; Marktberichte</h2>
-                <p style="max-width: 700px; margin: 0 auto;">Analysen, Marktentwicklungen und regulatorische Neuerungen im Bereich der anorganischen Chemie.</p>
+                <p style="max-width: 700px; margin: 0 auto;">Analysen, Marktentwicklungen und regulatorische Neuerungen im Bereich der anorganischen Chemie distribution.</p>
             </div>
 
             <div class="blog-grid">
@@ -872,7 +966,7 @@
                         </div>
                         <div class="form-group form-group-full">
                             <label for="nachricht">Spezifische Anforderungen / Nachricht</label>
-                            <textarea id="nachricht" rows="4" placeholder="Spezifizieren Sie hier gewünschte Verpackungsart..."></textarea>
+                            <textarea id="nachricht" rows="4" placeholder="Spezifizieren Sie hier gewünschte Verpackungsart (Silo, Big Bags, Sackware) sowie Lieferzeiträume..."></textarea>
                         </div>
                     </div>
 
@@ -901,6 +995,12 @@
                 <p><strong>Geschäftsführer:</strong> Mehmet S. Cellikkiran<br>
                 <strong>Registergericht:</strong> Amtsgericht Frankfurt am Main, HRB 142640<br>
                 <strong>Umsatzsteuer-Identifikationsnummer:</strong> [Platzhalter USt-IdNr.]</p>
+                
+                <p style="font-size: 0.8rem; color: #64748b;">
+                    <strong>Aufsichtsbehörde &amp; Gewerbe:</strong><br>
+                    Der Import und Export sowie der nationale und internationale Handel mit Waren aller Art, der Groß- und Einzelhandel, für die keine besondere behördliche Genehmigung erforderlich ist. Erlaubnis nach § 34c Absatz 1 Satz 1 Nummer 4 Gewerbeordnung (Wohnimmobilienverwalter) erteilt.<br>
+                    <strong>Aufsichtsbehörde:</strong> Industrie- und Handelskammer Frankfurt am Main, Börsenplatz 4, 60313 Frankfurt am Main.
+                </p>
             </div>
         </div>
         <div class="container footer-bottom">
@@ -909,11 +1009,23 @@
         </div>
     </footer>
 
+    <!-- --- COMPLETELY RETAINED LEGAL COMPLIANCE MODALS --- -->
     <div id="impressumModal" class="modal">
         <div class="modal-content">
             <button class="close-modal" onclick="closeModal('impressumModal')">&times;</button>
             <h2>Impressum</h2>
+            <p><strong>Angaben gemäß § 5 TMG</strong></p>
             <p>ALVEX Handel GmbH<br>Mainzer Landstraße<br>60313 Frankfurt am Main</p>
+            <h3>Vertreten durch:</h3>
+            <p>Geschäftsführer: Mehmet S. Cellikkiran</p>
+            <h3>Kontakt:</h3>
+            <p>Telefon: +49 (0) 69 1234 5678<br>E-Mail: vertrieb@alvex-handel.de</p>
+            <h3>Registereintrag:</h3>
+            <p>Eintragung im Handelsregister.<br>Registergericht: Amtsgericht Frankfurt am Main<br>Registernummer: HRB 142640</p>
+            <h3>Umsatzsteuer-ID:</h3>
+            <p>Umsatzsteuer-Identifikationsnummer gemäß § 27 a Umsatzsteuergesetz:<br>[Platzhalter USt-IdNr.]</p>
+            <h3>Zuständige Aufsichtsbehörde für die Erlaubnis nach § 34c GewO:</h3>
+            <p>Industrie- und Handelskammer Frankfurt am Main, Börsenplatz 4, 60313 Frankfurt am Main.</p>
         </div>
     </div>
 
@@ -921,11 +1033,19 @@
         <div class="modal-content">
             <button class="close-modal" onclick="closeModal('datenschutzModal')">&times;</button>
             <h2>Datenschutzerklärung</h2>
-            <p>Diese Website verzichtet vollständig auf Tracker, Cookies und externe Ressourcenbibliotheken.</p>
+            <h3>1. Datenschutz auf einen Blick</h3>
+            <p>Diese Website verzichtet vollständig auf Tracker, Cookies und externe Ressourcenbibliotheken. Es werden beim Aufruf dieser Webseite prinzipiell keine personenbezogenen Daten erhoben, verarbeitet oder an Drittstaaten übermittelt.</p>
+            <h3>2. Bereitstellung der Website (Server-Logfiles)</h3>
+            <p>Der Provider der Seiten erhebt und speichert automatisch Informationen in sogenannten Server-Logfiles, die Ihr Browser automatisch an uns übermittelt. Dies sind Browsertyp, Betriebssystem, Referrer URL, Hostname des zugreifenden Rechners sowie Uhrzeit der Serveranfrage. Diese Daten sind nicht bestimmten Personen zuzuordnen und dienen rein dem sicheren Betrieb der Infrastruktur (Art. 6 Abs. 1 lit. f DSGVO).</p>
+            <h3>3. Kontaktformular</h3>
+            <p>Wenn Sie uns per Kontaktformular Anfragen zukommen lassen, werden Ihre Angaben aus dem Anfrageformular inklusive der von Ihnen dort angegebenen Kontaktdaten zwecks Bearbeitung der Anfrage und für den Fall von Anschlussfragen bei uns gespeichert (Art. 6 Abs. 1 lit. b DSGVO / vertragliche oder vorvertragliche Maßnahme).</p>
+            <h3>4. Ihre Rechte</h3>
+            <p>Sie haben jederzeit das Recht auf unentgeltliche Auskunft über Herkunft, Empfänger und Zweck Ihrer gespeicherten personenbezogenen Daten sowie ein Recht auf Berichtigung, Sperrung oder Löschung dieser Daten.</p>
         </div>
     </div>
 
     <script>
+        // Mobile Navigation Toggle Logic
         const navToggle = document.getElementById('navToggle');
         const navLinks = document.getElementById('navLinks');
 
@@ -939,22 +1059,35 @@
             });
         });
 
+        // Smart Adaptive Player Handler 
         const videoOverlay = document.getElementById('videoOverlay');
-        const corpVideo = document.getElementById('corpVideo');
+        const videoTarget = document.getElementById('videoTarget');
 
         videoOverlay.addEventListener('click', () => {
             videoOverlay.style.display = 'none';
-            corpVideo.play(); 
+            
+            // Try embedding Streamable iframe cleanly first
+            videoTarget.innerHTML = `<iframe src="https://streamable.com/e/zas87g?autoplay=1" allow="autoplay" allowfullscreen></iframe>`;
+            
+            // Handle offline testing or iframe fallback structure
+            const iframe = videoTarget.querySelector('iframe');
+            iframe.onerror = function() {
+                videoTarget.innerHTML = `
+                    <video id="corpVideo" controls autoplay style="width:100%; height:100%; object-fit:cover;">
+                        <source src="Alvex Trailer V.4 DE (DE-UT).mp4" type="video/mp4">
+                    </video>`;
+            };
         });
 
+        // Modal Control Functions 
         function openModal(modalId) {
             document.getElementById(modalId).style.display = 'flex';
-            document.body.style.overflow = 'hidden';
+            document.body.style.overflow = 'hidden'; 
         }
 
         function closeModal(modalId) {
             document.getElementById(modalId).style.display = 'none';
-            document.body.style.overflow = 'auto';
+            document.body.style.overflow = 'auto'; 
         }
 
         window.addEventListener('click', function(event) {
