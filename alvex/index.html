@@ -154,14 +154,14 @@
         }
 
         .logo {
-            font-size: 1.75rem;
-            font-weight: 800;
-            letter-spacing: 1px;
-            color: var(--color-text-light);
+            display: flex;
+            align-items: center;
         }
 
-        .logo span {
-            color: var(--color-accent);
+        .logo img {
+            height: 40px; /* Constrains logo height cleanly on desktop and mobile */
+            width: auto;
+            display: block;
         }
 
         .nav-right-group {
@@ -227,45 +227,78 @@
         .hero {
             background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
             color: var(--color-text-light);
-            padding: 4rem 0;
-            position: relative;
-            overflow: hidden;
+            padding: 2.5rem 0;
+            overflow: hidden; /* Hard boundary constraint */
+            width: 100%;
         }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 30%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(6, 182, 212, 0.03));
-            pointer-events: none;
-        }
-
+        
         .hero-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 3rem;
-            align-items: center;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            width: 100%;
         }
-
+        
+        .hero-content {
+            width: 100%;
+            max-width: 100%; /* Prevents text elements from expanding beyond viewport */
+            overflow-wrap: break-word; /* Crucial: Breaks massive words safely */
+            word-wrap: break-word;
+            word-break: break-word; 
+            hyphens: auto; /* Gracefully breaks German compound words with a hyphen */
+        }
+        
+        /* Fluid typography that scales perfectly on ultra-small screens */
         .hero h1 {
+            font-size: calc(1.5rem + 2vw); /* Dynamically scales down to ~1.7rem on tiny displays */
+            line-height: 1.2;
+            margin-bottom: 1.25rem;
             color: var(--color-text-light);
-            font-size: 2.25rem;
-            margin-bottom: 1.5rem;
         }
-
+        
         .hero p {
-            font-size: 1.1rem;
+            font-size: 1rem;
+            line-height: 1.6;
             color: #cbd5e1;
             margin-bottom: 2rem;
+            width: 100%;
         }
-
+        
+        /* Stacked block actions for touch targets */
         .hero-actions {
             display: flex;
             flex-direction: column;
             gap: 1rem;
+            width: 100%;
+        }
+        
+        .hero-actions .btn {
+            width: 100%; /* Ensures buttons fill the container safely without overflowing */
+            display: block;
+            box-sizing: border-box;
+        }
+        
+        /* --- PROGRESSIVE ENHANCEMENT FOR DESKTOP --- */
+        @media (min-width: 1024px) {
+            .hero {
+                padding: 6rem 0 8rem 0;
+            }
+            .hero-grid {
+                display: grid;
+                grid-template-columns: 1.2fr 0.8fr;
+                gap: 4rem;
+            }
+            .hero h1 {
+                font-size: 3rem; /* Return to original high-impact size on desktop architecture */
+            }
+            .hero-actions {
+                flex-direction: row;
+                width: auto;
+            }
+            .hero-actions .btn {
+                width: auto;
+                display: inline-block;
+            }
         }
 
         /* Responsive Video/Iframe Container */
@@ -705,6 +738,12 @@
             h2 { font-size: 2.25rem; }
             .section { padding: 6rem 0; }
             .nav-toggle { display: none; }
+            
+            /* Modern Alignment adjustments for multi-column navigation setup */
+            .nav-right-group {
+                order: 3;
+            }
+            
             .nav-links {
                 display: flex;
                 flex-direction: row;
@@ -714,9 +753,21 @@
                 background: none;
                 border: none;
                 gap: 2rem;
+                order: 1;
+                margin-left: auto;
+                margin-right: 2rem;
             }
             .nav-links a { font-size: 0.95rem; }
-            .nav-cta { display: flex; align-items: center; gap: 0.5rem; font-weight: 700; color: var(--color-accent); }
+            
+            .nav-cta { 
+                display: flex; 
+                align-items: center; 
+                gap: 0.5rem; 
+                font-weight: 700; 
+                color: var(--color-accent); 
+                order: 2;
+                margin-right: 1.5rem;
+            }
             .nav-cta a { color: var(--color-text-light); background-color: rgba(6, 182, 212, 0.15); padding: 0.5rem 1rem; border-radius: 4px; border: 1px solid var(--color-accent); }
             .nav-cta a:hover { background-color: var(--color-accent); color: var(--color-primary); }
             
@@ -741,7 +792,7 @@
     <header>
         <div class="container nav-container">
             <a href="#home" class="logo">
-                <img src="assets/img/ALVEX_LOGO.png" alt="ALVEX">
+                <img src="assets/img/ALVEX_Logo.png" alt="ALVEX">
             </a>
             
             <div class="nav-right-group">
@@ -781,7 +832,6 @@
                         <div class="play-btn"></div>
                         <span>Unternehmensvideo abspielen</span>
                     </div>
-                    <!-- Target element placeholder built for fallback parsing -->
                     <div id="videoTarget"></div>
                 </div>
             </div>
@@ -859,27 +909,27 @@
                     <tbody>
                         <tr>
                             <td><strong>Gehalt ($NaHCO_3$)</strong></td>
-                            <td>&ge; 99,3 %</td>
+                            <td>≥ 99,3 %</td>
                             <td>Acidimetrie</td>
                         </tr>
                         <tr>
                             <td><strong>Carbonat ($Na_2CO_3$)</strong></td>
-                            <td>&le; 0,5 %</td>
+                            <td>≤ 0,5 %</td>
                             <td>Titration</td>
                         </tr>
                         <tr>
                             <td><strong>Trocknungsverlust</strong></td>
-                            <td>&le; 0,25 %</td>
+                            <td>≤ 0,25 %</td>
                             <td>Thermogravimetrie</td>
                         </tr>
                         <tr>
                             <td><strong>Eisen (Fe)</strong></td>
-                            <td>&le; 5 mg/kg</td>
+                            <td>≤ 5 mg/kg</td>
                             <td>ICP-OES</td>
                         </tr>
                         <tr>
                             <td><strong>Schwermetalle (als Pb)</strong></td>
-                            <td>&le; 2 mg/kg</td>
+                            <td>≤ 2 mg/kg</td>
                             <td>ICP-OES</td>
                         </tr>
                     </tbody>
@@ -901,7 +951,7 @@
                     <div class="blog-body">
                         <h3>Optimierung von Frachtketten im Rheingebiet</h3>
                         <p>Ein Blick auf die strategische Verlagerung von Schüttgut-Transporten zur Absicherung gegen winterliche und sommerliche Extremwasserstände.</p>
-                        <a href="#" class="blog-link">Weiterlesen &rarr;</a>
+                        <a href="#" class="blog-link">Weiterlesen →</a>
                     </div>
                 </div>
                 <div class="blog-card">
@@ -909,7 +959,7 @@
                     <div class="blog-body">
                         <h3>Rohstofftrends bei Pufferchemikalien</h3>
                         <p>Preisvolatilitäten bei synthetischer Soda und deren direkte Auswirkungen auf die Herstellungskosten von Natriumhydrogencarbonat.</p>
-                        <a href="#" class="blog-link">Weiterlesen &rarr;</a>
+                        <a href="#" class="blog-link">Weiterlesen →</a>
                     </div>
                 </div>
                 <div class="blog-card">
@@ -917,7 +967,7 @@
                     <div class="blog-body">
                         <h3>Verschärfte Richtlinien für Feed Grade Produkte</h3>
                         <p>Die neuen Dokumentationspflichten für Importeure von Futtermittelzusatzstoffen gemäß EU-Verordnung im Praxischeck.</p>
-                        <a href="#" class="blog-link">Weiterlesen &rarr;</a>
+                        <a href="#" class="blog-link">Weiterlesen →</a>
                     </div>
                 </div>
             </div>
@@ -948,23 +998,23 @@
                     <div class="form-grid">
                         <div class="form-group">
                             <label for="name">Ansprechpartner Name *</label>
-                            <input type="text" id="name" required autocomplete="name">
+                            <input type="text" id="name" required="" autocomplete="name">
                         </div>
                         <div class="form-group">
                             <label for="firma">Firmenname *</label>
-                            <input type="text" id="firma" required autocomplete="organization">
+                            <input type="text" id="firma" required="" autocomplete="organization">
                         </div>
                         <div class="form-group">
                             <label for="email">E-Mail-Adresse *</label>
-                            <input type="email" id="email" required autocomplete="email">
+                            <input type="email" id="email" required="" autocomplete="email">
                         </div>
                         <div class="form-group">
                             <label for="telefon">Telefonnummer *</label>
-                            <input type="tel" id="telefon" required autocomplete="tel">
+                            <input type="tel" id="telefon" required="" autocomplete="tel">
                         </div>
                         <div class="form-group form-group-full">
                             <label for="menge">Gewünschte Liefermenge (in Tonnen) *</label>
-                            <input type="number" id="menge" min="1" step="any" placeholder="z.B. 24" required>
+                            <input type="number" id="menge" min="1" step="any" placeholder="z.B. 24" required="">
                         </div>
                         <div class="form-group form-group-full">
                             <label for="nachricht">Spezifische Anforderungen / Nachricht</label>
@@ -973,7 +1023,7 @@
                     </div>
 
                     <div class="checkbox-group">
-                        <input type="checkbox" id="datenschutz" required>
+                        <input type="checkbox" id="datenschutz" required="">
                         <label for="datenschutz">Ich habe die Datenschutzerklärung zur Kenntnis genommen und stimme zu, dass meine Angaben zur Kontaktaufnahme verarbeitet werden. *</label>
                     </div>
 
@@ -1006,15 +1056,14 @@
             </div>
         </div>
         <div class="container footer-bottom">
-            <p>&copy; 2026 ALVEX Handel GmbH. Alle Rechte vorbehalten.</p>
+            <p>© 2026 ALVEX Handel GmbH. Alle Rechte vorbehalten.</p>
             <p>100% DSGVO-konform | Keine externen CDNs | Keine Cookies</p>
         </div>
     </footer>
 
-    <!-- --- COMPLETELY RETAINED LEGAL COMPLIANCE MODALS --- -->
     <div id="impressumModal" class="modal">
         <div class="modal-content">
-            <button class="close-modal" onclick="closeModal('impressumModal')">&times;</button>
+            <button class="close-modal" onclick="closeModal('impressumModal')">×</button>
             <h2>Impressum</h2>
             <p><strong>Angaben gemäß § 5 TMG</strong></p>
             <p>ALVEX Handel GmbH<br>Mainzer Landstraße<br>60313 Frankfurt am Main</p>
@@ -1033,7 +1082,7 @@
 
     <div id="datenschutzModal" class="modal">
         <div class="modal-content">
-            <button class="close-modal" onclick="closeModal('datenschutzModal')">&times;</button>
+            <button class="close-modal" onclick="closeModal('datenschutzModal')">×</button>
             <h2>Datenschutzerklärung</h2>
             <h3>1. Datenschutz auf einen Blick</h3>
             <p>Diese Website verzichtet vollständig auf Tracker, Cookies und externe Ressourcenbibliotheken. Es werden beim Aufruf dieser Webseite prinzipiell keine personenbezogenen Daten erhoben, verarbeitet oder an Drittstaaten übermittelt.</p>
@@ -1099,5 +1148,6 @@
             }
         });
     </script>
+
 </body>
 </html>
