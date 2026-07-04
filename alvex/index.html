@@ -1117,8 +1117,13 @@
         videoOverlay.addEventListener('click', () => {
             videoOverlay.style.display = 'none';
             
-            // Try embedding Streamable iframe cleanly first
-            videoTarget.innerHTML = `<iframe src="https://streamable.com/e/zas87g?autoplay=1" allow="autoplay" allowfullscreen></iframe>`;
+            // Try embedding HTML5 video
+            videoTarget.innerHTML = `
+                <video id="corpVideo" controls autoplay playsinline>
+                    <source src="assets/video/ALVEX Trailer Cut.mp4" type="video/mp4">
+                    Your browser does not support HTML5 video.
+                </video>
+            `;
             
             // Handle offline testing or iframe fallback structure
             const iframe = videoTarget.querySelector('iframe');
