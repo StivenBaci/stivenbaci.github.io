@@ -1,0 +1,27 @@
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const {
+  title = 'ALVEX Handel GmbH | B2B Natriumhydrogencarbonat Distribution',
+  description = 'ALVEX Handel GmbH ist Ihr zuverlässiger B2B-Partner für Natriumhydrogencarbonat in Großmengen. Sichere Logistik, höchste Reinheit und zertifizierte Qualität für Industrie, Pharma, Lebensmittel und Futtermittel.',
+  navHero = false,
+} = Astro.props;
+---
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{title}</title>
+    <meta name="description" content={description}>
+    <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+    <Header navHero={navHero} />
+    <slot />
+    <Footer />
+    <div class="video-backdrop" id="videoBackdrop"></div>
+    <script is:inline src="/assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+---
+// Site header / navigation. Shared across all pages.
+// navHero=true (home page): the nav logo is hidden while the big hero logo is
+// in view and only reveals once the user scrolls down. On other pages the logo
+// is shown normally.
+const { navHero = false } = Astro.props;
+---
+<header class:list={["site-header", { "nav-hero": navHero }]} id="siteHeader">
+    <div class="container nav-container">
+        <a href="/" class="logo" id="navLogo">
+            <img src="/assets/img/ALVEX_Logo.png" alt="ALVEX">
+        </a>
+
+        <div class="nav-right-group">
+            <button class="lang-switcher" onclick="window.location.href='/en.html'">EN</button>
+            <button class="nav-toggle" id="navToggle" aria-label="Navigation öffnen">☰</button>
+        </div>
+
+        <ul class="nav-links" id="navLinks">
+            <li><a href="/#home">Home</a></li>
+            <li><a href="/#ueber-uns">Über uns</a></li>
+            <li><a href="/#branchen">Branchen</a></li>
+            <li><a href="/#team">Team</a></li>
+            <!-- <li><a href="/#aktuelles">Aktuelles</a></li> -->
+            <li><a href="/#kontakt">Kontakt</a></li>
+        </ul>
+
+        <div class="nav-cta">
+            <span>Vertrieb:</span>
+            <a href="tel:+496912345678">+49 (0) 69 1234 5678</a>
+        </div>
+    </div>
+</header>
