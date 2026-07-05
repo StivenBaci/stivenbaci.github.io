@@ -2,8 +2,8 @@
 :root {
     --color-primary: #0f172a;       /* Deep Industrial Navy */
     --color-primary-light: #1e293b; /* Slate Blue */
-    --color-accent: #06b6d4;        /* Sterile Cyan / Purity Mint */
-    --color-accent-hover: #0891b2;  
+    --color-accent: #d1b78f;        /* Sterile Cyan / Purity Mint */
+    --color-accent-hover: #d1b78f;  
     --color-text-dark: #334155;     /* Professional Gray */
     --color-text-light: #f8fafc;    
     --color-bg-light: #f1f5f9;      
