@@ -1,7 +1,12 @@
 ---
 import Base from '../layouts/Base.astro';
+
+const alternates = [
+    { lang: 'de', path: '/' },
+    { lang: 'en', path: '/en/' },
+];
 ---
-<Base navHero={true}>
+<Base navHero={true} lang="de" alternates={alternates}>
     <section class="hero" id="home">
         <div class="container hero-inner">
             <img

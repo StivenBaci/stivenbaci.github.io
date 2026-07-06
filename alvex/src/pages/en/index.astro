@@ -1,0 +1,230 @@
+---
+import Base from '../../layouts/Base.astro';
+
+const alternates = [
+    { lang: 'de', path: '/' },
+    { lang: 'en', path: '/en/' },
+];
+---
+<Base navHero={true} lang="en" alternates={alternates}>
+    <section class="hero" id="home">
+        <div class="container hero-inner">
+            <img
+                class="hero-logo"
+                src="/assets/img/Logo_Main_Hero.svg"
+                alt="ALVEX Handel GmbH – International supplier of high-quality sodium bicarbonate"
+                width="520"
+                height="200"
+            />
+            <h1>International supplier of high-quality sodium bicarbonate</h1>
+
+            <div class="hero-video" id="heroVideo">
+                <div class="video-wrapper">
+                    <video id="heroVideoEl" controls playsinline preload="metadata">
+                        <source src="/assets/video/ALVEX Trailer Cut.mp4" type="video/mp4">
+                    </video>
+                </div>
+            </div>
+
+            <div class="hero-actions">
+                <a href="/en/#kontakt" class="btn">Request a quote</a>
+                <a href="/en/#branchen" class="btn btn-outline">View specifications</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="ueber-uns">
+        <div class="container about-grid">
+            <div class="about-content">
+                <h2>About us</h2>
+                <p>ALVEX is an internationally oriented trading company based in Frankfurt am Main, specialised in the distribution of high-quality sodium bicarbonate for a wide range of industrial applications.</p>
+                <p>Together with our production partners in Turkey, we combine high quality standards with reliable supply capability, flexible logistics solutions and professional handling in international trade.</p>
+                <p>Clear structures, short communication channels and a high standard of quality form the basis of our daily business.</p>
+                <p>ALVEX stands for reliability, continuity and long-term partnerships – with the aim of offering our customers not just a product, but a sustainable and professional solution.</p>
+            </div>
+            <div class="about-image">
+                <img src="/assets/img/Team_Meeting.jpeg" alt="ALVEX office – meeting situation in Frankfurt am Main" loading="lazy" width="800" height="600">
+            </div>
+        </div>
+    </section>
+
+    <section class="section section-bg" id="branchen">
+        <div class="container">
+            <div class="text-center">
+                <h2>Our Industries</h2>
+                <p>Versatile applications worldwide</p>
+            </div>
+
+            <div class="app-grid">
+                <a href="#kontakt" class="app-card">
+                    <img class="app-img" src="/assets/img/Food%20Industry.svg" alt="Sodium bicarbonate for the food industry" loading="lazy" width="400" height="180">
+                    <div class="app-body">
+                        <h3>Food Industry</h3>
+                        <p>Used as a proven leavening agent and reliable acidity regulator.</p>
+                    </div>
+                </a>
+
+                <a href="#kontakt" class="app-card">
+                    <img class="app-img" src="/assets/img/Pharmaceuticals.svg" alt="Sodium bicarbonate for the pharmaceutical industry" loading="lazy" width="400" height="180">
+                    <div class="app-body">
+                        <h3>Pharmaceuticals</h3>
+                        <p>Highest purity for dialysis solutions and medical applications.</p>
+                    </div>
+                </a>
+
+                <a href="#kontakt" class="app-card">
+                    <img class="app-img" src="/assets/img/Cosmetics.svg" alt="Sodium bicarbonate for cosmetic products" loading="lazy" width="400" height="180">
+                    <div class="app-body">
+                        <h3>Cosmetics</h3>
+                        <p>Ingredient for personal-care products and effervescent bath additives.</p>
+                    </div>
+                </a>
+
+                <a href="#kontakt" class="app-card">
+                    <img class="app-img" src="/assets/img/Cleaning%20Products.svg" alt="Sodium bicarbonate for cleaning products" loading="lazy" width="400" height="180">
+                    <div class="app-body">
+                        <h3>Cleaning Products</h3>
+                        <p>Effective cleaning component for detergents and household cleaners.</p>
+                    </div>
+                </a>
+
+                <a href="#kontakt" class="app-card">
+                    <img class="app-img" src="/assets/img/Industrial%20Applications.svg" alt="Sodium bicarbonate for industrial applications" loading="lazy" width="400" height="180">
+                    <div class="app-body">
+                        <h3>Industry</h3>
+                        <p>Versatile chemical processes and industrial applications.</p>
+                    </div>
+                </a>
+
+                <a href="#kontakt" class="app-card">
+                    <img class="app-img" src="/assets/img/Water%20Treatment.svg" alt="Sodium bicarbonate for water treatment" loading="lazy" width="400" height="180">
+                    <div class="app-body">
+                        <h3>Water Treatment</h3>
+                        <p>For precise pH regulation and stabilisation of water.</p>
+                    </div>
+                </a>
+
+                <a href="#kontakt" class="app-card">
+                    <img class="app-img" src="/assets/img/Animal%20Feed.svg" alt="Sodium bicarbonate for animal nutrition" loading="lazy" width="400" height="180">
+                    <div class="app-body">
+                        <h3>Animal Nutrition</h3>
+                        <p>Certified feed additive supporting animal metabolism.</p>
+                    </div>
+                </a>
+
+                <a href="#kontakt" class="app-card">
+                    <img class="app-img" src="/assets/img/Environmental%20Solutions.svg" alt="Sodium bicarbonate for environmental applications and flue-gas cleaning" loading="lazy" width="400" height="180">
+                    <div class="app-body">
+                        <h3>Environmental Applications</h3>
+                        <p>Efficient dry sorption for highly effective flue-gas cleaning.</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="team">
+        <div class="container">
+            <div class="text-center">
+                <h2>Our Team</h2>
+                <p>Central management in Germany, operational execution in Turkey.</p>
+            </div>
+
+            <div class="team-section">
+                <div class="team-grid-de">
+                    <div class="member-card">
+                        <img src="/assets/img/Team_Meeting.jpeg" alt="ALVEX Germany team in a meeting" class="member-img" loading="lazy" width="800" height="600">
+                    </div>
+                    <div class="member-card">
+                        <img src="/assets/img/Mehmet_in_Buero.jpeg" alt="Mehmet S. Cellikkiran – ALVEX management" class="member-img" loading="lazy" width="600" height="750">
+                    </div>
+                </div>
+                <div class="team-text-block">
+                    <h3>Germany Team</h3>
+                    <h4>Central management, project coordination &amp; logistics</h4>
+                    <p>Our Germany team is the central hub for organisation, planning and operational coordination.</p>
+                </div>
+            </div>
+
+            <div class="team-section" style="margin-top: 4rem;">
+                <div class="team-grid-tr">
+                    <div class="member-card">
+                        <div class="member-img-placeholder bg-cream">Portrait Cihad (photos coming soon)</div>
+                    </div>
+                    <div class="member-card">
+                        <div class="member-img-placeholder bg-cream">Portrait Tuĝrul (photos coming soon)</div>
+                    </div>
+                </div>
+                <div class="team-text-block">
+                    <h3>Türkiye Ekibi / Turkey Team</h3>
+                    <h4>Operational execution &amp; project handling</h4>
+                    <p>Our Turkey team is responsible for operational execution and reliably supports projects on site.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="kontakt">
+        <div class="container contact-grid">
+            <div class="contact-info">
+                <h2>Request a Quote</h2>
+                <p>Contact our sales department in Frankfurt am Main directly for a tailored, volume-tiered fixed-price offer including freight calculation.</p>
+
+                <div class="info-block">
+                    <span>Frankfurt Headquarters:</span>
+                    <p>ALVEX Handel GmbH</p>
+                    <p>Steinweg 3</p>
+                    <p>60313 Frankfurt am Main</p>
+                </div>
+                <div class="info-block">
+                    <span>Direct contact:</span>
+                    <p>Phone: +49 (0) 69 9505 7680</p>
+                    <p>E-mail: info@alvexhandel.com</p>
+                </div>
+            </div>
+
+            <div>
+                <form class="contact-form" action="#" method="POST" onsubmit="alert('This is a functional prototype. No data was transmitted.'); return false;">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="name">Contact Name *</label>
+                            <input type="text" id="name" required="" autocomplete="name">
+                        </div>
+                        <div class="form-group">
+                            <label for="firma">Company</label>
+                            <input type="text" id="firma" autocomplete="organization">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">E-mail Address *</label>
+                            <input type="email" id="email" required="" autocomplete="email">
+                        </div>
+                        <div class="form-group">
+                            <label for="telefon">Phone</label>
+                            <input type="tel" id="telefon" autocomplete="tel">
+                        </div>
+                        <div class="form-group form-group-full">
+                            <label for="nachricht">Specific requirements / Message</label>
+                            <textarea id="nachricht" rows="4" placeholder="Please specify the desired packaging (silo, big bags, sacks) and delivery periods..."></textarea>
+                        </div>
+                    </div>
+
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="datenschutz" required="">
+                        <label for="datenschutz">I have read the Privacy Policy and agree that my data may be processed for the purpose of contacting me. *</label>
+                    </div>
+
+                    <button type="submit" class="btn" style="width: 100%;">Send request</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <div class="trust-bar">
+        <div class="container trust-grid">
+            <div class="trust-item">Worldwide Supply</div>
+            <div class="trust-item">Industrial Expertise</div>
+            <div class="trust-item">Flexible Packaging</div>
+            <div class="trust-item">Reliable Partner</div>
+        </div>
+    </div>
+</Base>

@@ -1,26 +1,69 @@
 ---
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import { ui, type Lang } from '../i18n/ui';
+
+interface Alternate { lang: string; path: string }
 
 const {
-  title = 'ALVEX Handel GmbH | B2B Natriumhydrogencarbonat Distribution',
-  description = 'ALVEX Handel GmbH ist Ihr zuverlässiger B2B-Partner für Natriumhydrogencarbonat in Großmengen. Sichere Logistik, höchste Reinheit und zertifizierte Qualität für Industrie, Pharma, Lebensmittel und Futtermittel.',
+  lang = 'de' as Lang,
   navHero = false,
+  title,
+  description,
+  alternates = [] as Alternate[],
 } = Astro.props;
+
+const t = ui[lang as Lang];
+const pageTitle = title ?? t.meta.title;
+const pageDescription = description ?? t.meta.description;
+
+// Absolute URLs (Astro.site = https://stivenbaci.github.io)
+const canonical = new URL(Astro.url.pathname, Astro.site).href;
+const ogImage = new URL('/assets/img/og-image.jpg', Astro.site).href;
+const xDefault = new URL('/', Astro.site).href;
 ---
 <!DOCTYPE html>
-<html lang="de">
+<html lang={t.htmlLang}>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{title}</title>
-    <meta name="description" content={description}>
+    <title>{pageTitle}</title>
+    <meta name="description" content={pageDescription}>
+    <link rel="canonical" href={canonical}>
+
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+    {alternates.map((a: Alternate) => (
+        <link rel="alternate" hreflang={a.lang} href={new URL(a.path, Astro.site).href} />
+    ))}
+    {alternates.length > 0 && (
+        <link rel="alternate" hreflang="x-default" href={xDefault} />
+    )}
+
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="ALVEX Handel GmbH">
+    <meta property="og:title" content={pageTitle}>
+    <meta property="og:description" content={pageDescription}>
+    <meta property="og:url" content={canonical}>
+    <meta property="og:image" content={ogImage}>
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:locale" content={t.ogLocale}>
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content={pageTitle}>
+    <meta name="twitter:description" content={pageDescription}>
+    <meta name="twitter:image" content={ogImage}>
+
     <link rel="stylesheet" href="/assets/css/style.css">
 </head>
 <body>
-    <Header navHero={navHero} />
+    <Header navHero={navHero} lang={lang} />
     <slot />
-    <Footer />
+    <Footer lang={lang} />
     <div class="video-backdrop" id="videoBackdrop"></div>
     <script is:inline src="/assets/js/main.js"></script>
 </body>

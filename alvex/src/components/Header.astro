@@ -3,31 +3,35 @@
 // navHero=true (home page): the nav logo is hidden while the big hero logo is
 // in view and only reveals once the user scrolls down. On other pages the logo
 // is shown normally.
-const { navHero = false } = Astro.props;
+import { ui, company, type Lang } from '../i18n/ui';
+
+const { navHero = false, lang = 'de' as Lang } = Astro.props;
+const t = ui[lang as Lang];
+// Anchor base: German home is "/", English home is "/en/".
+const base = lang === 'en' ? '/en/' : '/';
 ---
 <header class:list={["site-header", { "nav-hero": navHero }]} id="siteHeader">
     <div class="container nav-container">
-        <a href="/" class="logo" id="navLogo">
+        <a href={base} class="logo" id="navLogo">
             <img src="/assets/img/ALVEX_Logo.png" alt="ALVEX">
         </a>
 
         <div class="nav-right-group">
-            <button class="lang-switcher" onclick="window.location.href='/en.html'">EN</button>
-            <button class="nav-toggle" id="navToggle" aria-label="Navigation öffnen">☰</button>
+            <button class="lang-switcher" onclick={`window.location.href='${t.switch.href}'`} aria-label={t.switch.aria}>{t.switch.label}</button>
+            <button class="nav-toggle" id="navToggle" aria-label={t.navToggleAria}>☰</button>
         </div>
 
         <ul class="nav-links" id="navLinks">
-            <li><a href="/#home">Home</a></li>
-            <li><a href="/#ueber-uns">Über uns</a></li>
-            <li><a href="/#branchen">Branchen</a></li>
-            <li><a href="/#team">Team</a></li>
-            <!-- <li><a href="/#aktuelles">Aktuelles</a></li> -->
-            <li><a href="/#kontakt">Kontakt</a></li>
+            <li><a href={`${base}#home`}>{t.nav.home}</a></li>
+            <li><a href={`${base}#ueber-uns`}>{t.nav.about}</a></li>
+            <li><a href={`${base}#branchen`}>{t.nav.industries}</a></li>
+            <li><a href={`${base}#team`}>{t.nav.team}</a></li>
+            <li><a href={`${base}#kontakt`}>{t.nav.contact}</a></li>
         </ul>
 
         <div class="nav-cta">
-            <span>Vertrieb:</span>
-            <a href="tel:+496912345678">+49 (0) 69 9505 7680</a>
+            <span>{t.salesLabel}</span>
+            <a href={company.phoneHref}>{company.phoneDisplay}</a>
         </div>
     </div>
 </header>
