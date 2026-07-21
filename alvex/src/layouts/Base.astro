@@ -11,6 +11,7 @@ const {
   title,
   description,
   alternates = [] as Alternate[],
+  switchHref,
 } = Astro.props;
 
 const t = ui[lang as Lang];
@@ -61,7 +62,7 @@ const xDefault = new URL('/', Astro.site).href;
     <link rel="stylesheet" href="/assets/css/style.css">
 </head>
 <body>
-    <Header navHero={navHero} lang={lang} />
+    <Header navHero={navHero} lang={lang} switchHref={switchHref} />
     <slot />
     <Footer lang={lang} />
     <div class="video-backdrop" id="videoBackdrop"></div>

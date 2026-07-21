@@ -5,6 +5,8 @@ import { ui, company, type Lang } from '../i18n/ui';
 const { lang = 'de' as Lang } = Astro.props;
 const t = ui[lang as Lang];
 const f = t.footer;
+// Legal pages live under /en/ for English, site root for German.
+const legalBase = lang === 'en' ? '/en' : '';
 ---
 <footer>
     <div class="container footer-grid">
@@ -14,8 +16,8 @@ const f = t.footer;
         </div>
         <div class="footer-legal-text">
             <div class="footer-links">
-                <a href="/impressum">{f.impressum}</a>
-                <a href="/datenschutz">{f.datenschutz}</a>
+                <a href={`${legalBase}/impressum`}>{f.impressum}</a>
+                <a href={`${legalBase}/datenschutz`}>{f.datenschutz}</a>
             </div>
             <p><strong>{f.managingDirectorLabel}</strong> {company.managingDirector}<br>
             <strong>{f.registerCourtLabel}</strong> {company.registerCourt}<br>

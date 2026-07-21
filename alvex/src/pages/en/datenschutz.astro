@@ -1,0 +1,117 @@
+---
+import Base from '../../layouts/Base.astro';
+import { company } from '../../i18n/ui';
+
+const alternates = [
+    { lang: 'de', path: '/datenschutz' },
+    { lang: 'en', path: '/en/datenschutz' },
+];
+---
+<Base
+    lang="en"
+    title="Privacy Policy | ALVEX Handel GmbH"
+    description="Privacy policy of ALVEX Handel GmbH – how we process personal data in accordance with the EU General Data Protection Regulation (GDPR)."
+    alternates={alternates}
+    switchHref="/datenschutz"
+>
+    <main class="section legal-page">
+        <div class="container">
+            <h1>Privacy Policy</h1>
+            <p class="legal-intro">
+                We take the protection of your personal data seriously. This policy explains what data we
+                process when you visit this website and contact us, and the rights you have under the EU
+                General Data Protection Regulation (GDPR).
+            </p>
+            <p class="legal-note">
+                This English text is a courtesy translation. The legally binding version of this privacy
+                policy is the <a href="/datenschutz">German version</a>.
+            </p>
+
+            <h2>1. Controller</h2>
+            <p>
+                The controller responsible for data processing on this website is:<br>
+                {company.name}<br>
+                Steinweg 3, 60313 Frankfurt am Main, Germany<br>
+                Managing Director: {company.managingDirector}<br>
+                Phone: {company.phoneDisplay}<br>
+                E-mail: <a href={`mailto:${company.email}`}>{company.email}</a>
+            </p>
+
+            <h2>2. Scope of data processing</h2>
+            <p>
+                This website is designed to be data-minimising. It uses no cookies, no tracking, no
+                analytics services and loads no content from external third-party servers or content delivery
+                networks (CDNs). No user profiles are created and no data is passed to third parties for
+                advertising purposes.
+            </p>
+
+            <h2>3. Server log files &amp; hosting</h2>
+            <p>
+                This website is hosted by IONOS SE, Elgendorfer Straße 57, 56410 Montabaur, Germany. When you
+                access the site, the hosting provider automatically collects and stores information in server
+                log files that your browser transmits. This may include the browser type and version, the
+                operating system used, the referrer URL, the host name of the accessing device, the time of
+                the server request and the IP address.
+            </p>
+            <p>
+                This data is not merged with other data sources. It is processed on the basis of Article 6 (1)
+                (f) GDPR; we have a legitimate interest in the technically error-free presentation and
+                security of our website. A data processing agreement pursuant to Article 28 GDPR has been
+                concluded with the hosting provider. Log data is stored only for as long as necessary for
+                these purposes.
+            </p>
+
+            <h2>4. Contact form and e-mail contact</h2>
+            <p>
+                If you send us an enquiry via the contact form or by e-mail, the details you provide
+                (in particular your name, company, e-mail address, phone number and message) will be stored by
+                us for the purpose of processing the enquiry and in case of follow-up questions.
+            </p>
+            <p>
+                The legal basis for processing this data is Article 6 (1) (b) GDPR where your request relates
+                to the performance of a contract or pre-contractual measures, and otherwise our legitimate
+                interest in answering your enquiry pursuant to Article 6 (1) (f) GDPR. We delete this data once
+                it is no longer required, unless statutory retention periods (e.g. under commercial or tax law)
+                apply.
+            </p>
+
+            <h2>5. Data recipients</h2>
+            <p>
+                Your personal data is only passed on to third parties where this is legally permitted or where
+                you have consented. Processors (such as our hosting provider) act only on our instructions and
+                are bound by contract in accordance with Article 28 GDPR.
+            </p>
+
+            <h2>6. Your rights</h2>
+            <p>
+                Under the GDPR you have the right to obtain information about your stored personal data (Art.
+                15), to have it corrected (Art. 16) or erased (Art. 17), to restrict its processing (Art. 18),
+                to data portability (Art. 20) and to object to processing (Art. 21). Where processing is based
+                on consent, you may withdraw that consent at any time with effect for the future. To exercise
+                your rights, please contact us using the details in section 1.
+            </p>
+
+            <h2>7. Right to lodge a complaint</h2>
+            <p>
+                You have the right to lodge a complaint with a supervisory authority. The authority
+                responsible for us is:<br>
+                Der Hessische Beauftragte für Datenschutz und Informationsfreiheit,
+                Postfach 3163, 65021 Wiesbaden, Germany.
+            </p>
+
+            <h2>8. Data security</h2>
+            <p>
+                This website uses TLS/SSL encryption for security reasons and to protect the transmission of
+                confidential content. You can recognise an encrypted connection by the "https://" prefix in
+                your browser's address bar.
+            </p>
+
+            <h2>9. Changes to this policy</h2>
+            <p>
+                We reserve the right to amend this privacy policy to ensure it always complies with current
+                legal requirements or to reflect changes to our services. The current version applies to your
+                next visit.
+            </p>
+        </div>
+    </main>
+</Base>

@@ -5,10 +5,12 @@
 // is shown normally.
 import { ui, company, type Lang } from '../i18n/ui';
 
-const { navHero = false, lang = 'de' as Lang } = Astro.props;
+const { navHero = false, lang = 'de' as Lang, switchHref } = Astro.props;
 const t = ui[lang as Lang];
 // Anchor base: German home is "/", English home is "/en/".
 const base = lang === 'en' ? '/en/' : '/';
+// Language switcher target: page-specific override, else the language home.
+const langSwitchHref = switchHref ?? t.switch.href;
 ---
 <header class:list={["site-header", { "nav-hero": navHero }]} id="siteHeader">
     <div class="container nav-container">
@@ -17,7 +19,7 @@ const base = lang === 'en' ? '/en/' : '/';
         </a>
 
         <div class="nav-right-group">
-            <button class="lang-switcher" onclick={`window.location.href='${t.switch.href}'`} aria-label={t.switch.aria}>{t.switch.label}</button>
+            <button class="lang-switcher" onclick={`window.location.href='${langSwitchHref}'`} aria-label={t.switch.aria}>{t.switch.label}</button>
             <button class="nav-toggle" id="navToggle" aria-label={t.navToggleAria}>☰</button>
         </div>
 
