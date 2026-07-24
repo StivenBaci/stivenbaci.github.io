@@ -18,7 +18,8 @@ export const ui: Record<Lang, {
   htmlLang: string;
   ogLocale: string;
   meta: { title: string; description: string };
-  nav: { home: string; about: string; industries: string; team: string; contact: string };
+  nav: { home: string; about: string; industries: string; specs: string; team: string; contact: string };
+  specsHref: string;
   salesLabel: string;
   navToggleAria: string;
   switch: { label: string; href: string; aria: string };
@@ -44,7 +45,8 @@ export const ui: Record<Lang, {
       description:
         'ALVEX Handel GmbH ist Ihr zuverlässiger B2B-Partner für Natriumhydrogencarbonat in Großmengen. Sichere Logistik, höchste Reinheit und zertifizierte Qualität für Industrie, Pharma, Lebensmittel und Futtermittel.',
     },
-    nav: { home: 'Home', about: 'Über uns', industries: 'Branchen', team: 'Team', contact: 'Kontakt' },
+    nav: { home: 'Home', about: 'Über uns', industries: 'Branchen', specs: 'Spezifikationen', team: 'Team', contact: 'Kontakt' },
+    specsHref: '/spezifikationen',
     salesLabel: 'Vertrieb:',
     navToggleAria: 'Navigation öffnen',
     switch: { label: 'EN', href: '/en/', aria: 'Switch to English' },
@@ -73,7 +75,8 @@ export const ui: Record<Lang, {
       description:
         'ALVEX Handel GmbH is your reliable B2B partner for bulk sodium bicarbonate. Secure logistics, highest purity and certified quality for industry, pharma, food and animal feed.',
     },
-    nav: { home: 'Home', about: 'About', industries: 'Industries', team: 'Team', contact: 'Contact' },
+    nav: { home: 'Home', about: 'About', industries: 'Industries', specs: 'Specifications', team: 'Team', contact: 'Contact' },
+    specsHref: '/en/specifications',
     salesLabel: 'Sales:',
     navToggleAria: 'Open navigation',
     switch: { label: 'DE', href: '/', aria: 'Auf Deutsch wechseln' },

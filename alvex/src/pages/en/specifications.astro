@@ -1,0 +1,266 @@
+---
+import Base from '../../layouts/Base.astro';
+
+const alternates = [
+    { lang: 'de', path: '/spezifikationen' },
+    { lang: 'en', path: '/en/specifications' },
+];
+
+const title = 'Product Specifications | ALVEX Handel GmbH';
+const description = 'Full technical specifications for sodium bicarbonate (NaHCO₃) in food, feed and technical grade – chemical and physical properties, packaging and storage.';
+
+// Shared product identity (identical across all grades)
+const identity = [
+    ['Chemical name', 'Sodium Bicarbonate'],
+    ['Formula', 'NaHCO₃'],
+    ['Molecular weight', '84.01 g/mol'],
+    ['CAS No.', '144-55-8'],
+    ['EINECS No.', '205-633-8'],
+    ['Origin', 'Natural Trona Ore'],
+    ['Synonyms', 'Sodium Hydrogen Carbonate; Sodium Acid Carbonate; Baking Soda; Bicarbonate of Soda'],
+];
+---
+<Base title={title} description={description} lang="en" alternates={alternates} switchHref="/spezifikationen">
+    <main class="section specs-page">
+        <div class="container">
+            <div class="specs-header">
+                <h1>Product Specifications</h1>
+                <p class="specs-intro">
+                    ALVEX supplies high-purity sodium bicarbonate (NaHCO₃) derived from natural trona ore
+                    in three grades: food, feed and technical. The full chemical and physical properties are
+                    listed below. All values are reference figures in accordance with the current product
+                    data sheets.
+                </p>
+            </div>
+
+            <div class="table-container specs-identity">
+                <div class="table-title">General Product Data</div>
+                <table>
+                    <tbody>
+                        {identity.map(([k, v]) => (
+                            <tr><th scope="row">{k}</th><td>{v}</td></tr>
+                        ))}
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- FOOD GRADE -->
+            <section class="spec-block" id="food-grade">
+                <h2>Food Grade</h2>
+                <p class="spec-note">As of: 12.02.2025</p>
+
+                <div class="table-container">
+                    <div class="table-title">Chemical Properties</div>
+                    <table>
+                        <thead>
+                            <tr><th>Parameter</th><th>Unit</th><th>Specification</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>NaHCO₃</td><td>%</td><td>99.3 min</td></tr>
+                            <tr><td>Na₂CO₃</td><td>%</td><td>0.5 max</td></tr>
+                            <tr><td>Cl⁻</td><td>mg/kg</td><td>250 max</td></tr>
+                            <tr><td>SO₄²⁻</td><td>mg/kg</td><td>300 max</td></tr>
+                            <tr><td>Water insoluble matter</td><td>mg/kg</td><td>500 max</td></tr>
+                            <tr><td>Pb (Lead)</td><td>ppm</td><td>0.1 max</td></tr>
+                            <tr><td>As (Arsenic)</td><td>ppm</td><td>0.1 max</td></tr>
+                            <tr><td>Hg (Mercury)</td><td>ppm</td><td>0.1 max</td></tr>
+                            <tr><td>Cd (Cadmium)</td><td>ppm</td><td>0.1 max</td></tr>
+                            <tr><td>Fe (Total)</td><td>ppm</td><td>10.0 max</td></tr>
+                            <tr><td>Solubility</td><td>g/100 ml water</td><td>15.60 (60 ℃) · 9.55 (20 ℃) · 5.55 (0 ℃)</td></tr>
+                            <tr><td>pH (1% solution, 25 ℃)</td><td>—</td><td>8.0 – 8.6</td></tr>
+                            <tr><td>Test for sodium</td><td>—</td><td>Passes test</td></tr>
+                            <tr><td>Test for carbonate</td><td>—</td><td>Passes test</td></tr>
+                            <tr><td>Loss on drying</td><td>%</td><td>Not more than 0.25% (over silica gel, 4 h)</td></tr>
+                            <tr><td>Ammonium salts</td><td>—</td><td>No odour of ammonia detectable after heating</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="table-container">
+                    <div class="table-title">Physical Properties</div>
+                    <table>
+                        <thead>
+                            <tr><th>Parameter</th><th>Unit</th><th>Specification</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Bulk density</td><td>g/cm³</td><td>0.95 – 1.25</td></tr>
+                            <tr><td>Whiteness</td><td>%</td><td>L* = 95 (CIE Lab) min</td></tr>
+                            <tr><td>Appearance</td><td>visual</td><td>Free-flowing white powder</td></tr>
+                            <tr><td>Solubility</td><td>—</td><td>Soluble in water, insoluble in ethanol</td></tr>
+                            <tr><td>Particle size +75 µm</td><td>%</td><td>20 – 90</td></tr>
+                            <tr><td>Particle size +45 µm</td><td>%</td><td>60 – 100</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="table-container">
+                    <div class="table-title">Microbiological Properties</div>
+                    <table>
+                        <thead>
+                            <tr><th>Parameter</th><th>Unit</th><th>Specification</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Salmonella</td><td>cfu/25 g</td><td>0</td></tr>
+                            <tr><td>Enterococcus</td><td>cfu/g</td><td>1×10² max</td></tr>
+                            <tr><td>Mould/yeast</td><td>cfu/g</td><td>1×10² max</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <p class="spec-uses">
+                    <strong>Typical applications:</strong> baking powder, additive for cakes, doughnuts,
+                    pancakes and cookies, beverages, dentifrice. GMO-free, no allergens, shelf life 2 years.
+                </p>
+            </section>
+
+            <!-- FEED GRADE -->
+            <section class="spec-block" id="feed-grade">
+                <h2>Feed Grade</h2>
+                <p class="spec-note">As of: 12.02.2025</p>
+
+                <div class="table-container">
+                    <div class="table-title">Chemical Properties</div>
+                    <table>
+                        <thead>
+                            <tr><th>Parameter</th><th>Unit</th><th>Specification</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>NaHCO₃</td><td>%</td><td>99.3 min</td></tr>
+                            <tr><td>Na₂CO₃</td><td>%</td><td>0.5 max</td></tr>
+                            <tr><td>Cl⁻</td><td>mg/kg</td><td>700 max</td></tr>
+                            <tr><td>SO₄²⁻</td><td>mg/kg</td><td>300 max</td></tr>
+                            <tr><td>Water insoluble matter</td><td>mg/kg</td><td>500 max</td></tr>
+                            <tr><td>Pb (Lead)</td><td>ppm</td><td>0.1 max</td></tr>
+                            <tr><td>As (Arsenic)</td><td>ppm</td><td>0.1 max</td></tr>
+                            <tr><td>Hg (Mercury)</td><td>ppm</td><td>0.1 max</td></tr>
+                            <tr><td>Cd (Cadmium)</td><td>ppm</td><td>0.1 max</td></tr>
+                            <tr><td>Fe (Total)</td><td>ppm</td><td>10.0 max</td></tr>
+                            <tr><td>F (Fluorine)</td><td>ppm</td><td>150 max</td></tr>
+                            <tr><td>Solubility</td><td>g/100 ml water</td><td>15.60 (60 ℃) · 9.55 (20 ℃) · 5.55 (0 ℃)</td></tr>
+                            <tr><td>pH (1% solution, 25 ℃)</td><td>—</td><td>8.0 – 8.6</td></tr>
+                            <tr><td>Loss on drying</td><td>%</td><td>Not more than 0.25% (over silica gel, 4 h)</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="table-container">
+                    <div class="table-title">Physical Properties</div>
+                    <table>
+                        <thead>
+                            <tr><th>Parameter</th><th>Unit</th><th>Specification</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Bulk density</td><td>g/cm³</td><td>0.95 – 1.25</td></tr>
+                            <tr><td>Whiteness</td><td>%</td><td>L* = 95 (CIE Lab) min</td></tr>
+                            <tr><td>Appearance</td><td>visual</td><td>Free-flowing white powder</td></tr>
+                            <tr><td>Particle size +75 µm</td><td>%</td><td>20 – 90</td></tr>
+                            <tr><td>Particle size +45 µm</td><td>%</td><td>60 – 100</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="table-container">
+                    <div class="table-title">Dioxins &amp; PCBs</div>
+                    <table>
+                        <thead>
+                            <tr><th>Parameter</th><th>Unit</th><th>Specification</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Dioxin</td><td>ng WHO-PCDD/F-TEQ/kg</td><td>0.5 max</td></tr>
+                            <tr><td>Sum of dioxins and dioxin-like PCBs</td><td>ng WHO-PCDD/F-PCB-TEQ/kg</td><td>1.0 max</td></tr>
+                            <tr><td>Dioxin-like PCBs</td><td>ng WHO-PCB-TEQ/kg</td><td>0.35 max</td></tr>
+                            <tr><td>Non-dioxin-like PCBs</td><td>µg/kg</td><td>10.0 max</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <p class="spec-uses">
+                    <strong>Typical applications:</strong> dairy cattle, poultry, swine.
+                    GMO-free, no allergens, shelf life 2 years.
+                </p>
+            </section>
+
+            <!-- TECHNICAL GRADE -->
+            <section class="spec-block" id="technical-grade">
+                <h2>Technical Grade</h2>
+                <p class="spec-note">As of: 20.10.2023</p>
+
+                <div class="table-container">
+                    <div class="table-title">Chemical Properties</div>
+                    <table>
+                        <thead>
+                            <tr><th>Parameter</th><th>Unit</th><th>Specification</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>NaHCO₃</td><td>%</td><td>99.1 min</td></tr>
+                            <tr><td>Na₂CO₃</td><td>%</td><td>0.7 max</td></tr>
+                            <tr><td>Cl⁻</td><td>mg/kg</td><td>700 max</td></tr>
+                            <tr><td>SO₄²⁻</td><td>mg/kg</td><td>300 max</td></tr>
+                            <tr><td>Water insoluble matter</td><td>mg/kg</td><td>500 max</td></tr>
+                            <tr><td>Pb (Lead)</td><td>ppm</td><td>0.1 max</td></tr>
+                            <tr><td>As (Arsenic)</td><td>ppm</td><td>0.1 max</td></tr>
+                            <tr><td>Hg (Mercury)</td><td>ppm</td><td>0.1 max</td></tr>
+                            <tr><td>Cd (Cadmium)</td><td>ppm</td><td>0.1 max</td></tr>
+                            <tr><td>Fe (Total)</td><td>ppm</td><td>10.0 max</td></tr>
+                            <tr><td>pH (1% solution, 25 ℃)</td><td>—</td><td>8.0 – 8.6</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="table-container">
+                    <div class="table-title">Physical Properties</div>
+                    <table>
+                        <thead>
+                            <tr><th>Parameter</th><th>Unit</th><th>Specification</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Bulk density</td><td>g/cm³</td><td>0.95 – 1.25</td></tr>
+                            <tr><td>Whiteness</td><td>%</td><td>L* = 95 (CIE Lab) min</td></tr>
+                            <tr><td>Appearance</td><td>visual</td><td>Free-flowing, white, crystalline powder</td></tr>
+                            <tr><td>Particle size +75 µm</td><td>%</td><td>20 – 90</td></tr>
+                            <tr><td>Particle size +45 µm</td><td>%</td><td>60 – 100</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- PACKAGING & STORAGE -->
+            <section class="spec-block" id="packaging-storage">
+                <h2>Packaging &amp; Storage</h2>
+                <div class="specs-two-col">
+                    <div class="table-container">
+                        <div class="table-title">Standard Packaging</div>
+                        <div class="spec-list">
+                            <ul>
+                                <li>25 kg polyethylene (PE) FFS bags</li>
+                                <li>Polypropylene (PP) big bag with inner lining, 1 t or 1.25 t</li>
+                                <li>1.25 t sling bag prepared from 25 kg PE bags</li>
+                                <li>Bulk (feed and technical grade)</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="table-container">
+                        <div class="table-title">Storage Conditions</div>
+                        <div class="spec-list">
+                            <ul>
+                                <li>Store in a covered, well-ventilated warehouse</li>
+                                <li>Preferably below 30 ℃ and 50% humidity</li>
+                                <li>Do not stack more than one pallet on top of another</li>
+                                <li>Shelf life: 2 years</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <div class="specs-contact-cta">
+                <h2>Request a Tailored Quote</h2>
+                <p>Need a data sheet for a specific application, a sample shipment or a volume-tiered fixed-price offer? Our sales team in Frankfurt will be glad to assist.</p>
+                <div class="specs-cta-actions">
+                    <a href="/en/#kontakt" class="btn">Request a quote</a>
+                    <a href="/en/#branchen" class="btn btn-dark">View industries</a>
+                </div>
+            </div>
+        </div>
+    </main>
+</Base>

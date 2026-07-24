@@ -995,6 +995,17 @@ footer {
     display: block;
 }
 
+/* Team Ausland uses portrait photos – give them a taller frame and keep the
+   face in view instead of cropping through it. */
+.team-grid-tr .member-img,
+.team-grid-tr .member-img-placeholder {
+    height: 420px;
+}
+
+.team-grid-tr .member-img {
+    object-position: center 20%;
+}
+
 .team-text-block {
     margin-top: 1rem;
 }
@@ -1086,4 +1097,169 @@ footer {
     padding: 0.85rem 1.1rem;
     font-size: 0.95rem;
     margin-bottom: 2.5rem;
+}
+
+/* --- SPECIFICATIONS CTA BANNER (home page) --- */
+.specs-banner {
+    background-color: var(--color-primary);
+    padding: 3rem 0;
+}
+
+.specs-banner-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+}
+
+.specs-banner-text h2 {
+    color: var(--color-text-light);
+    margin-bottom: 0.5rem;
+}
+
+.specs-banner-text h2::after {
+    display: none;
+}
+
+.specs-banner-text p {
+    color: #cbd5e1;
+    max-width: 640px;
+    margin: 0;
+}
+
+.specs-banner-btn {
+    flex-shrink: 0;
+    white-space: nowrap;
+}
+
+@media (min-width: 768px) {
+    .specs-banner-inner {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        gap: 2.5rem;
+    }
+}
+
+/* --- SPECIFICATIONS PAGE --- */
+.specs-page .container {
+    max-width: 960px;
+}
+
+.specs-header {
+    margin-bottom: 2.5rem;
+}
+
+.specs-header h1 {
+    margin-bottom: 1rem;
+}
+
+.specs-intro {
+    color: var(--color-text-dark);
+    font-size: 1.05rem;
+    line-height: 1.7;
+    max-width: 760px;
+}
+
+.specs-identity {
+    margin-bottom: 3rem;
+}
+
+.specs-identity th[scope="row"] {
+    width: 34%;
+    background-color: #f8fafc;
+}
+
+.spec-block {
+    margin-bottom: 3.5rem;
+}
+
+.spec-block > h2 {
+    margin-bottom: 0.25rem;
+}
+
+.spec-block .table-container {
+    margin-top: 1.5rem;
+}
+
+.spec-note {
+    color: #64748b;
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+.spec-uses {
+    margin-top: 1.5rem;
+    background-color: var(--color-bg-light);
+    border-left: 3px solid var(--color-accent);
+    padding: 1rem 1.25rem;
+    font-size: 0.98rem;
+    line-height: 1.6;
+}
+
+.specs-two-col {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+    .specs-two-col {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.spec-list {
+    padding: 1.25rem 1.5rem;
+}
+
+.spec-list ul {
+    margin: 0;
+    padding-left: 1.2rem;
+}
+
+.spec-list li {
+    margin-bottom: 0.6rem;
+    line-height: 1.55;
+}
+
+.spec-list li:last-child {
+    margin-bottom: 0;
+}
+
+.specs-contact-cta {
+    background-color: var(--color-bg-light);
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    padding: 2.5rem;
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.specs-contact-cta h2::after {
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.specs-contact-cta p {
+    max-width: 640px;
+    margin: 1.25rem auto 1.75rem;
+    line-height: 1.7;
+}
+
+.specs-cta-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.btn-dark {
+    background-color: var(--color-primary);
+    color: var(--color-text-light);
+}
+
+.btn-dark:hover {
+    background-color: var(--color-primary-light);
+    color: var(--color-text-light);
 }

@@ -1,0 +1,266 @@
+---
+import Base from '../layouts/Base.astro';
+
+const alternates = [
+    { lang: 'de', path: '/spezifikationen' },
+    { lang: 'en', path: '/en/specifications' },
+];
+
+const title = 'Produktspezifikationen | ALVEX Handel GmbH';
+const description = 'Vollständige technische Spezifikationen für Natriumbicarbonat (NaHCO₃) in Lebensmittel-, Futtermittel- und technischer Qualität – chemische und physikalische Kennwerte, Verpackung und Lagerung.';
+
+// Shared product identity (identical across all grades)
+const identity = [
+    ['Chemische Bezeichnung', 'Natriumbicarbonat (Sodium Bicarbonate)'],
+    ['Formel', 'NaHCO₃'],
+    ['Molekulargewicht', '84,01 g/mol'],
+    ['CAS-Nr.', '144-55-8'],
+    ['EINECS-Nr.', '205-633-8'],
+    ['Herkunft', 'Natürliches Trona-Erz'],
+    ['Synonyme', 'Natriumhydrogencarbonat; Sodium Acid Carbonate; Baking Soda; Bicarbonate of Soda'],
+];
+---
+<Base title={title} description={description} alternates={alternates} switchHref="/en/specifications">
+    <main class="section specs-page">
+        <div class="container">
+            <div class="specs-header">
+                <h1>Produktspezifikationen</h1>
+                <p class="specs-intro">
+                    ALVEX liefert hochreines Natriumbicarbonat (NaHCO₃) auf Basis von natürlichem Trona-Erz
+                    in drei Qualitäten: Lebensmittel-, Futtermittel- und technische Qualität. Nachfolgend
+                    finden Sie die vollständigen chemischen und physikalischen Kennwerte. Alle Angaben sind
+                    Richtwerte gemäß aktueller Produktdatenblätter.
+                </p>
+            </div>
+
+            <div class="table-container specs-identity">
+                <div class="table-title">Allgemeine Produktdaten</div>
+                <table>
+                    <tbody>
+                        {identity.map(([k, v]) => (
+                            <tr><th scope="row">{k}</th><td>{v}</td></tr>
+                        ))}
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- FOOD GRADE -->
+            <section class="spec-block" id="food-grade">
+                <h2>Lebensmittelqualität (Food Grade)</h2>
+                <p class="spec-note">Stand: 12.02.2025</p>
+
+                <div class="table-container">
+                    <div class="table-title">Chemische Eigenschaften</div>
+                    <table>
+                        <thead>
+                            <tr><th>Parameter</th><th>Einheit</th><th>Spezifikation</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>NaHCO₃</td><td>%</td><td>99,3 min</td></tr>
+                            <tr><td>Na₂CO₃</td><td>%</td><td>0,5 max</td></tr>
+                            <tr><td>Cl⁻</td><td>mg/kg</td><td>250 max</td></tr>
+                            <tr><td>SO₄²⁻</td><td>mg/kg</td><td>300 max</td></tr>
+                            <tr><td>Wasserunlösliche Bestandteile</td><td>mg/kg</td><td>500 max</td></tr>
+                            <tr><td>Pb (Blei)</td><td>ppm</td><td>0,1 max</td></tr>
+                            <tr><td>As (Arsen)</td><td>ppm</td><td>0,1 max</td></tr>
+                            <tr><td>Hg (Quecksilber)</td><td>ppm</td><td>0,1 max</td></tr>
+                            <tr><td>Cd (Cadmium)</td><td>ppm</td><td>0,1 max</td></tr>
+                            <tr><td>Fe (gesamt)</td><td>ppm</td><td>10,0 max</td></tr>
+                            <tr><td>Löslichkeit</td><td>g/100 ml Wasser</td><td>15,60 (60 ℃) · 9,55 (20 ℃) · 5,55 (0 ℃)</td></tr>
+                            <tr><td>pH-Wert (1 %-Lösung, 25 ℃)</td><td>—</td><td>8,0 – 8,6</td></tr>
+                            <tr><td>Natrium-Test</td><td>—</td><td>Besteht den Test</td></tr>
+                            <tr><td>Carbonat-Test</td><td>—</td><td>Besteht den Test</td></tr>
+                            <tr><td>Trocknungsverlust</td><td>%</td><td>höchstens 0,25 % (über Silicagel, 4 h)</td></tr>
+                            <tr><td>Ammoniumsalze</td><td>—</td><td>kein Ammoniakgeruch nach Erhitzen</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="table-container">
+                    <div class="table-title">Physikalische Eigenschaften</div>
+                    <table>
+                        <thead>
+                            <tr><th>Parameter</th><th>Einheit</th><th>Spezifikation</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Schüttdichte</td><td>g/cm³</td><td>0,95 – 1,25</td></tr>
+                            <tr><td>Weißgrad</td><td>%</td><td>L* = 95 (CIE Lab) min</td></tr>
+                            <tr><td>Aussehen</td><td>visuell</td><td>Frei fließendes, weißes Pulver</td></tr>
+                            <tr><td>Löslichkeit</td><td>—</td><td>löslich in Wasser, unlöslich in Ethanol</td></tr>
+                            <tr><td>Korngröße +75 µm</td><td>%</td><td>20 – 90</td></tr>
+                            <tr><td>Korngröße +45 µm</td><td>%</td><td>60 – 100</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="table-container">
+                    <div class="table-title">Mikrobiologische Eigenschaften</div>
+                    <table>
+                        <thead>
+                            <tr><th>Parameter</th><th>Einheit</th><th>Spezifikation</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Salmonellen</td><td>KbE/25 g</td><td>0</td></tr>
+                            <tr><td>Enterokokken</td><td>KbE/g</td><td>1×10² max</td></tr>
+                            <tr><td>Schimmel/Hefe</td><td>KbE/g</td><td>1×10² max</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <p class="spec-uses">
+                    <strong>Typische Einsatzgebiete:</strong> Backtriebmittel, Zusatzstoff für Kuchen, Donuts,
+                    Pancakes und Gebäck, Getränke, Zahnpflege. GVO-frei, keine Allergene, Haltbarkeit 2 Jahre.
+                </p>
+            </section>
+
+            <!-- FEED GRADE -->
+            <section class="spec-block" id="feed-grade">
+                <h2>Futtermittelqualität (Feed Grade)</h2>
+                <p class="spec-note">Stand: 12.02.2025</p>
+
+                <div class="table-container">
+                    <div class="table-title">Chemische Eigenschaften</div>
+                    <table>
+                        <thead>
+                            <tr><th>Parameter</th><th>Einheit</th><th>Spezifikation</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>NaHCO₃</td><td>%</td><td>99,3 min</td></tr>
+                            <tr><td>Na₂CO₃</td><td>%</td><td>0,5 max</td></tr>
+                            <tr><td>Cl⁻</td><td>mg/kg</td><td>700 max</td></tr>
+                            <tr><td>SO₄²⁻</td><td>mg/kg</td><td>300 max</td></tr>
+                            <tr><td>Wasserunlösliche Bestandteile</td><td>mg/kg</td><td>500 max</td></tr>
+                            <tr><td>Pb (Blei)</td><td>ppm</td><td>0,1 max</td></tr>
+                            <tr><td>As (Arsen)</td><td>ppm</td><td>0,1 max</td></tr>
+                            <tr><td>Hg (Quecksilber)</td><td>ppm</td><td>0,1 max</td></tr>
+                            <tr><td>Cd (Cadmium)</td><td>ppm</td><td>0,1 max</td></tr>
+                            <tr><td>Fe (gesamt)</td><td>ppm</td><td>10,0 max</td></tr>
+                            <tr><td>F (Fluor)</td><td>ppm</td><td>150 max</td></tr>
+                            <tr><td>Löslichkeit</td><td>g/100 ml Wasser</td><td>15,60 (60 ℃) · 9,55 (20 ℃) · 5,55 (0 ℃)</td></tr>
+                            <tr><td>pH-Wert (1 %-Lösung, 25 ℃)</td><td>—</td><td>8,0 – 8,6</td></tr>
+                            <tr><td>Trocknungsverlust</td><td>%</td><td>höchstens 0,25 % (über Silicagel, 4 h)</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="table-container">
+                    <div class="table-title">Physikalische Eigenschaften</div>
+                    <table>
+                        <thead>
+                            <tr><th>Parameter</th><th>Einheit</th><th>Spezifikation</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Schüttdichte</td><td>g/cm³</td><td>0,95 – 1,25</td></tr>
+                            <tr><td>Weißgrad</td><td>%</td><td>L* = 95 (CIE Lab) min</td></tr>
+                            <tr><td>Aussehen</td><td>visuell</td><td>Frei fließendes, weißes Pulver</td></tr>
+                            <tr><td>Korngröße +75 µm</td><td>%</td><td>20 – 90</td></tr>
+                            <tr><td>Korngröße +45 µm</td><td>%</td><td>60 – 100</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="table-container">
+                    <div class="table-title">Dioxine &amp; PCB</div>
+                    <table>
+                        <thead>
+                            <tr><th>Parameter</th><th>Einheit</th><th>Spezifikation</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Dioxin</td><td>ng WHO-PCDD/F-TEQ/kg</td><td>0,5 max</td></tr>
+                            <tr><td>Summe Dioxine und dioxinähnliche PCB</td><td>ng WHO-PCDD/F-PCB-TEQ/kg</td><td>1,0 max</td></tr>
+                            <tr><td>Dioxinähnliche PCB</td><td>ng WHO-PCB-TEQ/kg</td><td>0,35 max</td></tr>
+                            <tr><td>Nicht dioxinähnliche PCB</td><td>µg/kg</td><td>10,0 max</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <p class="spec-uses">
+                    <strong>Typische Einsatzgebiete:</strong> Milchvieh, Geflügel, Schweinehaltung.
+                    GVO-frei, keine Allergene, Haltbarkeit 2 Jahre.
+                </p>
+            </section>
+
+            <!-- TECHNICAL GRADE -->
+            <section class="spec-block" id="technical-grade">
+                <h2>Technische Qualität (Technical Grade)</h2>
+                <p class="spec-note">Stand: 20.10.2023</p>
+
+                <div class="table-container">
+                    <div class="table-title">Chemische Eigenschaften</div>
+                    <table>
+                        <thead>
+                            <tr><th>Parameter</th><th>Einheit</th><th>Spezifikation</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>NaHCO₃</td><td>%</td><td>99,1 min</td></tr>
+                            <tr><td>Na₂CO₃</td><td>%</td><td>0,7 max</td></tr>
+                            <tr><td>Cl⁻</td><td>mg/kg</td><td>700 max</td></tr>
+                            <tr><td>SO₄²⁻</td><td>mg/kg</td><td>300 max</td></tr>
+                            <tr><td>Wasserunlösliche Bestandteile</td><td>mg/kg</td><td>500 max</td></tr>
+                            <tr><td>Pb (Blei)</td><td>ppm</td><td>0,1 max</td></tr>
+                            <tr><td>As (Arsen)</td><td>ppm</td><td>0,1 max</td></tr>
+                            <tr><td>Hg (Quecksilber)</td><td>ppm</td><td>0,1 max</td></tr>
+                            <tr><td>Cd (Cadmium)</td><td>ppm</td><td>0,1 max</td></tr>
+                            <tr><td>Fe (gesamt)</td><td>ppm</td><td>10,0 max</td></tr>
+                            <tr><td>pH-Wert (1 %-Lösung, 25 ℃)</td><td>—</td><td>8,0 – 8,6</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="table-container">
+                    <div class="table-title">Physikalische Eigenschaften</div>
+                    <table>
+                        <thead>
+                            <tr><th>Parameter</th><th>Einheit</th><th>Spezifikation</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Schüttdichte</td><td>g/cm³</td><td>0,95 – 1,25</td></tr>
+                            <tr><td>Weißgrad</td><td>%</td><td>L* = 95 (CIE Lab) min</td></tr>
+                            <tr><td>Aussehen</td><td>visuell</td><td>Frei fließendes, weißes, kristallines Pulver</td></tr>
+                            <tr><td>Korngröße +75 µm</td><td>%</td><td>20 – 90</td></tr>
+                            <tr><td>Korngröße +45 µm</td><td>%</td><td>60 – 100</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- PACKAGING & STORAGE -->
+            <section class="spec-block" id="verpackung-lagerung">
+                <h2>Verpackung &amp; Lagerung</h2>
+                <div class="specs-two-col">
+                    <div class="table-container">
+                        <div class="table-title">Standardverpackungen</div>
+                        <div class="spec-list">
+                            <ul>
+                                <li>25-kg-Säcke aus Polyethylen (PE), FFS</li>
+                                <li>Big Bag aus Polypropylen (PP) mit Innenauskleidung, 1 t oder 1,25 t</li>
+                                <li>Sling Bag 1,25 t, konfektioniert aus 25-kg-PE-Säcken</li>
+                                <li>Lose Ware / Bulk (Futtermittel- und technische Qualität)</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="table-container">
+                        <div class="table-title">Lagerbedingungen</div>
+                        <div class="spec-list">
+                            <ul>
+                                <li>In geschlossenen, gut belüfteten Lagern aufbewahren</li>
+                                <li>Vorzugsweise unter 30 ℃ und 50 % Luftfeuchtigkeit</li>
+                                <li>Nicht mehr als eine Palette übereinander stapeln</li>
+                                <li>Haltbarkeit: 2 Jahre</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <div class="specs-contact-cta">
+                <h2>Individuelles Angebot anfragen</h2>
+                <p>Benötigen Sie ein Datenblatt für einen bestimmten Anwendungsfall, eine Musterlieferung oder ein volumengestaffeltes Festpreisangebot? Unser Vertrieb in Frankfurt berät Sie gerne.</p>
+                <div class="specs-cta-actions">
+                    <a href="/#kontakt" class="btn">Angebotsanfrage stellen</a>
+                    <a href="/#branchen" class="btn btn-dark">Zu den Branchen</a>
+                </div>
+            </div>
+        </div>
+    </main>
+</Base>
