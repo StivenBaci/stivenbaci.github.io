@@ -3,8 +3,8 @@ import Base from '../../layouts/Base.astro';
 import { company } from '../../i18n/ui';
 
 const alternates = [
-    { lang: 'de', path: '/impressum' },
-    { lang: 'en', path: '/en/impressum' },
+    { lang: 'de', path: '/impressum/' },
+    { lang: 'en', path: '/en/impressum/' },
 ];
 ---
 <Base
@@ -12,7 +12,7 @@ const alternates = [
     title="Legal Notice | ALVEX Handel GmbH"
     description="Legal notice (Impressum) of ALVEX Handel GmbH, Frankfurt am Main – company details in accordance with Section 5 of the German Digital Services Act (DDG)."
     alternates={alternates}
-    switchHref="/impressum"
+    switchHref="/impressum/"
 >
     <main class="section legal-page">
         <div class="container">
@@ -20,7 +20,7 @@ const alternates = [
             <p class="legal-intro">Information pursuant to Section 5 of the German Digital Services Act (DDG).</p>
             <p class="legal-note">
                 This English text is a courtesy translation. The legally binding version of this legal notice
-                is the <a href="/impressum">German version</a>.
+                is the <a href="/impressum/">German version</a>.
             </p>
 
             <h2>Company</h2>

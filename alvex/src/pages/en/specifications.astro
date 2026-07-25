@@ -2,12 +2,28 @@
 import Base from '../../layouts/Base.astro';
 
 const alternates = [
-    { lang: 'de', path: '/spezifikationen' },
-    { lang: 'en', path: '/en/specifications' },
+    { lang: 'de', path: '/spezifikationen/' },
+    { lang: 'en', path: '/en/specifications/' },
 ];
 
-const title = 'Product Specifications | ALVEX Handel GmbH';
+const title = 'Sodium Bicarbonate Specifications | ALVEX Handel GmbH';
 const description = 'Full technical specifications for sodium bicarbonate (NaHCO₃) in food, feed and technical grade – chemical and physical properties, packaging and storage.';
+
+const productSchema = {
+    '@type': 'Product',
+    name: 'Sodium Bicarbonate (NaHCO₃)',
+    description:
+        'High-purity sodium bicarbonate derived from natural trona ore in food, feed and technical grade. Available in bags, big bags, sling bags and bulk.',
+    category: 'Sodium bicarbonate',
+    brand: { '@type': 'Brand', name: 'ALVEX Handel GmbH' },
+    additionalProperty: [
+        { '@type': 'PropertyValue', name: 'CAS No.', value: '144-55-8' },
+        { '@type': 'PropertyValue', name: 'EINECS No.', value: '205-633-8' },
+        { '@type': 'PropertyValue', name: 'Formula', value: 'NaHCO3' },
+        { '@type': 'PropertyValue', name: 'Molecular weight', value: '84.01 g/mol' },
+        { '@type': 'PropertyValue', name: 'Purity (food grade)', value: 'NaHCO3 99.3% min' },
+    ],
+};
 
 // Shared product identity (identical across all grades)
 const identity = [
@@ -20,7 +36,7 @@ const identity = [
     ['Synonyms', 'Sodium Hydrogen Carbonate; Sodium Acid Carbonate; Baking Soda; Bicarbonate of Soda'],
 ];
 ---
-<Base title={title} description={description} lang="en" alternates={alternates} switchHref="/spezifikationen">
+<Base title={title} description={description} lang="en" alternates={alternates} switchHref="/spezifikationen/" schema={[productSchema]}>
     <main class="section specs-page">
         <div class="container">
             <div class="specs-header">

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <!-- Home -->
+  <url>
+    <loc>https://alvexhandel.com/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://alvexhandel.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://alvexhandel.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://alvexhandel.com/"/>
+    <lastmod>2026-07-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://alvexhandel.com/en/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://alvexhandel.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://alvexhandel.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://alvexhandel.com/"/>
+    <lastmod>2026-07-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Product specifications -->
+  <url>
+    <loc>https://alvexhandel.com/spezifikationen/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://alvexhandel.com/spezifikationen/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://alvexhandel.com/en/specifications/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://alvexhandel.com/spezifikationen/"/>
+    <lastmod>2026-07-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://alvexhandel.com/en/specifications/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://alvexhandel.com/spezifikationen/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://alvexhandel.com/en/specifications/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://alvexhandel.com/spezifikationen/"/>
+    <lastmod>2026-07-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Legal Notice / Impressum -->
+  <url>
+    <loc>https://alvexhandel.com/impressum/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://alvexhandel.com/impressum/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://alvexhandel.com/en/impressum/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://alvexhandel.com/impressum/"/>
+    <lastmod>2026-07-24</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://alvexhandel.com/en/impressum/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://alvexhandel.com/impressum/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://alvexhandel.com/en/impressum/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://alvexhandel.com/impressum/"/>
+    <lastmod>2026-07-24</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+  <!-- Privacy Policy / Datenschutz -->
+  <url>
+    <loc>https://alvexhandel.com/datenschutz/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://alvexhandel.com/datenschutz/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://alvexhandel.com/en/datenschutz/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://alvexhandel.com/datenschutz/"/>
+    <lastmod>2026-07-24</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://alvexhandel.com/en/datenschutz/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://alvexhandel.com/datenschutz/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://alvexhandel.com/en/datenschutz/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://alvexhandel.com/datenschutz/"/>
+    <lastmod>2026-07-24</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+</urlset>

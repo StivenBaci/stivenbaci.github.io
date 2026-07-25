@@ -3,11 +3,11 @@ import Base from '../layouts/Base.astro';
 import { company } from '../i18n/ui';
 
 const alternates = [
-    { lang: 'de', path: '/impressum' },
-    { lang: 'en', path: '/en/impressum' },
+    { lang: 'de', path: '/impressum/' },
+    { lang: 'en', path: '/en/impressum/' },
 ];
 ---
-<Base title="Impressum | ALVEX Handel GmbH" description="Impressum der ALVEX Handel GmbH, Frankfurt am Main – Angaben gemäß § 5 Digitale-Dienste-Gesetz (DDG)." alternates={alternates} switchHref="/en/impressum">
+<Base title="Impressum | ALVEX Handel GmbH" description="Impressum der ALVEX Handel GmbH, Frankfurt am Main – Angaben gemäß § 5 Digitale-Dienste-Gesetz (DDG)." alternates={alternates} switchHref="/en/impressum/">
     <main class="section legal-page">
         <div class="container">
             <h1>Impressum</h1>

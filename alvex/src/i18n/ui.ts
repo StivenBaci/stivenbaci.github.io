@@ -41,12 +41,12 @@ export const ui: Record<Lang, {
     htmlLang: 'de',
     ogLocale: 'de_DE',
     meta: {
-      title: 'ALVEX Handel GmbH | B2B Natriumhydrogencarbonat Distribution',
+      title: 'Natriumbicarbonat kaufen | ALVEX Handel GmbH – B2B-Lieferant',
       description:
-        'ALVEX Handel GmbH ist Ihr zuverlässiger B2B-Partner für Natriumhydrogencarbonat in Großmengen. Sichere Logistik, höchste Reinheit und zertifizierte Qualität für Industrie, Pharma, Lebensmittel und Futtermittel.',
+        'ALVEX Handel GmbH: Ihr zuverlässiger B2B-Lieferant und Großhändler für Natriumbicarbonat (Natron, Natriumhydrogencarbonat) in Lebensmittel-, Pharma-, Futtermittel- und technischer Qualität. Großmengen, höchste Reinheit, sichere Logistik – Lieferung aus Frankfurt am Main, weltweit.',
     },
     nav: { home: 'Home', about: 'Über uns', industries: 'Branchen', specs: 'Spezifikationen', team: 'Team', contact: 'Kontakt' },
-    specsHref: '/spezifikationen',
+    specsHref: '/spezifikationen/',
     salesLabel: 'Vertrieb:',
     navToggleAria: 'Navigation öffnen',
     switch: { label: 'EN', href: '/en/', aria: 'Switch to English' },
@@ -71,12 +71,12 @@ export const ui: Record<Lang, {
     htmlLang: 'en',
     ogLocale: 'en_US',
     meta: {
-      title: 'ALVEX Handel GmbH | B2B Sodium Bicarbonate Distribution',
+      title: 'Sodium Bicarbonate Supplier | ALVEX Handel GmbH – B2B Bulk',
       description:
-        'ALVEX Handel GmbH is your reliable B2B partner for bulk sodium bicarbonate. Secure logistics, highest purity and certified quality for industry, pharma, food and animal feed.',
+        'ALVEX Handel GmbH: your reliable B2B supplier and wholesaler of sodium bicarbonate (baking soda, sodium hydrogen carbonate) in food, pharma, feed and technical grade. Bulk volumes, highest purity, secure logistics – shipping from Frankfurt am Main, worldwide.',
     },
     nav: { home: 'Home', about: 'About', industries: 'Industries', specs: 'Specifications', team: 'Team', contact: 'Contact' },
-    specsHref: '/en/specifications',
+    specsHref: '/en/specifications/',
     salesLabel: 'Sales:',
     navToggleAria: 'Open navigation',
     switch: { label: 'DE', href: '/', aria: 'Auf Deutsch wechseln' },

@@ -3,8 +3,8 @@ import Base from '../../layouts/Base.astro';
 import { company } from '../../i18n/ui';
 
 const alternates = [
-    { lang: 'de', path: '/datenschutz' },
-    { lang: 'en', path: '/en/datenschutz' },
+    { lang: 'de', path: '/datenschutz/' },
+    { lang: 'en', path: '/en/datenschutz/' },
 ];
 ---
 <Base
@@ -12,7 +12,7 @@ const alternates = [
     title="Privacy Policy | ALVEX Handel GmbH"
     description="Privacy policy of ALVEX Handel GmbH – how we process personal data in accordance with the EU General Data Protection Regulation (GDPR)."
     alternates={alternates}
-    switchHref="/datenschutz"
+    switchHref="/datenschutz/"
 >
     <main class="section legal-page">
         <div class="container">
@@ -24,7 +24,7 @@ const alternates = [
             </p>
             <p class="legal-note">
                 This English text is a courtesy translation. The legally binding version of this privacy
-                policy is the <a href="/datenschutz">German version</a>.
+                policy is the <a href="/datenschutz/">German version</a>.
             </p>
 
             <h2>1. Controller</h2>

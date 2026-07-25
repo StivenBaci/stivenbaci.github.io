@@ -1,0 +1,8 @@
+# robots.txt – ALVEX Handel GmbH
+# https://alvexhandel.com
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://alvexhandel.com/sitemap.xml

@@ -3,11 +3,11 @@ import Base from '../layouts/Base.astro';
 import { company } from '../i18n/ui';
 
 const alternates = [
-    { lang: 'de', path: '/datenschutz' },
-    { lang: 'en', path: '/en/datenschutz' },
+    { lang: 'de', path: '/datenschutz/' },
+    { lang: 'en', path: '/en/datenschutz/' },
 ];
 ---
-<Base title="Datenschutzerklärung | ALVEX Handel GmbH" description="Datenschutzerklärung der ALVEX Handel GmbH – Verarbeitung personenbezogener Daten gemäß der EU-Datenschutz-Grundverordnung (DSGVO)." alternates={alternates} switchHref="/en/datenschutz">
+<Base title="Datenschutzerklärung | ALVEX Handel GmbH" description="Datenschutzerklärung der ALVEX Handel GmbH – Verarbeitung personenbezogener Daten gemäß der EU-Datenschutz-Grundverordnung (DSGVO)." alternates={alternates} switchHref="/en/datenschutz/">
     <main class="section legal-page">
         <div class="container">
             <h1>Datenschutzerklärung</h1>

@@ -960,9 +960,18 @@ footer {
 
 .team-grid-tr {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr;
     gap: 1.5rem;
     margin-bottom: 1.5rem;
+    max-width: 320px;
+}
+
+@media (min-width: 768px) {
+    /* Two portraits side by side once a second photo is added */
+    .team-grid-tr:has(> .member-card + .member-card) {
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 640px;
+    }
 }
 
 .member-card {
@@ -1023,7 +1032,7 @@ footer {
 }
 
 @media (min-width: 768px) {
-    .team-grid-de { grid-template-columns: 2fr 1fr; }
+    .team-grid-de { grid-template-columns: 1fr 2fr; }
 }
 
 /* --- TRUST BAR --- */
@@ -1262,4 +1271,13 @@ footer {
 .btn-dark:hover {
     background-color: var(--color-primary-light);
     color: var(--color-text-light);
+}
+
+/* Honeypot spam trap – hidden from users, visible to bots. */
+.hp-field {
+    position: absolute;
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
 }

@@ -28,7 +28,7 @@ const alternates = [
 
             <div class="hero-actions">
                 <a href="/#kontakt" class="btn">Angebotsanfrage stellen</a>
-                <a href="/spezifikationen" class="btn btn-outline">Spezifikationen einsehen</a>
+                <a href="/spezifikationen/" class="btn btn-outline">Spezifikationen einsehen</a>
             </div>
         </div>
     </section>
@@ -129,7 +129,7 @@ const alternates = [
                 <h2>Vollständige Produktspezifikationen</h2>
                 <p>Chemische und physikalische Kennwerte für Lebensmittel-, Futtermittel- und technische Qualität – auf einen Blick.</p>
             </div>
-            <a href="/spezifikationen" class="btn specs-banner-btn">Spezifikationen ansehen</a>
+            <a href="/spezifikationen/" class="btn specs-banner-btn">Spezifikationen ansehen</a>
         </div>
     </section>
 
@@ -158,9 +158,7 @@ const alternates = [
 
             <div class="team-section" style="margin-top: 4rem;">
                 <div class="team-grid-tr">
-                    <div class="member-card">
-                        <div class="member-img-placeholder bg-cream">Portrait Cihad (Fotos kommen noch)</div>
-                    </div>
+                    {/* Portrait Cihad – Karte einfügen, sobald das Foto vorliegt */}
                     <div class="member-card">
                         <img src="/assets/img/Portrait_Tugrul.jpeg" alt="Tuğrul – ALVEX Team Ausland" class="member-img" loading="lazy" width="1024" height="1536">
                     </div>
@@ -232,33 +230,38 @@ const alternates = [
             </div>
 
             <div>
-                <form class="contact-form" action="#" method="POST" onsubmit="alert('Dies ist ein Funktionsprototyp. Es wurden keine Daten übertragen.'); return false;">
+                <form class="contact-form" action="/contact.php" method="POST">
+                    <input type="hidden" name="lang" value="de">
+                    <div class="hp-field" aria-hidden="true">
+                        <label for="website">Bitte dieses Feld leer lassen</label>
+                        <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+                    </div>
                     <div class="form-grid">
                         <div class="form-group">
                             <label for="name">Ansprechpartner Name *</label>
-                            <input type="text" id="name" required="" autocomplete="name">
+                            <input type="text" id="name" name="name" required="" autocomplete="name">
                         </div>
                         <div class="form-group">
                             <label for="firma">Firmenname</label>
-                            <input type="text" id="firma" autocomplete="organization">
+                            <input type="text" id="firma" name="firma" autocomplete="organization">
                         </div>
                         <div class="form-group">
                             <label for="email">E-Mail-Adresse *</label>
-                            <input type="email" id="email" required="" autocomplete="email">
+                            <input type="email" id="email" name="email" required="" autocomplete="email">
                         </div>
                         <div class="form-group">
                             <label for="telefon">Telefonnummer</label>
-                            <input type="tel" id="telefon" autocomplete="tel">
+                            <input type="tel" id="telefon" name="telefon" autocomplete="tel">
                         </div>
                         <div class="form-group form-group-full">
                             <label for="nachricht">Spezifische Anforderungen / Nachricht</label>
-                            <textarea id="nachricht" rows="4" placeholder="Spezifizieren Sie hier gewünschte Verpackungsart (Silo, Big Bags, Sackware) sowie Lieferzeiträume..."></textarea>
+                            <textarea id="nachricht" name="nachricht" rows="4" placeholder="Spezifizieren Sie hier gewünschte Verpackungsart (Silo, Big Bags, Sackware) sowie Lieferzeiträume..."></textarea>
                         </div>
                     </div>
 
                     <div class="checkbox-group">
-                        <input type="checkbox" id="datenschutz" required="">
-                        <label for="datenschutz">Ich habe die Datenschutzerklärung zur Kenntnis genommen und stimme zu, dass meine Angaben zur Kontaktaufnahme verarbeitet werden. *</label>
+                        <input type="checkbox" id="datenschutz" name="datenschutz" required="">
+                        <label for="datenschutz">Ich habe die <a href="/datenschutz/">Datenschutzerklärung</a> zur Kenntnis genommen und stimme zu, dass meine Angaben zur Kontaktaufnahme verarbeitet werden. *</label>
                     </div>
 
                     <button type="submit" class="btn" style="width: 100%;">Anfrage senden</button>
