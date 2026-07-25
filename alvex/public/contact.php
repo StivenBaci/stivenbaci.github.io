@@ -14,7 +14,8 @@
  */
 
 // --- Configuration ---------------------------------------------------------
-$recipient = 'info@alvexhandel.com';        // where enquiries are delivered
+// TODO: switch $recipient back to 'info@alvexhandel.com' before go-live.
+$recipient = 'stivenbaci@gmail.com';        // TEST recipient
 $from      = 'info@alvexhandel.com';        // sender – an address on the domain
 
 // --- Language-aware redirect targets ---------------------------------------
