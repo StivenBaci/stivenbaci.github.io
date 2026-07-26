@@ -15,8 +15,9 @@
 
 // --- Configuration ---------------------------------------------------------
 // TODO: switch $recipient back to 'info@alvexhandel.com' before go-live.
-$recipient = 'stivenbaci@gmail.com';        // TEST recipient
-$from      = 'info@alvexhandel.com';        // sender – an address on the domain
+$recipient = 'stivenbaci@gmail.com';                 // TEST recipient
+$from      = 'kontaktformular@alvexhandel.com';      // sender – MUST exist on the
+                                                     // domain (mailbox or alias)
 
 // --- Language-aware redirect targets ---------------------------------------
 $lang       = (isset($_POST['lang']) && $_POST['lang'] === 'en') ? 'en' : 'de';
@@ -72,7 +73,9 @@ $headers .= "MIME-Version: 1.0\r\n";
 
 $encodedSubject = '=?UTF-8?B?' . base64_encode($subject) . '?=';
 
-$sent = @mail($recipient, $encodedSubject, $body, $headers);
+// 5th param sets the envelope sender (Return-Path) so mail no longer goes out
+// as the IONOS default sh-xxxx@eu.hosting-webspace.io address.
+$sent = @mail($recipient, $encodedSubject, $body, $headers, '-f ' . $from);
 
 // --- Redirect --------------------------------------------------------------
 header('Location: ' . ($sent ? $successUrl : $errorUrl));
