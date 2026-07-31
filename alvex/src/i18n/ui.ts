@@ -9,9 +9,9 @@ export const company = {
   phoneDisplay: '+49 (0) 69 9505 7680',
   phoneHref: 'tel:+496995057680',
   email: 'info@alvexhandel.com',
-  managingDirector: 'Mehmet S. Cellikkiran',
+  managingDirector: 'Mehmet Selik Celikkiran',
   registerCourt: 'Amtsgericht Frankfurt am Main, HRB 142640',
-  vatId: '[Platzhalter USt-IdNr.]',
+  vatId: 'DE463817322',
 };
 
 export const ui: Record<Lang, {
@@ -58,11 +58,10 @@ export const ui: Record<Lang, {
       managingDirectorLabel: 'Geschäftsführer:',
       registerCourtLabel: 'Registergericht:',
       vatLabel: 'Umsatzsteuer-Identifikationsnummer:',
-      authorityLabel: 'Aufsichtsbehörde & Gewerbe:',
+      authorityLabel: 'Berufsbezeichnung:',
       authorityText:
-        'Der Import und Export sowie der nationale und internationale Handel mit Waren aller Art, der Groß- und Einzelhandel, für die keine besondere behördliche Genehmigung erforderlich ist. Erlaubnis nach § 34c Absatz 1 Satz 1 Nummer 4 Gewerbeordnung (Wohnimmobilienverwalter) erteilt.',
-      authoritySupervisor:
-        'Aufsichtsbehörde: Industrie- und Handelskammer Frankfurt am Main, Börsenplatz 4, 60313 Frankfurt am Main.',
+        'Import und Export sowie der nationale und internationale Handel mit Waren aller Art, der Groß- und Einzelhandel.',
+      authoritySupervisor: 'Verliehen in: Hessen.',
       rights: '© 2026 ALVEX Handel GmbH. Alle Rechte vorbehalten.',
       compliance: '100% DSGVO-konform | Keine externen CDNs | Keine Cookies',
     },
@@ -88,11 +87,10 @@ export const ui: Record<Lang, {
       managingDirectorLabel: 'Managing Director:',
       registerCourtLabel: 'Register Court:',
       vatLabel: 'VAT ID:',
-      authorityLabel: 'Regulatory Authority & Trade:',
+      authorityLabel: 'Professional title:',
       authorityText:
-        'Import and export as well as national and international trade in goods of all kinds, and wholesale and retail trade not requiring special official authorisation. Permit pursuant to Section 34c (1) sentence 1 no. 4 of the German Trade Regulation Act (GewO) granted.',
-      authoritySupervisor:
-        'Supervisory authority: Chamber of Industry and Commerce (IHK) Frankfurt am Main, Börsenplatz 4, 60313 Frankfurt am Main.',
+        'Import and export as well as national and international trade in goods of all kinds, wholesale and retail trade.',
+      authoritySupervisor: 'Granted in: Hesse, Germany.',
       rights: '© 2026 ALVEX Handel GmbH. All rights reserved.',
       compliance: '100% GDPR-compliant | No external CDNs | No cookies',
     },
