@@ -16,8 +16,8 @@
 // --- Configuration ---------------------------------------------------------
 // TODO: switch $recipient back to 'info@alvexhandel.com' before go-live.
 $recipient = 'stivenbaci@gmail.com';                 // TEST recipient
-$from      = 'kontaktformular@alvexhandel.com';      // sender – MUST exist on the
-                                                     // domain (mailbox or alias)
+$from      = 'info@alvexhandel.com';                 // sender – existing mailbox on
+                                                     // the domain (no extra cost)
 
 // --- Language-aware redirect targets ---------------------------------------
 $lang       = (isset($_POST['lang']) && $_POST['lang'] === 'en') ? 'en' : 'de';
