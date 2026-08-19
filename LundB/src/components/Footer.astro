@@ -1,0 +1,134 @@
+---
+import { site, contact, services, nav } from '../data/site';
+const year = new Date().getFullYear();
+import { u } from '../lib/url';
+---
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <a href={u('/')} class="footer-word" aria-label={`${site.name} Startseite`}>
+        L<span>&amp;</span>B <em>Bausanierung</em>
+      </a>
+      <p>
+        Ihr eingetragener Fachbetrieb für Bausanierung in Frankfurt am Main.
+        Seit über 30&nbsp;Jahren zuverlässig, termintreu und in Meisterqualität.
+      </p>
+      <a href={u('/#kontakt')} class="btn btn--gold footer-cta">Kostenlos anfragen</a>
+    </div>
+
+    <div class="footer-col">
+      <h3>Leistungen</h3>
+      <ul>
+        {services.map((s) => (
+          <li><a href={u('/#leistungen')}>{s.title}</a></li>
+        ))}
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h3>Navigation</h3>
+      <ul>
+        {nav.map((n) => (
+          <li><a href={u(n.href)}>{n.label}</a></li>
+        ))}
+        <li><a href={u('/impressum')}>Impressum</a></li>
+        <li><a href={u('/datenschutz')}>Datenschutz</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h3>Kontakt</h3>
+      <ul class="footer-contact">
+        <li><span>Telefon</span><a href={contact.phoneHref}>{contact.phone}</a></li>
+        <li><span>E-Mail</span><a href={contact.emailHref}>{contact.email}</a></li>
+        <li><span>Adresse</span>{contact.street}, {contact.zip} {contact.cityLine}</li>
+        <li><span>Zeiten</span>{contact.hours}</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-bar">
+    <div class="container footer-bar-inner">
+      <p>© {year} {site.name}. Alle Rechte vorbehalten.</p>
+      <nav aria-label="Rechtliches">
+        <a href={u('/impressum')}>Impressum</a>
+        <a href={u('/datenschutz')}>Datenschutz</a>
+      </nav>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .site-footer { background: var(--navy-900); color: #b9c4d3; }
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    padding-block: clamp(3rem, 7vw, 4.5rem);
+  }
+  .footer-word {
+    font-family: var(--font-head);
+    font-size: 1.7rem;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: 0.02em;
+    display: inline-block;
+    margin-bottom: 1rem;
+  }
+  .footer-word span { color: var(--gold-300); }
+  .footer-word em {
+    font-style: normal;
+    display: block;
+    font-family: var(--font-body);
+    font-size: 0.72rem;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--gold-300);
+    margin-top: 0.15rem;
+  }
+  .footer-brand p { color: #92a1b5; max-width: 34ch; }
+  .footer-cta { margin-top: 0.5rem; }
+
+  .footer-col h3 {
+    color: #fff;
+    font-size: 1.05rem;
+    margin-bottom: 1.1rem;
+  }
+  .footer-col ul { list-style: none; margin: 0; padding: 0; }
+  .footer-col li { margin-bottom: 0.6rem; line-height: 1.4; }
+  .footer-col a { color: #b9c4d3; }
+  .footer-col a:hover { color: var(--gold-300); }
+
+  .footer-contact li { display: flex; flex-direction: column; }
+  .footer-contact span {
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #7c8ba0;
+    margin-bottom: 0.1rem;
+  }
+  .footer-contact a { color: #dfe6ef; font-weight: 600; }
+
+  .footer-bar { border-top: 1px solid rgba(255, 255, 255, 0.08); }
+  .footer-bar-inner {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem 1.5rem;
+    justify-content: space-between;
+    align-items: center;
+    padding-block: 1.3rem;
+    font-size: 0.9rem;
+  }
+  .footer-bar p { margin: 0; color: #7c8ba0; }
+  .footer-bar nav { display: flex; gap: 1.5rem; }
+  .footer-bar a { color: #9aa8bc; }
+  .footer-bar a:hover { color: var(--gold-300); }
+
+  @media (min-width: 640px) {
+    .footer-grid { grid-template-columns: 1fr 1fr; }
+  }
+  @media (min-width: 980px) {
+    .footer-grid { grid-template-columns: 1.6fr 1fr 1fr 1.2fr; gap: 3rem; }
+  }
+</style>

@@ -1,0 +1,170 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { site, contact, legal } from '../data/site';
+---
+
+<Layout
+  title="Datenschutzerklärung"
+  description="Datenschutzerklärung der L&B Bausanierung gemäß DSGVO."
+  noindex={true}
+>
+  <div class="page-head">
+    <div class="container">
+      <h1>Datenschutzerklärung</h1>
+      <p>Informationen gemäß Art. 13, 14 DSGVO</p>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="container prose">
+      <p class="hint">
+        <strong>Hinweis:</strong> Diese Datenschutzerklärung ist eine anpassbare Vorlage.
+        Bitte an die tatsächlich eingesetzten Dienste (Hosting, Analyse, Karten, Schriftarten
+        etc.) anpassen und mit <span class="ph">[PLATZHALTER]</span> markierte Angaben ersetzen.
+        Im Zweifel rechtlich prüfen lassen.
+      </p>
+
+      <h2>1. Verantwortlicher</h2>
+      <p>Verantwortlich für die Datenverarbeitung auf dieser Website ist:</p>
+      <address>
+        {legal.companyLine}<br />
+        <span class="ph">{legal.owner}</span><br />
+        {contact.street}, {contact.zip} {contact.cityLine}<br />
+        Telefon: {contact.phone}<br />
+        E-Mail: <a href={contact.emailHref}>{contact.email}</a>
+      </address>
+
+      <h2>2. Allgemeines zur Datenverarbeitung</h2>
+      <p>
+        Wir verarbeiten personenbezogene Daten unserer Nutzer grundsätzlich nur, soweit dies zur
+        Bereitstellung einer funktionsfähigen Website sowie unserer Inhalte und Leistungen
+        erforderlich ist. Die Verarbeitung erfolgt regelmäßig nur nach Einwilligung der Nutzer
+        (Art. 6 Abs. 1 lit. a DSGVO) oder wenn eine Rechtsgrundlage die Verarbeitung gestattet
+        (insb. Art. 6 Abs. 1 lit. b, f DSGVO).
+      </p>
+
+      <h2>3. Hosting und Server-Logfiles</h2>
+      <p>
+        Diese Website wird gehostet bei der IONOS SE, Elgendorfer Straße 57,
+        56410 Montabaur (<span class="ph">bei abweichendem Hosting anpassen</span>). Beim Aufruf der
+        Website erfasst der Server automatisch Informationen in sogenannten Server-Logfiles,
+        die Ihr Browser übermittelt. Dies sind in der Regel:
+      </p>
+      <ul>
+        <li>IP-Adresse (gekürzt/anonymisiert, sofern möglich)</li>
+        <li>Datum und Uhrzeit des Zugriffs</li>
+        <li>aufgerufene Seite/Datei und Statuscode</li>
+        <li>verwendeter Browser und Betriebssystem</li>
+        <li>Referrer-URL</li>
+      </ul>
+      <p>
+        Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO. Unser berechtigtes Interesse liegt im
+        sicheren und stabilen Betrieb der Website. Sofern erforderlich, haben wir mit dem
+        Hoster einen Auftragsverarbeitungsvertrag (Art. 28 DSGVO) geschlossen.
+      </p>
+
+      <h2>4. Kontaktaufnahme (Kontaktformular, E-Mail, Telefon)</h2>
+      <p>
+        Wenn Sie uns über das Kontaktformular, per E-Mail oder telefonisch kontaktieren, werden
+        Ihre Angaben (z. B. Name, E-Mail-Adresse, Telefonnummer, Nachricht) zur Bearbeitung
+        Ihrer Anfrage und für den Fall von Anschlussfragen gespeichert. Die Übertragung des
+        Kontaktformulars erfolgt an unseren eigenen Server (Hosting bei IONOS); ein
+        externer Formular-Dienstleister wird nicht eingesetzt.
+      </p>
+      <p>
+        Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO (Anbahnung/Erfüllung eines Vertrags),
+        sofern Ihre Anfrage hierauf gerichtet ist, andernfalls Art. 6 Abs. 1 lit. f DSGVO
+        (berechtigtes Interesse an der Beantwortung von Anfragen) bzw. Art. 6 Abs. 1 lit. a
+        DSGVO, sofern Sie eingewilligt haben. Wir löschen die Daten, sobald sie für den Zweck
+        ihrer Erhebung nicht mehr erforderlich sind, soweit keine gesetzlichen
+        Aufbewahrungspflichten entgegenstehen.
+      </p>
+
+      <h2>5. Cookies</h2>
+      <p>
+        Diese Website verwendet nach aktuellem Stand ausschließlich technisch notwendige Cookies
+        bzw. keine Cookies zu Analyse- oder Marketingzwecken. Sollten künftig einwilligungs­pflichtige
+        Cookies oder Dienste eingesetzt werden, wird zuvor Ihre Einwilligung über ein
+        Consent-Banner eingeholt (§ 25 Abs. 1 TDDDG i. V. m. Art. 6 Abs. 1 lit. a DSGVO).
+      </p>
+
+      <h2>6. Google Maps</h2>
+      <p>
+        Auf dieser Website binden wir Kartenmaterial des Dienstes „Google Maps“ ein.
+        Anbieter ist die Google Ireland Limited, Gordon House, Barrow Street, Dublin 4,
+        Irland („Google“).
+      </p>
+      <p>
+        Die Karte wird <strong>erst nach Ihrer ausdrücklichen Einwilligung</strong> geladen
+        (Klick auf „Karte laden“). Vor diesem Klick werden keine Daten an Google übertragen.
+        Nach dem Laden verarbeitet Google insbesondere Ihre IP-Adresse sowie technische
+        Zugriffsdaten und kann Cookies setzen. Eine Übermittlung in die USA ist dabei nicht
+        auszuschließen.
+      </p>
+      <p>
+        Rechtsgrundlage ist Ihre Einwilligung gemäß Art. 6 Abs. 1 lit. a DSGVO in Verbindung
+        mit § 25 Abs. 1 TDDDG. Sie können Ihre Einwilligung jederzeit mit Wirkung für die
+        Zukunft widerrufen, indem Sie die Seite neu laden und die Karte nicht erneut aktivieren.
+      </p>
+      <p>
+        Weitere Informationen zum Umgang mit Nutzerdaten finden Sie in der
+        Datenschutzerklärung von Google:
+        <a href="https://policies.google.com/privacy" rel="noopener" target="_blank">https://policies.google.com/privacy</a>.
+      </p>
+
+      <h2>7. Weitere externe Dienste (falls eingesetzt)</h2>
+      <p>
+        Sofern zusätzlich eingebunden, gelten ergänzend die Datenschutzhinweise der jeweiligen
+        Anbieter. Bitte hier tatsächlich genutzte Dienste ergänzen, z. B.:
+      </p>
+      <ul>
+        <li><span class="ph">Web-Schriftarten (lokal eingebunden empfohlen)</span></li>
+        <li><span class="ph">Reichweitenmessung (z. B. Matomo, nur mit Einwilligung)</span></li>
+      </ul>
+
+      <h2>8. Ihre Rechte als betroffene Person</h2>
+      <p>Ihnen stehen gegenüber uns folgende Rechte hinsichtlich Ihrer personenbezogenen Daten zu:</p>
+      <ul>
+        <li>Recht auf Auskunft (Art. 15 DSGVO)</li>
+        <li>Recht auf Berichtigung (Art. 16 DSGVO)</li>
+        <li>Recht auf Löschung (Art. 17 DSGVO)</li>
+        <li>Recht auf Einschränkung der Verarbeitung (Art. 18 DSGVO)</li>
+        <li>Recht auf Datenübertragbarkeit (Art. 20 DSGVO)</li>
+        <li>Widerspruchsrecht gegen die Verarbeitung (Art. 21 DSGVO)</li>
+        <li>Recht auf Widerruf einer erteilten Einwilligung (Art. 7 Abs. 3 DSGVO)</li>
+      </ul>
+
+      <h2>9. Beschwerderecht bei der Aufsichtsbehörde</h2>
+      <p>
+        Sie haben das Recht, sich bei einer Datenschutz-Aufsichtsbehörde zu beschweren. Zuständig
+        ist u. a. der Hessische Beauftragte für Datenschutz und Informationsfreiheit,
+        Postfach 3163, 65021 Wiesbaden.
+      </p>
+
+      <h2>10. Datensicherheit</h2>
+      <p>
+        Wir verwenden für die Website eine TLS-/SSL-Verschlüsselung. Eine verschlüsselte
+        Verbindung erkennen Sie am „https://“ in der Adresszeile Ihres Browsers.
+      </p>
+
+      <h2>11. Aktualität</h2>
+      <p>
+        Diese Datenschutzerklärung ist aktuell gültig. Durch die Weiterentwicklung unserer
+        Website oder aufgrund geänderter gesetzlicher Vorgaben kann es notwendig werden, sie
+        anzupassen.
+      </p>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .hint {
+    background: #fff6e6;
+    border: 1px solid var(--gold-300);
+    border-radius: var(--radius);
+    padding: 0.9rem 1.1rem;
+    color: var(--gold-600);
+    font-size: 0.92rem;
+    margin-bottom: 2rem;
+  }
+</style>

@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="L&amp;B">
+  <rect width="64" height="64" rx="10" fill="#14263f"/>
+  <path d="M10 30 L32 15 L54 30" fill="none" stroke="#b6955d" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+  <text x="32" y="48" text-anchor="middle" font-family="Georgia, serif" font-size="26" font-weight="700" fill="#ffffff">L<tspan fill="#b6955d">&amp;</tspan>B</text>
+</svg>

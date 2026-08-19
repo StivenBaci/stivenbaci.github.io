@@ -1,0 +1,160 @@
+---
+import { site, contact, nav } from '../data/site';
+import { u } from '../lib/url';
+---
+
+<header class="site-header" id="siteHeader">
+  <div class="container header-inner">
+    <a href={u('/')} class="brand" aria-label={`${site.name} – Startseite`}>
+      <img src={u('/assets/logo.svg')} alt={`${site.name} Logo`} width="132" height="113" class="brand-logo" />
+    </a>
+
+    <nav class="nav" id="mainNav" aria-label="Hauptnavigation">
+      {nav.map((item) => (
+        <a href={u(item.href)} class="nav-link">{item.label}</a>
+      ))}
+      <a href={contact.phoneHref} class="nav-phone" data-mobile>
+        {contact.phone}
+      </a>
+      <a href={u('/#kontakt')} class="btn btn--gold nav-cta">Angebot anfordern</a>
+    </nav>
+
+    <button
+      class="nav-toggle"
+      id="navToggle"
+      aria-label="Menü öffnen"
+      aria-expanded="false"
+      aria-controls="mainNav"
+    >
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<style>
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(255, 255, 255, 0.96);
+    backdrop-filter: saturate(140%) blur(8px);
+    border-bottom: 1px solid var(--line-soft);
+    transition: box-shadow 0.25s ease;
+  }
+  .site-header.is-scrolled { box-shadow: var(--shadow-sm); }
+
+  .header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 68px;
+  }
+  .brand { display: inline-flex; align-items: center; }
+  .brand-logo { height: 46px; width: auto; }
+
+  .nav { display: flex; align-items: center; gap: 1.5rem; }
+  .nav-link {
+    font-weight: 600;
+    font-size: 0.98rem;
+    color: var(--navy-800);
+    padding: 0.4rem 0;
+    position: relative;
+  }
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    left: 0; bottom: -2px;
+    width: 0; height: 2px;
+    background: var(--gold);
+    transition: width 0.25s var(--ease);
+  }
+  .nav-link:hover { color: var(--navy-900); }
+  .nav-link:hover::after { width: 100%; }
+  .nav-phone { display: none; }
+  .nav-cta { font-size: 0.92rem; padding: 0.65rem 1.15rem; }
+
+  .nav-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 44px; height: 44px;
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+    padding: 8px;
+  }
+  .nav-toggle span {
+    display: block;
+    height: 2.5px;
+    width: 100%;
+    background: var(--navy-800);
+    border-radius: 2px;
+    transition: transform 0.3s var(--ease), opacity 0.2s;
+  }
+  .nav-toggle[aria-expanded='true'] span:nth-child(1) { transform: translateY(7.5px) rotate(45deg); }
+  .nav-toggle[aria-expanded='true'] span:nth-child(2) { opacity: 0; }
+  .nav-toggle[aria-expanded='true'] span:nth-child(3) { transform: translateY(-7.5px) rotate(-45deg); }
+
+  /* ---------- Mobile ---------- */
+  @media (max-width: 900px) {
+    .nav-toggle { display: flex; }
+    .nav {
+      position: fixed;
+      inset: 68px 0 auto 0;
+      flex-direction: column;
+      align-items: stretch;
+      gap: 0;
+      background: #fff;
+      padding: 0.5rem 20px 1.5rem;
+      border-bottom: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      transform: translateY(-140%);
+      transition: transform 0.35s var(--ease);
+      max-height: calc(100vh - 68px);
+      overflow-y: auto;
+    }
+    .nav.is-open { transform: translateY(0); }
+    .nav-link {
+      padding: 1rem 0;
+      border-bottom: 1px solid var(--line-soft);
+      font-size: 1.1rem;
+    }
+    .nav-link::after { display: none; }
+    .nav-phone {
+      display: block;
+      padding: 1rem 0;
+      font-weight: 700;
+      color: var(--navy-700);
+      border-bottom: 1px solid var(--line-soft);
+    }
+    .nav-cta { margin-top: 1.25rem; width: 100%; }
+  }
+</style>
+
+<script is:inline>
+  (function () {
+    const toggle = document.getElementById('navToggle');
+    const nav = document.getElementById('mainNav');
+    const header = document.getElementById('siteHeader');
+    if (toggle && nav) {
+      const close = () => {
+        nav.classList.remove('is-open');
+        toggle.setAttribute('aria-expanded', 'false');
+        toggle.setAttribute('aria-label', 'Menü öffnen');
+      };
+      toggle.addEventListener('click', () => {
+        const open = nav.classList.toggle('is-open');
+        toggle.setAttribute('aria-expanded', String(open));
+        toggle.setAttribute('aria-label', open ? 'Menü schließen' : 'Menü öffnen');
+      });
+      nav.querySelectorAll('a').forEach((a) => a.addEventListener('click', close));
+    }
+    if (header) {
+      const onScroll = () =>
+        header.classList.toggle('is-scrolled', window.scrollY > 8);
+      onScroll();
+      window.addEventListener('scroll', onScroll, { passive: true });
+    }
+  })();
+</script>

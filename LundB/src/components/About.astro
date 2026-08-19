@@ -1,0 +1,139 @@
+---
+const stats = [
+  { value: '30+', label: 'Jahre am Markt' },
+  { value: '1.000+', label: 'Sanierte Objekte' },
+  { value: '100 %', label: 'Regional in Rhein-Main' },
+];
+import { u } from '../lib/url';
+---
+
+<section class="section" id="ueber-uns" aria-labelledby="ueber-title">
+  <div class="container about-grid">
+    <div class="about-media reveal" aria-hidden="true">
+      <div class="about-figure">
+        <img src={u('/assets/logo-dark.svg')} alt="" class="about-logo" />
+        <span class="about-badge">Seit 1995</span>
+      </div>
+    </div>
+
+    <div class="about-content reveal">
+      <p class="eyebrow">Über uns</p>
+      <h2 id="ueber-title">Ein Frankfurter Handwerksbetrieb mit Wort und Handschlag</h2>
+      <p class="lead">
+        L&amp;B Bausanierung ist seit über drei Jahrzehnten fest im Rhein-Main-Gebiet
+        verwurzelt. Was als kleiner Handwerksbetrieb begann, ist heute ein
+        eingetragener Fachbetrieb für Bausanierung – gewachsen durch saubere Arbeit
+        und Kunden, die wiederkommen.
+      </p>
+      <p>
+        Wir sanieren Wohn- und Gewerbegebäude vollständig oder in einzelnen Gewerken.
+        Dabei zählt für uns, was auch nach Jahren noch hält: ehrliche Beratung,
+        faire Festpreise und Termine, auf die Sie sich verlassen können. Vom ersten
+        Ortstermin bis zur Abnahme haben Sie einen festen Ansprechpartner.
+      </p>
+
+      <ul class="about-usp">
+        <li>Eingetragener, versicherter Fachbetrieb</li>
+        <li>Erfahrenes Meister- und Facharbeiterteam</li>
+        <li>Transparente Angebote ohne versteckte Kosten</li>
+        <li>Kurze Wege – regional in Frankfurt &amp; Umgebung</li>
+      </ul>
+
+      <dl class="about-stats">
+        {stats.map((s) => (
+          <div>
+            <dt>{s.value}</dt>
+            <dd>{s.label}</dd>
+          </div>
+        ))}
+      </dl>
+    </div>
+  </div>
+</section>
+
+<style>
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    align-items: center;
+  }
+  .about-figure {
+    position: relative;
+    border-radius: var(--radius-lg);
+    background:
+      radial-gradient(600px 300px at 30% 0%, rgba(182,149,93,0.16), transparent 65%),
+      linear-gradient(155deg, #14263f, #0e1c30);
+    aspect-ratio: 4 / 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.06);
+  }
+  .about-logo { width: 58%; max-width: 260px; opacity: 0.96; filter: brightness(0) invert(1); }
+  .about-badge {
+    position: absolute;
+    left: 18px; bottom: 18px;
+    background: var(--gold);
+    color: var(--navy-900);
+    font-weight: 700;
+    font-size: 0.85rem;
+    letter-spacing: 0.04em;
+    padding: 0.45rem 0.9rem;
+    border-radius: 100px;
+  }
+
+  .about-content .lead { margin-bottom: 1rem; }
+  .about-usp {
+    list-style: none;
+    margin: 1.5rem 0;
+    padding: 0;
+    display: grid;
+    gap: 0.65rem;
+  }
+  .about-usp li {
+    position: relative;
+    padding-left: 1.9rem;
+    color: var(--ink);
+    font-weight: 500;
+  }
+  .about-usp li::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 4px;
+    width: 18px; height: 18px;
+    border-radius: 50%;
+    background: var(--gold);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230e1c30' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 6 9 17l-5-5'/%3E%3C/svg%3E");
+    background-size: 12px;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  .about-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin: 2rem 0 0;
+    padding-top: 1.75rem;
+    border-top: 1px solid var(--line);
+  }
+  .about-stats dt {
+    font-family: var(--font-head);
+    font-size: clamp(1.6rem, 5vw, 2.2rem);
+    font-weight: 700;
+    color: var(--navy-800);
+    line-height: 1;
+  }
+  .about-stats dd {
+    margin: 0.35rem 0 0;
+    font-size: 0.85rem;
+    color: var(--muted);
+  }
+
+  @media (min-width: 900px) {
+    .about-grid { grid-template-columns: 0.9fr 1.1fr; gap: 3.5rem; }
+  }
+</style>

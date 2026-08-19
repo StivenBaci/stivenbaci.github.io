@@ -1,0 +1,20 @@
+{
+  "name": "lundb-bausanierung",
+  "type": "module",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Website der L&B Bausanierung, Frankfurt am Main",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "build:gh": "astro build --config astro.config.gh.mjs",
+    "preview": "astro preview",
+    "preview:gh": "astro preview --config astro.config.gh.mjs",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "astro": "^4.16.18",
+    "@astrojs/sitemap": "3.2.1"
+  }
+}

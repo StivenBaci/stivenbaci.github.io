@@ -1,0 +1,37 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { contact } from '../data/site';
+import { u } from '../lib/url';
+---
+
+<Layout title="Vielen Dank" description="Ihre Anfrage bei L&B Bausanierung ist eingegangen." noindex={true}>
+  <section class="section">
+    <div class="container thanks">
+      <span class="thanks-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m8 12 3 3 5-6"/></svg>
+      </span>
+      <h1>Vielen Dank für Ihre Anfrage</h1>
+      <p class="lead">
+        Ihre Nachricht ist bei uns eingegangen. Wir melden uns in der Regel innerhalb
+        eines Werktags bei Ihnen zurück.
+      </p>
+      <p>Sie möchten schneller sprechen? Rufen Sie uns gerne direkt an: <a href={contact.phoneHref}>{contact.phone}</a>.</p>
+      <a href={u('/')} class="btn btn--primary">Zurück zur Startseite</a>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .thanks { max-width: 620px; text-align: center; }
+  .thanks-icon {
+    display: inline-flex;
+    width: 72px; height: 72px;
+    align-items: center; justify-content: center;
+    border-radius: 50%;
+    background: var(--bg-warm-2);
+    color: var(--gold-600);
+    margin-bottom: 1.5rem;
+  }
+  .thanks-icon svg { width: 40px; height: 40px; }
+  .thanks .btn { margin-top: 1.5rem; }
+</style>

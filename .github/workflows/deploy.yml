@@ -1,5 +1,15 @@
 name: Deploy to GitHub Pages
 
+# Baut zwei Astro-Projekte aus diesem Repository und veröffentlicht sie
+# gemeinsam als eine GitHub-Pages-Seite:
+#
+#   alvex/  -> https://stivenbaci.github.io/          (Seitenwurzel, live)
+#   LundB/  -> https://stivenbaci.github.io/LundB/    (Vorschau, noindex)
+#
+# GitHub Pages erlaubt pro Repository nur EIN Deployment. Deshalb werden
+# beide Builds hier zu einem Verzeichnis (_site) zusammengelegt und
+# gemeinsam hochgeladen.
+
 on:
   # Runs on pushes to the default branch. Change "main" to "master" if needed.
   push:
@@ -24,11 +34,55 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Build Astro site
-        uses: withastro/action@v3
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
         with:
-          path: alvex          # Astro project lives in the alvex/ subfolder
-          # package-manager: npm@latest   # uncomment to pin if auto-detect misfires
+          node-version: 20
+          cache: npm
+          cache-dependency-path: |
+            alvex/package-lock.json
+            LundB/package-lock.json
+
+      # ---------- ALVEX (Seitenwurzel) ----------
+      - name: Install ALVEX dependencies
+        working-directory: alvex
+        run: npm ci
+
+      - name: Build ALVEX
+        working-directory: alvex
+        run: npm run build
+
+      # ---------- L&B Bausanierung (Unterordner /LundB) ----------
+      - name: Install L&B dependencies
+        working-directory: LundB
+        run: npm ci
+
+      - name: Build L&B preview
+        working-directory: LundB
+        run: npm run build:gh
+
+      # ---------- Zusammenlegen ----------
+      - name: Assemble site
+        run: |
+          set -e
+          rm -rf _site
+          mkdir -p _site
+          cp -a alvex/dist/. _site/
+          mkdir -p _site/LundB
+          cp -a LundB/dist/. _site/LundB/
+          # GitHub Pages kann kein PHP ausführen – das Skript würde nur
+          # als Quelltext im Netz stehen.
+          rm -f _site/LundB/kontakt.php
+          touch _site/.nojekyll
+          echo "--- Ergebnis ---"
+          ls -a _site
+          ls -a _site/LundB
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
 
   deploy:
     needs: build

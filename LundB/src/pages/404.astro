@@ -1,0 +1,63 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { contact, services } from '../data/site';
+import { u } from '../lib/url';
+---
+
+<Layout
+  title="Seite nicht gefunden"
+  description="Die aufgerufene Seite existiert nicht. Zurück zur Startseite von L&B Bausanierung Frankfurt."
+  noindex={true}
+>
+  <section class="section">
+    <div class="container notfound">
+      <p class="eyebrow">Fehler 404</p>
+      <h1>Diese Seite gibt es nicht</h1>
+      <p class="lead">
+        Der Link ist veraltet oder die Adresse wurde falsch eingegeben.
+        Über die folgenden Wege finden Sie schnell weiter.
+      </p>
+
+      <div class="notfound-actions">
+        <a href={u('/')} class="btn btn--primary">Zur Startseite</a>
+        <a href={u('/#leistungen')} class="btn btn--ghost">Unsere Leistungen</a>
+        <a href={u('/#kontakt')} class="btn btn--gold">Kontakt aufnehmen</a>
+      </div>
+
+      <ul class="notfound-list">
+        {services.map((s) => (
+          <li><a href={u('/#leistungen')}>{s.title}</a></li>
+        ))}
+      </ul>
+
+      <p class="notfound-call">
+        Lieber direkt sprechen? <a href={contact.phoneHref}>{contact.phone}</a>
+      </p>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .notfound { max-width: 760px; }
+  .notfound-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin: 2rem 0 2.5rem;
+  }
+  .notfound-list {
+    list-style: none;
+    margin: 0 0 2rem;
+    padding: 1.5rem 0 0;
+    border-top: 1px solid var(--line-soft);
+    display: grid;
+    gap: 0.6rem;
+  }
+  .notfound-list a { font-weight: 600; color: var(--navy-800); }
+  .notfound-list a:hover { color: var(--gold-600); }
+  .notfound-call { color: var(--muted); }
+
+  @media (min-width: 640px) {
+    .notfound-list { grid-template-columns: 1fr 1fr; }
+  }
+</style>

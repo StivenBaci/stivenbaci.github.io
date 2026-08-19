@@ -1,0 +1,124 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { site, contact, legal } from '../data/site';
+---
+
+<Layout
+  title="Impressum"
+  description="Impressum und Anbieterkennzeichnung der L&B Bausanierung, Frankfurt am Main."
+  noindex={true}
+>
+  <div class="page-head">
+    <div class="container">
+      <h1>Impressum</h1>
+      <p>Angaben gemäß § 5 TMG</p>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="container prose">
+      <p class="hint">
+        <strong>Hinweis:</strong> Alle mit <span class="ph">[PLATZHALTER]</span> markierten
+        Angaben müssen vor dem Livegang durch die echten Unternehmensdaten ersetzt werden.
+      </p>
+
+      <h2>Anbieter</h2>
+      <address>
+        {legal.companyLine}<br />
+        {contact.street}<br />
+        {contact.zip} {contact.cityLine}<br />
+        Deutschland
+      </address>
+
+      <h2>Vertreten durch</h2>
+      <p>{legal.owner}</p>
+
+      <h2>Kontakt</h2>
+      <p>
+        Telefon: {contact.phone}<br />
+        E-Mail: <a href={contact.emailHref}>{contact.email}</a>
+      </p>
+
+      <h2>Registereintrag</h2>
+      <p>
+        Handelsregister: <span class="ph">{legal.register}</span><br />
+        Registergericht: <span class="ph">{legal.registerCourt}</span>
+        <br /><small>(Entfällt bei nicht eingetragenen Einzelunternehmen – Zeile dann löschen.)</small>
+      </p>
+
+      <h2>Umsatzsteuer-Identifikationsnummer</h2>
+      <p>
+        Umsatzsteuer-Identifikationsnummer gemäß § 27a Umsatzsteuergesetz:<br />
+        <span class="ph">{legal.vatId}</span>
+      </p>
+
+      <h2>Berufsrechtliche Angaben</h2>
+      <p>
+        Gesetzliche Berufsbezeichnung: {legal.professionTitle}<br />
+        Zuständige Kammer: <span class="ph">{legal.chamber}</span><br />
+        Verliehen in: Deutschland
+      </p>
+
+      <h2>Aufsichtsbehörde / Kammer</h2>
+      <p><span class="ph">{legal.chamber}</span></p>
+
+      <h2>Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV</h2>
+      <address>
+        <span class="ph">{legal.responsible}</span><br />
+        {contact.street}, {contact.zip} {contact.cityLine}
+      </address>
+
+      <h2>EU-Streitschlichtung</h2>
+      <p>
+        Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit:
+        <a href="https://ec.europa.eu/consumers/odr/" rel="noopener" target="_blank">https://ec.europa.eu/consumers/odr/</a>.
+        Unsere E-Mail-Adresse finden Sie oben im Impressum.
+      </p>
+
+      <h2>Verbraucherstreitbeilegung / Universalschlichtungsstelle</h2>
+      <p>
+        Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer
+        Verbraucherschlichtungsstelle teilzunehmen.
+      </p>
+
+      <h2>Haftung für Inhalte</h2>
+      <p>
+        Als Diensteanbieter sind wir gemäß § 7 Abs. 1 TMG für eigene Inhalte auf diesen Seiten
+        nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG sind wir als
+        Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde
+        Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige
+        Tätigkeit hinweisen. Verpflichtungen zur Entfernung oder Sperrung der Nutzung von
+        Informationen nach den allgemeinen Gesetzen bleiben hiervon unberührt.
+      </p>
+
+      <h2>Haftung für Links</h2>
+      <p>
+        Unser Angebot enthält gegebenenfalls Links zu externen Websites Dritter, auf deren
+        Inhalte wir keinen Einfluss haben. Deshalb können wir für diese fremden Inhalte auch
+        keine Gewähr übernehmen. Für die Inhalte der verlinkten Seiten ist stets der jeweilige
+        Anbieter oder Betreiber der Seiten verantwortlich.
+      </p>
+
+      <h2>Urheberrecht</h2>
+      <p>
+        Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen
+        dem deutschen Urheberrecht. Beiträge Dritter sind als solche gekennzeichnet. Die
+        Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der
+        Grenzen des Urheberrechts bedürfen der schriftlichen Zustimmung des jeweiligen Autors
+        bzw. Erstellers.
+      </p>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .hint {
+    background: #fff6e6;
+    border: 1px solid var(--gold-300);
+    border-radius: var(--radius);
+    padding: 0.9rem 1.1rem;
+    color: var(--gold-600);
+    font-size: 0.92rem;
+    margin-bottom: 2rem;
+  }
+</style>

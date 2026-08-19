@@ -1,0 +1,268 @@
+---
+import { contact } from '../data/site';
+import { u, isPreview } from '../lib/url';
+---
+
+<section class="section section--warm" id="kontakt" aria-labelledby="kontakt-title">
+  <div class="container contact-grid">
+    <div class="contact-intro reveal">
+      <p class="eyebrow">Kontakt</p>
+      <h2 id="kontakt-title">Jetzt kostenloses Angebot anfordern</h2>
+      <p class="lead">
+        Am schnellsten geht es, wenn Sie uns Ihre <strong>Angebotsanfrage direkt
+        hierher kopieren</strong> – mit Objektart, Adresse, gewünschten Arbeiten und
+        Zeitrahmen. Die Beratung ist für Sie kostenlos und unverbindlich.
+      </p>
+
+      <div class="quick-actions">
+        <a href={contact.whatsapp} class="qa qa--wa" target="_blank" rel="noopener">
+          <span class="qa-ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.22 3.08c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.7.63.71.23 1.36.2 1.87.12.57-.09 1.77-.72 2.02-1.42.25-.7.25-1.29.17-1.42-.07-.13-.27-.2-.57-.35zM12.05 21.5h-.01a9.5 9.5 0 0 1-4.83-1.32l-.35-.2-3.6.94.96-3.5-.23-.36a9.42 9.42 0 0 1-1.45-5.03c0-5.22 4.26-9.47 9.5-9.47 2.54 0 4.92.99 6.71 2.78a9.4 9.4 0 0 1 2.78 6.7c0 5.22-4.26 9.47-9.5 9.47z"/></svg>
+          </span>
+          Per WhatsApp
+        </a>
+        <a href={contact.phoneHref} class="qa qa--call">
+          <span class="qa-ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2 4.2 2 2 0 0 1 4 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.1a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>
+          </span>
+          Anrufen
+        </a>
+      </div>
+
+      <ul class="contact-list">
+        <li>
+          <span class="ci" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
+          </span>
+          <div><span>E-Mail</span><a href={contact.emailHref}>{contact.email}</a></div>
+        </li>
+        <li>
+          <span class="ci" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </span>
+          <div><span>Adresse</span>{contact.street}, {contact.zip} {contact.cityLine}</div>
+        </li>
+        <li>
+          <span class="ci" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+          </span>
+          <div><span>Öffnungszeiten</span>{contact.hours}</div>
+        </li>
+      </ul>
+    </div>
+
+    <div class="contact-form-wrap reveal">
+      <!--
+        Formular sendet direkt an das PHP-Skript /kontakt.php (Hosting bei IONOS).
+        In der GitHub-Pages-Vorschau ist der Versand deaktiviert (kein PHP).
+        Die Mail wird mit Reply-To der Absenderadresse verschickt, sodass eine
+        Antwort direkt an den Interessenten geht.
+      -->
+      <form
+        class="contact-form"
+        id="angebotForm"
+        name="kontakt"
+        method="POST"
+        action={isPreview ? undefined : u('/kontakt.php')}
+      >
+        <p class="hp" aria-hidden="true">
+          <label>Nicht ausfüllen: <input name="bot-field" tabindex="-1" autocomplete="off" /></label>
+        </p>
+
+        <div class="field">
+          <label for="name">Name *</label>
+          <input id="name" name="name" type="text" required autocomplete="name" />
+        </div>
+
+        <div class="field-row">
+          <div class="field">
+            <label for="email">E-Mail *</label>
+            <input id="email" name="email" type="email" required autocomplete="email" />
+          </div>
+          <div class="field">
+            <label for="telefon">Telefon</label>
+            <input id="telefon" name="telefon" type="tel" autocomplete="tel" />
+          </div>
+        </div>
+
+        <div class="field">
+          <div class="label-row">
+            <label for="nachricht">Ihre Anfrage *</label>
+            <button type="button" class="tmpl-btn" id="tmplBtn">Vorlage einfügen</button>
+          </div>
+          <textarea id="nachricht" name="nachricht" rows="12" required
+            placeholder="Fügen Sie hier Ihre Angebotsanfrage ein oder beschreiben Sie Ihr Vorhaben:&#10;&#10;• Objektart (z. B. Mehrfamilienhaus, Baujahr)&#10;• Adresse / Ort des Objekts&#10;• Gewünschte Arbeiten&#10;• Ungefährer Zeitrahmen&#10;• Sonstige Hinweise"></textarea>
+          <p class="field-hint">Tipp: Ganze Angebotsanfrage einfach hierher kopieren – je mehr Details, desto genauer unser Angebot.</p>
+        </div>
+
+        <label class="consent">
+          <input type="checkbox" name="datenschutz" required />
+          <span>Ich habe die <a href={u('/datenschutz')}>Datenschutzerklärung</a> gelesen und stimme der Verarbeitung meiner Angaben zur Kontaktaufnahme zu. *</span>
+        </label>
+
+        {isPreview ? (
+          <>
+            <button type="submit" class="btn btn--primary form-submit" disabled aria-describedby="preview-hinweis">
+              Anfrage absenden
+            </button>
+            <p class="preview-note" id="preview-hinweis" role="note">
+              <strong>Vorschau:</strong> Diese Version dient nur zur Ansicht und Abnahme.
+              Der Versand ist deaktiviert – auf der Live-Seite geht die Anfrage direkt
+              per E-Mail an L&amp;B.
+            </p>
+          </>
+        ) : (
+          <button type="submit" class="btn btn--primary form-submit">Anfrage absenden</button>
+        )}
+        <p class="form-note">* Pflichtfelder. Ihre Daten werden ausschließlich zur Bearbeitung Ihrer Anfrage verwendet.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<style>
+  .preview-note {
+    margin-top: 0.9rem;
+    padding: 0.8rem 1rem;
+    border-left: 3px solid var(--gold);
+    background: #fff8e9;
+    color: var(--navy-800);
+    font-size: 0.9rem;
+    line-height: 1.5;
+    border-radius: 0 6px 6px 0;
+  }
+  .form-submit[disabled] { opacity: 0.55; cursor: not-allowed; }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+  .quick-actions { display: flex; flex-wrap: wrap; gap: 0.75rem; margin: 1.5rem 0 0.5rem; }
+  .qa {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    font-weight: 650;
+    padding: 0.7rem 1.15rem;
+    border-radius: var(--radius);
+    border: 1px solid var(--line);
+    background: #fff;
+    color: var(--navy-800);
+    transition: transform 0.2s var(--ease), border-color 0.2s, box-shadow 0.2s;
+  }
+  .qa:hover { transform: translateY(-2px); box-shadow: var(--shadow-sm); color: var(--navy-800); }
+  .qa-ico { display: inline-flex; width: 20px; height: 20px; }
+  .qa-ico svg { width: 20px; height: 20px; }
+  .qa--wa { border-color: #25d36633; color: #128c4a; }
+  .qa--wa:hover { border-color: #25d366; color: #128c4a; }
+
+  .contact-list {
+    list-style: none;
+    margin: 2rem 0 0;
+    padding: 0;
+    display: grid;
+    gap: 1.1rem;
+  }
+  .contact-list li { display: flex; gap: 0.9rem; align-items: flex-start; }
+  .ci {
+    flex: 0 0 auto;
+    width: 42px; height: 42px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    background: #fff;
+    border: 1px solid var(--line);
+    color: var(--navy-700);
+  }
+  .ci svg { width: 20px; height: 20px; }
+  .contact-list div { display: flex; flex-direction: column; line-height: 1.4; }
+  .contact-list span { font-size: 0.74rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
+  .contact-list a { font-weight: 600; color: var(--navy-800); }
+
+  .contact-form-wrap {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: var(--radius-lg);
+    padding: clamp(1.5rem, 4vw, 2.25rem);
+    box-shadow: var(--shadow);
+  }
+  .hp { position: absolute; left: -5000px; }
+  .field { margin-bottom: 1.1rem; display: flex; flex-direction: column; }
+  .field-row { display: grid; grid-template-columns: 1fr; gap: 0 1rem; }
+  label { font-weight: 600; font-size: 0.92rem; color: var(--navy-800); margin-bottom: 0.4rem; }
+  .label-row { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; }
+  .tmpl-btn {
+    background: none; border: 0; cursor: pointer;
+    color: var(--navy-700); font-weight: 650; font-size: 0.85rem;
+    text-decoration: underline; padding: 0; margin-bottom: 0.4rem;
+  }
+  .tmpl-btn:hover { color: var(--gold-600); }
+  input, textarea {
+    font-family: inherit;
+    font-size: 1rem;
+    color: var(--ink);
+    padding: 0.75rem 0.85rem;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    background: #fdfcfa;
+    width: 100%;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+  input:focus, textarea:focus {
+    outline: none;
+    border-color: var(--navy-600);
+    box-shadow: 0 0 0 3px rgba(39, 69, 102, 0.15);
+  }
+  textarea { resize: vertical; min-height: 220px; line-height: 1.55; }
+  .field-hint { font-size: 0.82rem; color: var(--muted); margin: 0.45rem 0 0; }
+
+  .consent {
+    display: flex;
+    gap: 0.6rem;
+    align-items: flex-start;
+    font-weight: 400;
+    font-size: 0.9rem;
+    color: var(--slate);
+    margin: 0.5rem 0 1.25rem;
+  }
+  .consent input { width: auto; margin-top: 0.2rem; flex: 0 0 auto; }
+  .consent a { color: var(--navy-700); text-decoration: underline; }
+
+  .form-submit { width: 100%; }
+  .form-note { font-size: 0.8rem; color: var(--muted); margin: 0.9rem 0 0; }
+
+  @media (min-width: 520px) {
+    .field-row { grid-template-columns: 1fr 1fr; }
+  }
+  @media (min-width: 900px) {
+    .contact-grid { grid-template-columns: 1fr 1.1fr; gap: 3.5rem; align-items: start; }
+  }
+</style>
+
+<script is:inline>
+  (function () {
+    var tmplBtn = document.getElementById('tmplBtn');
+    var ta = document.getElementById('nachricht');
+
+    var template =
+      'Angebotsanfrage\n\n' +
+      'Objektart / Baujahr: \n' +
+      'Adresse des Objekts: \n' +
+      'Gewünschte Arbeiten: \n' +
+      'Ungefährer Zeitrahmen: \n' +
+      'Budgetrahmen (optional): \n' +
+      'Sonstige Hinweise: \n';
+
+    if (tmplBtn && ta) {
+      tmplBtn.addEventListener('click', function () {
+        if (ta.value.trim() === '' || confirm('Vorhandenen Text durch die Vorlage ersetzen?')) {
+          ta.value = template;
+          ta.focus();
+          ta.setSelectionRange(template.indexOf(': ') + 2, template.indexOf(': ') + 2);
+        }
+      });
+    }
+  })();
+</script>

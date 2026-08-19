@@ -1,0 +1,112 @@
+---
+const reasons = [
+  {
+    title: 'Meisterqualität',
+    text: 'Ausgebildete Fachkräfte und geprüfte Materialien – Ausführung nach anerkannten Regeln der Technik.',
+  },
+  {
+    title: 'Festpreisgarantie',
+    text: 'Ein klares Angebot, ein verbindlicher Preis. Keine bösen Überraschungen bei der Schlussrechnung.',
+  },
+  {
+    title: 'Termintreue',
+    text: 'Wir halten Zusagen ein. Realistische Zeitpläne und saubere Übergaben statt endloser Baustellen.',
+  },
+  {
+    title: 'Ein Ansprechpartner',
+    text: 'Von der Beratung bis zur Abnahme betreut Sie eine feste Person – ohne Zuständigkeits-Wirrwarr.',
+  },
+];
+
+const steps = [
+  { n: '01', t: 'Kostenloser Ortstermin', d: 'Wir schauen uns Ihr Objekt an und hören zu, was Sie brauchen.' },
+  { n: '02', t: 'Transparentes Angebot', d: 'Sie erhalten ein nachvollziehbares Festpreis-Angebot.' },
+  { n: '03', t: 'Saubere Ausführung', d: 'Fachgerechte Umsetzung durch unser eigenes Team, termingerecht.' },
+  { n: '04', t: 'Abnahme & Gewährleistung', d: 'Gemeinsame Abnahme und verlässliche Gewährleistung.' },
+];
+---
+
+<section class="section section--navy" id="warum" aria-labelledby="warum-title">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="eyebrow">Warum L&amp;B</p>
+      <h2 id="warum-title">Warum Auftraggeber uns seit Jahrzehnten vertrauen</h2>
+      <p>
+        Sanierung ist Vertrauenssache. Diese vier Grundsätze prägen jede Baustelle,
+        die wir übernehmen – vom kleinen Reparaturauftrag bis zur Kernsanierung.
+      </p>
+    </div>
+
+    <div class="why-grid">
+      {reasons.map((r) => (
+        <div class="why-card reveal">
+          <h3>{r.title}</h3>
+          <p>{r.text}</p>
+        </div>
+      ))}
+    </div>
+
+    <div class="process reveal">
+      <h3 class="process-title">So läuft Ihr Projekt ab</h3>
+      <ol class="process-steps">
+        {steps.map((s) => (
+          <li>
+            <span class="step-n">{s.n}</span>
+            <div>
+              <strong>{s.t}</strong>
+              <p>{s.d}</p>
+            </div>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </div>
+</section>
+
+<style>
+  .why-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+    margin-bottom: clamp(3rem, 7vw, 4.5rem);
+  }
+  .why-card {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.09);
+    border-left: 3px solid var(--gold);
+    border-radius: var(--radius);
+    padding: 1.5rem 1.4rem;
+  }
+  .why-card h3 { color: #fff; font-size: 1.15rem; margin-bottom: 0.5rem; }
+  .why-card p { color: #b9c4d3; margin: 0; }
+
+  .process-title { color: #fff; margin-bottom: 1.75rem; }
+  .process-steps {
+    list-style: none;
+    margin: 0; padding: 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    counter-reset: step;
+  }
+  .process-steps li { display: flex; gap: 1rem; align-items: flex-start; }
+  .step-n {
+    font-family: var(--font-head);
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: var(--gold-300);
+    flex: 0 0 auto;
+    width: 2.6rem;
+  }
+  .process-steps strong { color: #fff; display: block; margin-bottom: 0.2rem; }
+  .process-steps p { color: #9fb0c4; margin: 0; font-size: 0.95rem; }
+
+  @media (min-width: 620px) {
+    .why-grid { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+  }
+  @media (min-width: 980px) {
+    .why-grid { grid-template-columns: repeat(4, 1fr); }
+    .process-steps { grid-template-columns: repeat(4, 1fr); gap: 2rem; }
+    .process-steps li { flex-direction: column; }
+  }
+</style>
