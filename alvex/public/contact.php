@@ -14,8 +14,7 @@
  */
 
 // --- Configuration ---------------------------------------------------------
-// TODO: switch $recipient back to 'info@alvexhandel.com' before go-live.
-$recipient = 'stivenbaci@gmail.com';                 // TEST recipient
+$recipient = 'info@alvexhandel.com';                 // recipient – company mailbox
 $from      = 'info@alvexhandel.com';                 // sender – existing mailbox on
                                                      // the domain (no extra cost)
 
