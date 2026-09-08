@@ -1038,13 +1038,7 @@ footer {
 
 /* Geschaeftsfuehrung – single portrait above the two team columns */
 .team-lead {
-    max-width: 320px;
     margin-bottom: 3.5rem;
-}
-
-.team-lead .member-img {
-    height: 420px;
-    object-position: center 20%;
 }
 
 .team-lead .team-text-block p {
@@ -1069,12 +1063,28 @@ footer {
     max-width: none;
 }
 
+/* All three team photos share one 4:3 frame so they scale together and crop
+   as little as possible – fixed pixel heights cut faces on portrait shots. */
+.team-lead .member-img,
+.team-columns .member-img,
+.team-columns .team-grid-tr .member-img {
+    height: auto;
+    aspect-ratio: 4 / 3;
+}
+
+.team-lead .member-img {
+    object-position: center 25%;
+}
+
+.team-columns .team-grid-tr .member-img {
+    object-position: center 20%;
+}
+
 @media (min-width: 768px) {
     .team-columns { grid-template-columns: repeat(2, 1fr); }
 
-    /* Equal frame height so both columns line up despite portrait vs. landscape */
-    .team-columns .member-img { height: 340px; }
-    .team-columns .team-grid-tr .member-img { height: 340px; }
+    /* Lead portrait matches the width of one column below it */
+    .team-lead { max-width: calc(50% - 1.5rem); }
 }
 
 /* --- TRUST BAR --- */
