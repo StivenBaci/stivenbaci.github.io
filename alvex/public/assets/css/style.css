@@ -1036,6 +1036,47 @@ footer {
     .team-grid-de { grid-template-columns: 1fr 2fr; }
 }
 
+/* Geschaeftsfuehrung – single portrait above the two team columns */
+.team-lead {
+    max-width: 320px;
+    margin-bottom: 3.5rem;
+}
+
+.team-lead .member-img {
+    height: 420px;
+    object-position: center 20%;
+}
+
+.team-lead .team-text-block p {
+    margin-bottom: 0;
+}
+
+/* Team Ausland and Team Deutschland side by side */
+.team-columns {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    align-items: start;
+}
+
+.team-columns .team-section {
+    margin-bottom: 0;
+}
+
+.team-columns .team-grid-tr,
+.team-columns .team-grid-de {
+    grid-template-columns: 1fr;
+    max-width: none;
+}
+
+@media (min-width: 768px) {
+    .team-columns { grid-template-columns: repeat(2, 1fr); }
+
+    /* Equal frame height so both columns line up despite portrait vs. landscape */
+    .team-columns .member-img { height: 340px; }
+    .team-columns .team-grid-tr .member-img { height: 340px; }
+}
+
 /* --- TRUST BAR --- */
 .trust-bar {
     background-color: var(--color-primary);
